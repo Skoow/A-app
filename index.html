@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Anthony 7/7">
+<title>Anthony 7/7</title>
+<link rel="icon" type="image/png" href="data:image/png;base64,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">
+<link rel="apple-touch-icon" href="data:image/png;base64,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">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{background:#0a0a0b;color:#efefef;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;min-height:100vh;padding-bottom:100px;padding-top:env(safe-area-inset-top,20px)}
+button,select{font-family:inherit;cursor:pointer}
+select{-webkit-appearance:none;appearance:none}
+.hdr{background:linear-gradient(160deg,#131315,#1a0e0a);border-bottom:1px solid #1e1e22;padding:28px 16px 16px}
+.hdr-top{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.ttl{font-family:Impact,sans-serif;font-size:clamp(2rem,8vw,3.2rem);letter-spacing:2px;line-height:.95}
+.ttl span{color:#ff4d1c}
+.wbadge{text-align:center;border-radius:12px;padding:8px 12px;min-width:72px}
+.wl{font-size:9px;color:#6b6b78;font-weight:700;letter-spacing:1px}
+.wv{font-family:Impact,sans-serif;font-size:2rem;line-height:1}
+.wr{font-size:10px;font-weight:700}
+.dlbar{margin-top:12px;background:rgba(245,166,35,.08);border:1px solid rgba(245,166,35,.25);border-radius:10px;padding:9px 12px;display:flex;align-items:center;justify-content:space-between}
+.dll{font-size:10px;color:#6b6b78;font-weight:700;letter-spacing:1px}
+.dld{font-size:13px;color:#f5a623;font-weight:700;margin-top:2px}
+.dlc{font-family:Impact,sans-serif;font-size:1.6rem;line-height:1}
+.dls{font-size:9px;color:#6b6b78}
+.mtog{display:flex;gap:8px;padding:14px 14px 6px}
+.mbtn{flex:1;padding:10px 12px;border-radius:10px;border:1.5px solid #252528;background:#161618;color:#888;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;gap:6px}
+.days{display:flex;flex-direction:column;gap:10px;padding:4px 14px 20px}
+.dc{background:#1a1a1d;border-radius:14px;overflow:hidden;border:1px solid #252528}
+.dh{display:flex;align-items:center;gap:12px;padding:14px;cursor:pointer;user-select:none;-webkit-user-select:none}
+.dbox{width:46px;height:46px;border-radius:11px;display:flex;flex-direction:column;align-items:center;justify-content:center;flex-shrink:0;position:relative}
+.dlbl{font-family:Impact,sans-serif;font-size:.8rem;letter-spacing:1px;line-height:1.1;text-align:center}
+.tdot{position:absolute;top:-3px;right:-3px;width:10px;height:10px;border-radius:50%;border:2px solid #1a1a1d}
+.di{flex:1}
+.dn{font-family:Impact,sans-serif;font-size:1.1rem;letter-spacing:1.5px;line-height:1}
+.ds{font-size:11px;color:#6b6b78;margin-top:3px}
+.dpb{margin-top:6px;height:3px;background:#252528;border-radius:2px;overflow:hidden}
+.dpf{height:100%;border-radius:2px}
+.dchev{font-size:18px;color:#6b6b78;transition:transform .2s;flex-shrink:0}
+.dcnt{font-size:10px;font-weight:600}
+.dbody{border-top:1px solid #252528}
+.abanner{padding:9px 12px;display:flex;align-items:center;gap:8px;background:rgba(168,85,247,.1);border-bottom:1px solid rgba(168,85,247,.2)}
+.abtxt{font-size:12px;color:#c084fc;font-weight:600}
+.ssblk{border-radius:12px;overflow:hidden;margin:8px 0}
+.sshdr{padding:8px 12px;display:flex;align-items:center}
+.sslbl{font-size:11px;font-weight:800;letter-spacing:1px}
+.ssbetween{padding:2px 12px 2px 80px;display:flex;align-items:center}
+.ssarr{font-size:9.5px;font-weight:700}
+.ssftr{padding:6px 12px 9px 28px}
+.ssftr span{font-size:10.5px;font-weight:700}
+.sswrap{position:relative;padding-left:10px}
+.ssnum{position:absolute;left:2px;top:16px;width:16px;height:16px;border-radius:50%;color:#000;font-size:10px;font-weight:900;display:flex;align-items:center;justify-content:center;z-index:2}
+.exrow{border-bottom:1px solid #1e1e22}
+.extap{display:flex;align-items:flex-start;gap:10px;padding:11px 12px 8px;cursor:pointer;user-select:none;-webkit-user-select:none}
+.exicon{width:64px;height:64px;flex-shrink:0;border-radius:12px;border:1px solid #252528;display:flex;align-items:center;justify-content:center;overflow:hidden;background:#111113}
+.excnt{flex:1;min-width:0}
+.exnm{font-size:13.5px;font-weight:600;color:#efefef;line-height:1.2}
+.exst{font-size:12px;color:#6b6b78;margin-top:3px}
+.exst strong{color:#c0c0c0}
+.extip{font-size:11px;color:#555;margin-top:3px;line-height:1.4}
+.exbadges{display:flex;gap:6px;flex-wrap:wrap;margin-top:5px}
+.bdg{font-size:10px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;padding:2px 7px;border-radius:12px;border:1px solid}
+.ba{color:#3d8bff;border-color:rgba(61,139,255,.4);background:rgba(61,139,255,.12)}
+.bs{color:#f5a623;border-color:rgba(245,166,35,.4);background:rgba(245,166,35,.12)}
+.bf{color:#ff6b35;border-color:rgba(255,107,53,.4);background:rgba(255,107,53,.12)}
+.bc{color:#2ecc71;border-color:rgba(46,204,113,.4);background:rgba(46,204,113,.12)}
+.bab{color:#c084fc;border-color:rgba(168,85,247,.4);background:rgba(168,85,247,.12)}
+.bi{color:#c084fc;border-color:rgba(168,85,247,.4);background:rgba(168,85,247,.1)}
+.bd{color:#2ecc71;border-color:rgba(46,204,113,.4);background:rgba(46,204,113,.15)}
+.exck{width:28px;height:28px;flex-shrink:0;border-radius:50%;border:2px solid #333;display:flex;align-items:center;justify-content:center;margin-top:4px;font-size:14px;font-weight:900;color:transparent}
+.wrow{display:flex;align-items:center;gap:8px;padding:0 12px 10px 88px;flex-wrap:wrap}
+.wsel{flex:1;min-width:120px;background:#111113;border-radius:8px;font-size:13px;font-weight:600;padding:7px 10px;outline:none;border:1px solid #2a2a30;color:#555}
+.wval{font-size:12px;font-weight:700;padding:4px 8px;border-radius:8px;white-space:nowrap;border:1px solid}
+.sugg{margin:0 12px 10px 88px;background:rgba(46,204,113,.1);border:1px solid rgba(46,204,113,.3);border-radius:8px;padding:6px 10px;font-size:11.5px;color:#2ecc71}
+.fab{position:fixed;bottom:calc(24px + env(safe-area-inset-bottom));right:20px;width:56px;height:56px;border-radius:50%;background:rgba(46,204,113,.18);border:2px solid #2ecc71;color:#2ecc71;font-size:24px;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(46,204,113,.3);z-index:300}
+.tov{position:fixed;bottom:0;left:0;right:0;background:#0a0a0b;padding:14px 16px calc(14px + env(safe-area-inset-bottom));z-index:500;box-shadow:0 -8px 24px rgba(0,0,0,.5)}
+.tlbl{font-size:10px;color:#6b6b78;letter-spacing:1.5px;font-weight:600;text-transform:uppercase;margin-bottom:4px}
+.tcnt{font-family:Impact,sans-serif;font-size:2.6rem;line-height:1;letter-spacing:1px}
+.tbg{margin-top:8px;height:4px;background:#1e1e22;border-radius:2px;overflow:hidden}
+.tfill{height:100%;border-radius:2px;transition:width .2s linear}
+.trow{display:flex;align-items:center;gap:14px}
+.tskip{padding:10px 16px;background:#1e1e22;border:1px solid #2a2a30;border-radius:10px;color:#aaa;font-size:13px;font-weight:600;flex-shrink:0}
+</style>
+</head>
+<body>
+<div id="app"></div>
+<script>
+// ── ICONS ──────────────────────────────────────────────────────────────────
+function mkIcon(n,c,sz){
+  sz=sz||52;c=c||'#fff';
+  var shapes={
+    bench:'<line x1="4" y1="56" x2="60" y2="56" stroke="C" stroke-width="1" opacity=".3"/><rect x="6" y="14" width="3" height="32" fill="C" opacity=".5"/><rect x="55" y="14" width="3" height="32" fill="C" opacity=".5"/><rect x="3" y="22" width="58" height="2" rx="1" fill="C"/><rect x="2" y="18" width="4" height="10" rx="1" fill="C"/><rect x="58" y="18" width="4" height="10" rx="1" fill="C"/><circle cx="48" cy="34" r="3.5" fill="C"/><path d="M46 37L26 34L26 40L46 43Z" fill="C" opacity=".85"/><path d="M30 36Q28 28 30 22" stroke="C" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M34 38Q32 30 34 22" stroke="C" stroke-width="3" fill="none" stroke-linecap="round"/>',
+    incline:'<line x1="4" y1="56" x2="60" y2="56" stroke="C" stroke-width="1" opacity=".3"/><path d="M12 52L30 20L42 20L42 52Z" fill="C" opacity=".2"/><path d="M12 52L30 20" stroke="C" stroke-width="2.5"/><path d="M30 20L42 20" stroke="C" stroke-width="2.5"/><circle cx="40" cy="24" r="3.5" fill="C"/><path d="M38 27L22 42L25 45L41 30Z" fill="C" opacity=".85"/><rect x="18" y="10" width="3" height="12" rx="1" fill="C"/><rect x="14" y="14" width="3" height="4" fill="C"/><rect x="22" y="14" width="3" height="4" fill="C"/><rect x="43" y="10" width="3" height="12" rx="1" fill="C"/><rect x="39" y="14" width="3" height="4" fill="C"/><rect x="47" y="14" width="3" height="4" fill="C"/>',
+    chestPress:'<line x1="4" y1="56" x2="60" y2="56" stroke="C" stroke-width="1" opacity=".3"/><rect x="18" y="6" width="28" height="46" rx="3" fill="C" opacity=".1" stroke="C" stroke-width="1.5"/><rect x="24" y="12" width="16" height="28" rx="2" fill="C" opacity=".3"/><circle cx="10" cy="18" r="3" fill="C"/><path d="M10 21Q8 30 12 38" stroke="C" stroke-width="3" stroke-linecap="round" fill="none"/><circle cx="54" cy="18" r="3" fill="C"/><path d="M54 21Q56 30 52 38" stroke="C" stroke-width="3" stroke-linecap="round" fill="none"/><circle cx="32" cy="22" r="3.5" fill="C"/><path d="M29 25L29 40L35 40L35 25Z" fill="C" opacity=".9"/><path d="M29 28L14 30" stroke="C" stroke-width="2.5" stroke-linecap="round"/><path d="M35 28L50 30" stroke="C" stroke-width="2.5" stroke-linecap="round"/>',
+    pecFly:'<line x1="4" y1="56" x2="60" y2="56" stroke="C" stroke-width="1" opacity=".3"/><rect x="28" y="14" width="8" height="22" rx="1" fill="C" opacity=".3"/><circle cx="8" cy="12" r="3" fill="C"/><path d="M8 15Q6 24 14 34" stroke="C" stroke-width="3" stroke-linecap="round" fill="none"/><rect x="13" y="32" width="4" height="5" rx="1" fill="C"/><circle cx="56" cy="12" r="3" fill="C"/><path d="M56 15Q58 24 50 34" stroke="C" stroke-width="3" stroke-linecap="round" fill="none"/><rect x="47" y="32" width="4" height="5" rx="1" fill="C"/><circle cx="32" cy="20" r="3.5" fill="C"/><path d="M29 23L29 38L35 38L35 23Z" fill="C" opacity=".9"/><path d="M29 26L15 33" stroke="C" stroke-width="2.5" stroke-linecap="round"/><path d="M35 26L49 33" stroke="C" stroke-width="2.5" stroke-linecap="round"/>',
+    tricepsPush:'<line x1="4" y1="56" x2="60" y2="56" stroke="C" stroke-width="1" opacity=".3"/><rect x="28" y="4" width="8" height="10" rx="1" fill="C" opacity=".4"/><line x1="32" y1="13" x2="32" y2="26" stroke="C" stroke-width="1.5" stroke-dasharray="2,1"/><rect x="18" y="26" width="28" height="2.5" rx="1" fill="C"/><rect x="16" y="24" width="4" height="6" rx="1" fill="C"/><rect x="44" y="24" width="4" height="6" rx="1" fill="C"/><circle cx="32" cy="20" r="3.5" fill="C"/><path d="M29 23L29 42L35 42L35 23Z" fill="C" opacity=".9"/>',
+    overhead:'<line x1="4" y1="56" x2="60" y2="56" stroke="C" stroke-width="1" opacity=".3"/><rect x="26" y="4" width="12" height="6" rx="1.5" fill="C"/><rect x="22" y="2" width="4" height="10" rx="1" fill="C"/><rect x="38" y="2" width="4" height="10" rx="1" fill="C"/><circle cx="24" cy="18" r="2" fill="C"/><circle cx="40" cy="18" r="2" fill="C"/><path d="M24 18L28 10" stroke="C" stroke-width="3" stroke-linecap="round"/><path d="M40 18L36 10" stroke="C" stroke-width="3" stroke-linecap="round"/><path d="M24 18L30 28" stroke="C" stroke-width="3" stroke-linecap="round"/><path d="M40 18L34 28" stroke="C" stroke-width="3" stroke-linecap="round"/><circle cx="32" cy="26" r="3.5" fill="C"/><path d="M29 29L29 44L35 44L35 29Z" fill="C" opacity=".9"/>',
+    pullup:'<rect x="4" y="6" width="56" height="3" rx="1" fill="C"/><rect x="4" y="6" width="3" height="50" fill="C" opacity=".4"/><rect x="57" y="6" width="3" height="50" fill="C" opacity=".4"/><circle cx="22" cy="10" r="2" fill="C"/><circle cx="42" cy="10" r="2" fill="C"/><rect x="18" y="42" width="28" height="6" rx="2" fill="C" opacity=".5"/><circle cx="32" cy="18" r="3.5" fill="C"/><path d="M29 21L29 34L35 34L35 21Z" fill="C" opacity=".9"/><path d="M29 22L22 14" stroke="C" stroke-width="3" stroke-linecap="round"/><path d="M22 14L22 10" stroke="C" stroke-width="3" stroke-linecap="round"/><path d="M35 22L42 14" stroke="C" stroke-width="3" stroke-linecap="round"/><path d="M42 14L42 10" stroke="C" stroke-width="3" stroke-linecap="round"/><path d="M30 34L26 42" stroke="C" stroke-width="3" stroke-linecap="round"/><path d="M34 34L38 42" stroke="C" stroke-width="3" stroke-linecap="round"/>',
+    latPull:'<line x1="4" y1="56" x2="60" y2="56" stroke="C" stroke-width="1" opacity=".3"/><rect x="6" y="4" width="52" height="3" rx="1" fill="C"/><line x1="16" y1="8" x2="16" y2="26" stroke="C" stroke-width="1.5" stroke-dasharray="2,1"/><line x1="48" y1="8" x2="48" y2="26" stroke="C" stroke-width="1.5" stroke-dasharray="2,1"/><path d="M14 26Q16 30 22 28L42 28Q48 30 50 26" stroke="C" stroke-width="3" fill="none" stroke-linecap="round"/><rect x="10" y="24" width="4" height="6" rx="1" fill="C"/><rect x="50" y="24" width="4" height="6" rx="1" fill="C"/><circle cx="32" cy="26" r="3.5" fill="C"/><path d="M29 29L29 42L35 42L35 29Z" fill="C" opacity=".9"/><path d="M29 30L16 28" stroke="C" stroke-width="2.5" stroke-linecap="round"/><path d="M35 30L48 28" stroke="C" stroke-width="2.5" stroke-linecap="round"/>',
+    seatedRow:'<line x1="4" y1="56" x2="60" y2="56" stroke="C" stroke-width="1" opacity=".3"/><rect x="46" y="10" width="14" height="40" rx="2" fill="C" opacity=".15" stroke="C" stroke-width="1"/><circle cx="52" cy="32" r="3" fill="none" stroke="C" stroke-width="1.5"/><rect x="38" y="26" width="6" height="18" rx="1" fill="C" opacity=".5"/><line x1="48" y1="32" x2="34" y2="34" stroke="C" stroke-width="1.5" stroke-dasharray="2,1"/><rect x="30" y="32" width="4" height="6" rx="1" fill="C"/><rect x="4" y="48" width="42" height="4" rx="1" fill="C" opacity=".3"/><circle cx="22" cy="28" r="3.5" fill="C"/><path d="M19 31L19 44L25 44L25 31Z" fill="C" opacity=".9"/><path d="M19 32L30 34" stroke="C" stroke-width="2.5" stroke-linecap="round"/>',
+    pullover:'<line x1="4" y1="56" x2="60" y2="56" stroke="C" stroke-width="1" opacity=".3"/><rect x="28" y="4" width="8" height="10" rx="1" fill="C" opacity=".4"/><line x1="32" y1="13" x2="32" y2="26" stroke="C" stroke-width="1.5" stroke-dasharray="2,1"/><rect x="20" y="26" width="24" height="2.5" rx="1" fill="C"/><rect x="18" y="24" width="4" height="6" rx="1" fill="C"/><rect x="42" y="24" width="4" height="6" rx="1" fill="C"/><circle cx="32" cy="20" r="3.5" fill="C"/><path d="M29 23L29 40L35 40L35 23Z" fill="C" opacity=".9"/><path d="M29 25L20 28" stroke="C" stroke-width="3" stroke-linecap="round"/><path d="M35 25L44 28" stroke="C" stroke-width="3" stroke-linecap="round"/>',
+    barbellRow:'<line x1="4" y1="56" x2="60" y2="56" stroke="C" stroke-width="1" opacity=".3"/><rect x="4" y="40" width="56" height="2.5" rx="1" fill="C"/><rect x="2" y="36" width="4" height="10" rx="1" fill="C"/><rect x="58" y="36" width="4" height="10" rx="1" fill="C"/><circle cx="42" cy="16" r="3.5" fill="C"/><path d="M40 19L26 32L30 35L44 22Z" fill="C" opacity=".9"/><path d="M28 33L24 48" stroke="C" stroke-width="3" stroke-linecap="round"/><path d="M32 33L32 48" stroke="C" stroke-width="3" stroke-linecap="round"/>',
+    preacher:'<line x1="4" y1="56" x2="60" y2="56" stroke="C" stroke-width="1" opacity=".3"/><path d="M12 56L26 24L46 24L46 56Z" fill="C" opacity=".2"/><path d="M12 56L26 24" stroke="C" stroke-width="2.5"/><path d="M26 24L46 24" stroke="C" stroke-width="2.5"/><rect x="18" y="18" width="28" height="2.5" rx="1" fill="C"/><circle cx="38" cy="14" r="3.5" fill="C"/><path d="M35 17L35 34L41 34L41 17Z" fill="C" opacity=".9"/><path d="M32 20L26 30" stroke="C" stroke-width="3" stroke-linecap="round"/><path d="M36 30L44 20" stroke="C" stroke-width="3" stroke-linecap="round"/>',
+    squat:'<line x1="4" y1="56" x2="60" y2="56" stroke="C" stroke-width="1" opacity=".3"/><rect x="6" y="4" width="3" height="52" fill="C" opacity=".5"/><rect x="55" y="4" width="3" height="52" fill="C" opacity=".5"/><rect x="4" y="20" width="56" height="2.5" rx="1" fill="C"/><rect x="2" y="16" width="5" height="10" rx="1" fill="C"/><rect x="57" y="16" width="5" height="10" rx="1" fill="C"/><circle cx="32" cy="16" r="3.5" fill="C"/><path d="M30 19L28 30L34 30L36 19Z" fill="C" opacity=".9"/><path d="M28 30L18 38" stroke="C" stroke-width="4" stroke-linecap="round"/><path d="M34 30L46 38" stroke="C" stroke-width="4" stroke-linecap="round"/><path d="M18 38L16 52" stroke="C" stroke-width="3.5" stroke-linecap="round"/><path d="M46 38L48 52" stroke="C" stroke-width="3.5" stroke-linecap="round"/>',
+    legPress:'<line x1="4" y1="56" x2="60" y2="56" stroke="C" stroke-width="1" opacity=".3"/><line x1="4" y1="56" x2="24" y2="8" stroke="C" stroke-width="2.5" opacity=".5"/><line x1="30" y1="8" x2="60" y2="56" stroke="C" stroke-width="2.5" opacity=".5"/><rect x="14" y="4" width="5" height="10" rx="1" fill="C"/><rect x="36" y="4" width="5" height="10" rx="1" fill="C"/><rect x="40" y="26" width="16" height="16" rx="2" fill="C" opacity=".25"/><circle cx="46" cy="22" r="3.5" fill="C"/><path d="M43 25L43 42L49 42L49 25Z" fill="C" opacity=".9"/><path d="M43 30L30 14" stroke="C" stroke-width="3.5" stroke-linecap="round"/><path d="M49 30L36 14" stroke="C" stroke-width="3.5" stroke-linecap="round"/>',
+    legCurl:'<line x1="4" y1="56" x2="60" y2="56" stroke="C" stroke-width="1" opacity=".3"/><rect x="4" y="12" width="56" height="38" rx="3" fill="C" opacity=".1" stroke="C" stroke-width="1"/><rect x="6" y="24" width="48" height="5" rx="1" fill="C" opacity=".4"/><circle cx="42" cy="38" r="2" fill="C"/><rect x="8" y="36" width="14" height="4" rx="1" fill="C" opacity=".6"/><path d="M42 38L36 18" stroke="C" stroke-width="4" stroke-linecap="round"/><circle cx="52" cy="22" r="3" fill="C"/><rect x="30" y="24" width="24" height="5" rx="1" fill="C" opacity=".9"/>',
+    legExt:'<line x1="4" y1="56" x2="60" y2="56" stroke="C" stroke-width="1" opacity=".3"/><rect x="6" y="10" width="52" height="42" rx="3" fill="C" opacity=".1" stroke="C" stroke-width="1"/><rect x="12" y="30" width="28" height="5" rx="1" fill="C" opacity=".4"/><circle cx="36" cy="40" r="2" fill="C"/><rect x="8" y="38" width="18" height="4" rx="1" fill="C" opacity=".6"/><path d="M36 40L10 40" stroke="C" stroke-width="4" stroke-linecap="round"/><circle cx="42" cy="22" r="3" fill="C"/><path d="M39 25L39 34L45 34L45 25Z" fill="C" opacity=".9"/>',
+    calf:'<line x1="4" y1="56" x2="60" y2="56" stroke="C" stroke-width="1" opacity=".3"/><rect x="20" y="8" width="24" height="5" rx="1" fill="C" opacity=".5"/><rect x="16" y="5" width="6" height="11" rx="1" fill="C"/><rect x="42" y="5" width="6" height="11" rx="1" fill="C"/><rect x="12" y="48" width="40" height="5" rx="1" fill="C" opacity=".4"/><circle cx="32" cy="20" r="3.5" fill="C"/><path d="M29 23L29 42L35 42L35 23Z" fill="C" opacity=".9"/><path d="M30 42L26 48" stroke="C" stroke-width="3" stroke-linecap="round"/><path d="M34 42L38 48" stroke="C" stroke-width="3" stroke-linecap="round"/>',
+    shoulderPress:'<line x1="4" y1="56" x2="60" y2="56" stroke="C" stroke-width="1" opacity=".3"/><rect x="10" y="6" width="44" height="48" rx="3" fill="C" opacity=".1" stroke="C" stroke-width="1"/><rect x="26" y="12" width="12" height="26" rx="1" fill="C" opacity=".3"/><rect x="4" y="18" width="8" height="4" rx="1" fill="C"/><rect x="52" y="18" width="8" height="4" rx="1" fill="C"/><circle cx="32" cy="22" r="3.5" fill="C"/><path d="M29 25L29 38L35 38L35 25Z" fill="C" opacity=".9"/><path d="M29 26L10 20" stroke="C" stroke-width="3" stroke-linecap="round"/><path d="M35 26L54 20" stroke="C" stroke-width="3" stroke-linecap="round"/>',
+    lateralRaise:'<line x1="4" y1="56" x2="60" y2="56" stroke="C" stroke-width="1" opacity=".3"/><circle cx="32" cy="14" r="3.5" fill="C"/><path d="M29 17L29 36L35 36L35 17Z" fill="C" opacity=".9"/><path d="M29 20L12 24" stroke="C" stroke-width="3" stroke-linecap="round"/><path d="M35 20L52 24" stroke="C" stroke-width="3" stroke-linecap="round"/><rect x="4" y="20" width="16" height="4" rx="1" fill="C"/><rect x="4" y="16" width="5" height="12" rx="1" fill="C"/><rect x="15" y="16" width="5" height="12" rx="1" fill="C"/><rect x="44" y="20" width="16" height="4" rx="1" fill="C"/><rect x="44" y="16" width="5" height="12" rx="1" fill="C"/><rect x="55" y="16" width="5" height="12" rx="1" fill="C"/>',
+    rearDelt:'<line x1="4" y1="56" x2="60" y2="56" stroke="C" stroke-width="1" opacity=".3"/><circle cx="32" cy="10" r="3.5" fill="C"/><path d="M28 13L28 24L36 24L36 13Z" fill="C" opacity=".9"/><path d="M28 18L10 18" stroke="C" stroke-width="3" stroke-linecap="round"/><path d="M36 18L54 18" stroke="C" stroke-width="3" stroke-linecap="round"/><rect x="2" y="14" width="14" height="4" rx="1" fill="C"/><rect x="2" y="10" width="5" height="12" rx="1" fill="C"/><rect x="11" y="10" width="5" height="12" rx="1" fill="C"/><rect x="48" y="14" width="14" height="4" rx="1" fill="C"/><rect x="48" y="10" width="5" height="12" rx="1" fill="C"/><rect x="57" y="10" width="5" height="12" rx="1" fill="C"/>',
+    facePull:'<line x1="4" y1="56" x2="60" y2="56" stroke="C" stroke-width="1" opacity=".3"/><rect x="48" y="4" width="12" height="52" rx="1" fill="C" opacity=".2" stroke="C" stroke-width="1"/><circle cx="54" cy="16" r="3" fill="none" stroke="C" stroke-width="1.5"/><path d="M48 16L32 22" stroke="C" stroke-width="1.5" stroke-dasharray="2,1"/><path d="M48 16L32 28" stroke="C" stroke-width="1.5" stroke-dasharray="2,1"/><rect x="28" y="20" width="4" height="4" rx="1" fill="C"/><rect x="28" y="26" width="4" height="4" rx="1" fill="C"/><circle cx="16" cy="18" r="3.5" fill="C"/><path d="M13 21L13 40L19 40L19 21Z" fill="C" opacity=".9"/><path d="M13 22L22 20" stroke="C" stroke-width="3" stroke-linecap="round"/><path d="M22 20L28 22" stroke="C" stroke-width="3" stroke-linecap="round"/>',
+    hipAbduct:'<line x1="4" y1="56" x2="60" y2="56" stroke="C" stroke-width="1" opacity=".3"/><rect x="4" y="12" width="56" height="40" rx="3" fill="C" opacity=".1" stroke="C" stroke-width="1"/><rect x="40" y="16" width="8" height="18" rx="1" fill="C" opacity=".3"/><rect x="4" y="30" width="14" height="5" rx="1" fill="C" opacity=".6"/><rect x="46" y="30" width="14" height="5" rx="1" fill="C" opacity=".6"/><circle cx="32" cy="22" r="3.5" fill="C"/><path d="M29 25L29 34L35 34L35 25Z" fill="C" opacity=".9"/><path d="M29 34L12 34" stroke="C" stroke-width="4" stroke-linecap="round"/><path d="M35 34L52 34" stroke="C" stroke-width="4" stroke-linecap="round"/>',
+    glueKick:'<line x1="4" y1="56" x2="60" y2="56" stroke="C" stroke-width="1" opacity=".3"/><rect x="34" y="4" width="22" height="52" rx="2" fill="C" opacity=".15" stroke="C" stroke-width="1"/><rect x="4" y="26" width="34" height="4" rx="1" fill="C" opacity=".4"/><circle cx="14" cy="14" r="3" fill="C"/><path d="M14 17L14 30" stroke="C" stroke-width="4" stroke-linecap="round"/><path d="M14 30L12 44" stroke="C" stroke-width="3" stroke-linecap="round"/><path d="M14 30L28 36" stroke="C" stroke-width="4" stroke-linecap="round"/><path d="M28 36L38 28" stroke="C" stroke-width="4" stroke-linecap="round"/>',
+    pullThrough:'<line x1="4" y1="56" x2="60" y2="56" stroke="C" stroke-width="1" opacity=".3"/><rect x="46" y="26" width="12" height="28" rx="1" fill="C" opacity=".2" stroke="C" stroke-width="1"/><circle cx="52" cy="36" r="3" fill="none" stroke="C" stroke-width="1.5"/><path d="M48 36Q32 38 26 34" stroke="C" stroke-width="1.5" stroke-dasharray="2,1"/><rect x="22" y="32" width="4" height="6" rx="1" fill="C"/><circle cx="14" cy="10" r="3.5" fill="C"/><path d="M14 13L24 30L28 32L18 15Z" fill="C" opacity=".9"/><path d="M22 30L18 52" stroke="C" stroke-width="3.5" stroke-linecap="round"/><path d="M26 30L30 52" stroke="C" stroke-width="3.5" stroke-linecap="round"/>',
+    abMachine:'<line x1="4" y1="56" x2="60" y2="56" stroke="C" stroke-width="1" opacity=".3"/><rect x="8" y="10" width="48" height="44" rx="3" fill="C" opacity=".1" stroke="C" stroke-width="1"/><rect x="38" y="14" width="8" height="18" rx="1" fill="C" opacity=".3"/><rect x="16" y="36" width="28" height="4" rx="1" fill="C" opacity=".4"/><rect x="8" y="20" width="14" height="4" rx="1" fill="C" opacity=".6"/><rect x="38" y="20" width="14" height="4" rx="1" fill="C" opacity=".6"/><circle cx="32" cy="18" r="3.5" fill="C"/><path d="M29 21Q26 28 24 32" stroke="C" stroke-width="4" stroke-linecap="round"/><path d="M35 21Q38 28 40 32" stroke="C" stroke-width="4" stroke-linecap="round"/>',
+    stairs:'<line x1="4" y1="56" x2="60" y2="56" stroke="C" stroke-width="1" opacity=".3"/><path d="M4 54L14 54L14 44L26 44L26 34L38 34L38 24L50 24L50 14L60 14" fill="none" stroke="C" stroke-width="2" stroke-linejoin="round"/><rect x="4" y="48" width="10" height="6" fill="C" opacity=".25"/><rect x="14" y="38" width="12" height="6" fill="C" opacity=".3"/><rect x="26" y="28" width="12" height="6" fill="C" opacity=".35"/><rect x="38" y="18" width="12" height="6" fill="C" opacity=".4"/><circle cx="22" cy="30" r="3" fill="C"/><path d="M19 33L19 42L25 42L25 33Z" fill="C" opacity=".9"/><path d="M19 42L30 34" stroke="C" stroke-width="3" stroke-linecap="round"/><path d="M25 42L20 50" stroke="C" stroke-width="3" stroke-linecap="round"/>',
+    inclineTreadmill:'<line x1="4" y1="56" x2="60" y2="56" stroke="C" stroke-width="1" opacity=".3"/><rect x="4" y="46" width="56" height="8" rx="2" fill="C" opacity=".2" stroke="C" stroke-width="1"/><path d="M10 46L22 20L56 20L56 46Z" fill="C" opacity=".3"/><path d="M10 46L22 20" stroke="C" stroke-width="2.5"/><path d="M22 20L56 20" stroke="C" stroke-width="2.5"/><line x1="20" y1="14" x2="14" y2="46" stroke="C" stroke-width="2.5"/><rect x="14" y="10" width="42" height="6" rx="1" fill="C" opacity=".4"/><circle cx="36" cy="16" r="3" fill="C"/><path d="M33 19L33 30L39 30L39 19Z" fill="C" opacity=".9"/><path d="M33 30L28 40" stroke="C" stroke-width="3" stroke-linecap="round"/>'
+  };
+  var s=shapes[n]||shapes.abMachine;
+  s=s.split('C').join(c);
+  return '<svg width="'+sz+'" height="'+sz+'" viewBox="0 0 64 64" fill="none">'+s+'</svg>';
+}
+
+// ── PROGRAMME ──────────────────────────────────────────────────────────────
+var P=[
+  {id:'lun',label:'LUN',name:'Pectoraux \u2014 Triceps',sub:'3 pecs \u00b7 3 triceps \u00b7 Isolation finale',color:'#ff4d1c',exercises:[
+    {id:'ab_lun',name:'Ab Machine (Crunch)',icon:'abMachine',cat:'assist',isAbdo:true,tip:'Gainage abdominal - Contraction en bas - Expiration en haut'},
+    {id:'benchpress',name:'Barbell Bench Press',icon:'bench',cat:'semi',tip:'Allonge sur le banc - Barre descendue jusqu a la poitrine - Prise large - Pecs horizontal - Mouvement principal'},
+    {id:'inclinedb',name:'Incline Dumbbell Press',icon:'incline',cat:'free',tip:'Banc incline 30-45 degres - Halteres - Haut des pecs - Coudes legerement vers exterieur - Grande amplitude'},
+    {id:'pecdeck',name:'Pec Deck Fly',icon:'pecFly',cat:'assist',tip:'Coudes sur les pads - Ramener les bras devant la poitrine - Isolation pecs interieur - Contraction maximale au centre'},
+    {id:'overheadtri',name:'Overhead Triceps Extension',icon:'overhead',cat:'free',tip:'Haltere a deux mains - Debout ou assis - Descend derriere la tete - Chef long du triceps - Coudes fixes'},
+    {id:'tricepsPush',name:'Cable Triceps Pushdown',icon:'tricepsPush',cat:'assist',pair:'tri',tip:'Corde ou barre - Coudes colles au corps - Pousse vers le bas - Triceps - SUPERSET avec Cable Overhead'},
+    {id:'cableOverhead',name:'Cable Overhead Triceps',icon:'tricepsPush',cat:'assist',pair:'tri',isIso:true,tip:'Cable bas - Corde derriere la tete - Pousse vers le haut - Chef long triceps - SUPERSET avec Pushdown - ISOLATION FINALE'},
+  ]},
+  {id:'mar',label:'MAR',name:'Dos \u2014 Biceps',sub:'3 dos \u00b7 3 biceps \u00b7 Isolation finale',color:'#3d8bff',exercises:[
+    {id:'ab_mar',name:'Ab Machine (Crunch)',icon:'abMachine',cat:'assist',isAbdo:true,tip:'Gainage abdominal - Contraction en bas'},
+    {id:'latPull',name:'Wide Grip Lat Pulldown',icon:'latPull',cat:'assist',tip:'Prise large - Tire vers la poitrine - Dos large - Coudes vers le bas et arriere - Grand dorsal'},
+    {id:'dbpullover',name:'Dumbbell Pullover',icon:'pullover',cat:'free',tip:'Allonge sur le banc - Haltere descend derriere la tete - Grand dorsal + Pecs bas - Etire le dorsal avant les rowing - Grande amplitude'},
+    {id:'seatedRow',name:'Seated Cable Row',icon:'seatedRow',cat:'assist',tip:'Assis - Dos droit - Tire vers le ventre - Dos epaisseur - Coudes colles au corps'},
+    {id:'preacher',name:'Machine Preacher Curl',icon:'preacher',cat:'assist',isIso:true,tip:'Bras sur appui incline - Isolation biceps - Contraction maximale en haut - Descente controlee'},
+    {id:'dbcurl',name:'Dumbbell Curl debout',icon:'lateralRaise',cat:'free',pair:'bic',tip:'Debout - Coudes colles au corps - Alterne les bras - Biceps chef court - SUPERSET avec Hammer Curl'},
+    {id:'hammercurl',name:'Hammer Curl',icon:'lateralRaise',cat:'free',pair:'bic',isIso:true,tip:'Prise neutre pouce vers le haut - Biceps chef long + Avant-bras - SUPERSET avec Dumbbell Curl - ISOLATION FINALE'},
+  ]},
+  {id:'mer',label:'MER',name:'Jambes \u2014 Quadriceps',sub:'3 quadri \u00b7 1 ischio \u00b7 1 mollet \u00b7 Isolation finale',color:'#f5a623',exercises:[
+    {id:'ab_mer',name:'Ab Machine (Crunch)',icon:'abMachine',cat:'assist',isAbdo:true,tip:'Gainage abdominal - Contraction en bas'},
+    {id:'smithSq',name:'Smith Machine Squat',icon:'squat',cat:'semi',pair:'smith',tip:'Pieds milieu plateforme - Largeur epaules - Descends cuisses paralleles - Dos droit - (Quadriceps complet + Fessiers) - SUPERSET avec Lunges'},
+    {id:'smithLunge',name:'Smith Machine Lunges',icon:'squat',cat:'semi',pair:'smith',tip:'Meme machine Smith - Grand pas AVANT - Pied arriere pointe au sol - Genou avant dans axe - (Quadri avant + Fessier) - SUPERSET avec Squat'},
+    {id:'legPress',name:'Leg Press 45\u00b0',icon:'legPress',cat:'semi',tip:'Pieds bas serres = Quadri externes - Pieds normaux = Quadri complet - Pieds hauts = Ischios + Fessiers - Choisis selon objectif'},
+    {id:'legCurl',name:'Lying Leg Curl',icon:'legCurl',cat:'assist',tip:'Ventre sur la machine - Talon vers les fesses - Ischios - Contraction en haut - Descente lente 3 secondes'},
+    {id:'calfRaise',name:'Standing Calf Raise',icon:'calf',cat:'assist',tip:'Debout - Monte sur la pointe des pieds - Contraction maximale en haut - Descente complete pour etirement - Mollets'},
+    {id:'legExt',name:'Leg Extension',icon:'legExt',cat:'assist',isIso:true,tip:'Assis - Jambes etendues vers le haut - Quadriceps isolation - Contraction maximale en haut - Tempo lent 4 secondes - ISOLATION FINALE'},
+  ]},
+  {id:'jeu',label:'JEU',name:'\u00c9paules',sub:'4 faisceaux \u00b7 Superset halteres \u00b7 Isolation finale',color:'#a855f7',exercises:[
+    {id:'ab_jeu',name:'Ab Machine (Crunch)',icon:'abMachine',cat:'assist',isAbdo:true,tip:'Gainage abdominal - Contraction en bas'},
+    {id:'shoulderPress',name:'Machine Shoulder Press',icon:'shoulderPress',cat:'assist',tip:'Assis - Poussee verticale - Deltoide complet - Mouvement principal epaules - Charge lourde'},
+    {id:'frontRaise',name:'Dumbbell Front Raise',icon:'lateralRaise',cat:'free',pair:'db',tip:'Debout - Halteres montent devant soi jusqu a hauteur epaule - Deltoide anterieur - Avant des epaules - SUPERSET avec Lateral Raise'},
+    {id:'lateralRaise',name:'Dumbbell Lateral Raise',icon:'lateralRaise',cat:'free',pair:'db',tip:'Debout - Bras en croix jusqu a hauteur epaule - Deltoide lateral - Coudes legerement flechis - SUPERSET avec Front Raise'},
+    {id:'rearDelt',name:'Dumbbell Rear Delt Fly',icon:'rearDelt',cat:'free',tip:'Penche en avant - Halteres s ecartent sur les cotes - Deltoide posterieur - Dos des epaules'},
+    {id:'facePull',name:'Cable Face Pull',icon:'facePull',cat:'assist',tip:'Corde vers le visage - Coudes hauts - Epaules posterieures + Coiffe des rotateurs - Sante articulation'},
+    {id:'cableLat',name:'Cable Lateral Raise',icon:'lateralRaise',cat:'assist',isIso:true,tip:'Poulie basse - Tension constante tout le mouvement - Deltoide lateral - Meilleure isolation que haltere - ISOLATION FINALE'},
+  ]},
+  {id:'ven',label:'VEN',name:'Jambes \u2014 Ischios/Fessiers',sub:'3 ischios \u00b7 3 fessiers \u00b7 Isolation finale',color:'#2ecc71',exercises:[
+    {id:'ab_ven',name:'Ab Machine (Crunch)',icon:'abMachine',cat:'assist',isAbdo:true,tip:'Gainage abdominal - Contraction en bas'},
+    {id:'backExt45',name:'45\u00b0 Back Extension',icon:'barbellRow',cat:'free',tip:'Pieds cales - Poids contre la poitrine - Descends le buste - Remonte en contractant - (Ischios + Bas du dos + Fessiers) - Echauffe la chaine posterieure'},
+    {id:'lyingCurl',name:'Lying Leg Curl',icon:'legCurl',cat:'assist',tip:'Ventre sur la machine - Talon vers les fesses - Ischios isolation - Descente lente 3 secondes'},
+    {id:'hipThrust',name:'Hip Thrust Machine',icon:'glueKick',cat:'assist',tip:'Dos contre le pad - Pousse les hanches vers le haut - Contracte les fessiers en haut - Meilleur exercice fessiers - Descente controlee'},
+    {id:'bulgarianSplit',name:'Bulgarian Split Squat',icon:'squat',cat:'free',tip:'Un pied sur le banc arriere - Descends en fente - Genou avant dans axe - (Cuisses + Fessiers + Ischios) - Compose polyarticulaire - Pas trop fatigue ici'},
+    {id:'hipAbduct',name:'Hip Abduction Machine',icon:'hipAbduct',cat:'assist',pair:'hip',tip:'Assis - Ecarte les jambes - Fessier externe + Hanche - Contraction en haut - SUPERSET avec Adduction'},
+    {id:'hipAdduct',name:'Hip Adduction Machine',icon:'hipAbduct',cat:'assist',pair:'hip',tip:'Assis - Rapproche les jambes - Interieur de la cuisse - Contraction au centre - SUPERSET avec Abduction'},
+    {id:'gluteKickback',name:'Cable Glute Kickback',icon:'glueKick',cat:'assist',isIso:true,tip:'Sangle cheville - Face a la poulie - Pousse la jambe vers arriere - Fessier isolation - Contraction maximale en haut - ISOLATION FINALE'},
+  ]},
+  {id:'sam',label:'SAM',name:'Haut du corps complet',sub:'Dos + Pecs + Biceps + Triceps \u00b7 Isolation finale',color:'#e91e8c',exercises:[
+    {id:'ab_sam',name:'Ab Machine (Crunch)',icon:'abMachine',cat:'assist',isAbdo:true,tip:'Gainage abdominal - Contraction en bas'},
+    {id:'pullupSam',name:'Assisted Pull-Up Machine',icon:'pullup',cat:'assist',tip:'Traction assistee - Prise large - Dos large - Tire le corps vers le haut - Grand dorsal'},
+    {id:'rowSam',name:'Seated Cable Row',icon:'seatedRow',cat:'assist',tip:'Dos droit - Tire vers le ventre - Dos epaisseur - Rappel mardi'},
+    {id:'dbBench',name:'Dumbbell Bench Press',icon:'bench',cat:'free',tip:'Halteres - Meilleure amplitude que la barre - Pecs complet - Descente complete - Rappel lundi'},
+    {id:'dbCurlSam',name:'Dumbbell Curl debout',icon:'lateralRaise',cat:'free',pair:'bicSam',tip:'Coudes colles - Alterne les bras - Biceps - SUPERSET avec Hammer Curl - Rappel mardi'},
+    {id:'hammerSam',name:'Hammer Curl',icon:'lateralRaise',cat:'free',pair:'bicSam',tip:'Prise neutre - Biceps long + Avant-bras - SUPERSET avec Dumbbell Curl - Rappel mardi'},
+    {id:'cablePushSam',name:'Cable Triceps Pushdown',icon:'tricepsPush',cat:'assist',pair:'triSam',tip:'Corde - Coudes colles - Pousse vers le bas - Triceps - SUPERSET avec Cable Overhead'},
+    {id:'cableOverheadSam',name:'Cable Overhead Triceps',icon:'tricepsPush',cat:'assist',pair:'triSam',isIso:true,tip:'Cable bas - Corde derriere la tete - Chef long triceps - SUPERSET avec Pushdown - ISOLATION FINALE'},
+  ]},
+  {id:'dim',label:'DIM',name:'R\u00e9cup\u00e9ration Active',sub:'Cardio doux \u00b7 Mobilite \u00b7 Bas du corps leger',color:'#6b6b78',exercises:[
+    {id:'ab_dim',name:'Ab Machine (light)',icon:'abMachine',cat:'assist',isAbdo:true,tip:'Leger - Gainage doux - Recuperation'},
+    {id:'walk_dim',name:'Incline Treadmill Walk',icon:'inclineTreadmill',cat:'cardio',tip:'35-50 min - Cardio doux - Recuperation active - Inclinaison 5-8%'},
+    {id:'latNeck',name:'Behind-the-Neck Lat Pulldown',icon:'latPull',cat:'assist',tip:'Prise large - Barre descend derriere la nuque - Haut du dos + Trapezes - Charge legere - Mobilite'},
+    {id:'hipAbductDim',name:'Hip Abduction Machine',icon:'hipAbduct',cat:'assist',tip:'Leger - Fessier externe - Recuperation active - Charge reduite'},
+    {id:'seatedCalf',name:'Seated Calf Raise Machine',icon:'calf',cat:'assist',tip:'Assis - Poids sur les genoux - Monte sur la pointe des pieds - Mollets - Different du Standing'},
+  ]},
+];
+
+var PB=[
+  {id:'lun',label:'LUN',name:'Pectoraux \u2014 Triceps',sub:'Prise serr\u00e9e + Crois\u00e9 haut',color:'#ff4d1c',exercises:[
+    {id:'ab_lun_b',name:'Ab Machine (Crunch)',icon:'abMachine',cat:'assist',isAbdo:true,tip:'Gainage abdominal \u00b7 Contraction en bas'},
+    {id:'closegrip',isVariant:true,name:'Close Grip Bench Press',icon:'bench',cat:'free',tip:'Prise serr\u00e9e \u00b7 M\u00eame barre \u00b7 Triceps + Partie interne pecs \u00b7 Coudes coll\u00e9s'},
+    {id:'incline_b',name:'Incline Dumbbell Press',icon:'incline',cat:'free',tip:'Banc inclin\u00e9 \u00b7 Haut des pecs \u00b7 Halt\u00e8res'},
+    {id:'chestpress_b',name:'Machine Chest Press',icon:'chestPress',cat:'assist',tip:'Machine guid\u00e9e \u00b7 Pecs central \u00b7 Contr\u00f4le la charge'},
+    {id:'cablecross',isVariant:true,pair:'cableb',name:'Cable Crossover bas vers haut',icon:'pecFly',cat:'assist',tip:'Poulie basse \u00b7 Croise les bras vers le haut \u00b7 Haut des pecs \u00b7 Contraction maximale'},
+    {id:'tricepspush_b',name:'Cable Triceps Pushdown',icon:'tricepsPush',cat:'assist',pair:'cableb',tip:'Corde \u00b7 Coudes fix\u00e9s \u00b7 Pousse vers le bas \u00b7 Triceps'},
+    {id:'dips_b',name:'Dips',icon:'tricepsPush',cat:'free',tip:'Barres parall\u00e8les \u00b7 Descends jusqu\u2019\u00e0 coudes 90\u00b0 \u00b7 Triceps + Bas des pecs'},
+  ]},
+  {id:'mar',label:'MAR',name:'Dos \u2014 Biceps',sub:'Prise neutre + Unilat\u00e9ral',color:'#3d8bff',exercises:[
+    {id:'ab_mar_b',name:'Ab Machine (Crunch)',icon:'abMachine',cat:'assist',isAbdo:true,tip:'Gainage abdominal \u00b7 Contraction en bas'},
+    {id:'pullup_b',name:'Assisted Pull-Up Machine',icon:'pullup',cat:'assist',tip:'Traction assist\u00e9e \u00b7 Largeur dos \u00b7 Prise large'},
+    {id:'closegriplat',isVariant:true,name:'Close Grip Lat Pulldown',icon:'latPull',cat:'assist',tip:'Prise neutre serr\u00e9e \u00b7 M\u00eame machine \u00b7 Milieu du dos + Biceps \u00b7 Diff\u00e9rent de la prise large'},
+    {id:'singlerow',isVariant:true,pair:'dumbmar',name:'Single Arm Dumbbell Row',icon:'barbellRow',cat:'free',tip:'Un bras \u00e0 la fois \u00b7 Appui sur banc \u00b7 Grande amplitude \u00b7 Dos \u00e9paisseur'},
+    {id:'dbpullover_b',name:'Dumbbell Pullover',icon:'pullover',cat:'free',pair:'dumbmar',tip:'Allong\u00e9 sur le banc \u00b7 Halt\u00e8re derri\u00e8re la t\u00eate \u00b7 Grand dorsal + Pecs bas'},
+    {id:'chestrow_b',name:'Chest-Supported Row Machine',icon:'seatedRow',cat:'assist',tip:'Appui poitrine \u00b7 Dos \u00e9paisseur \u00b7 Impossible de tricher'},
+    {id:'preacher_b',name:'Machine Preacher Curl',icon:'preacher',cat:'assist',isIso:true,tip:'Coudes sur appui incline \u00b7 Isolation biceps \u00b7 Controle la descente'},
+  ]},
+  {id:'mer',label:'MER',name:'Jambes \u2014 Quadriceps',sub:'Quadri externes + Leg Press \u00e9troit',color:'#f5a623',exercises:[
+    {id:'ab_mer_b',name:'Ab Machine (Crunch)',icon:'abMachine',cat:'assist',isAbdo:true,tip:'Gainage abdominal \u00b7 Contraction en bas'},
+    {id:'smithsquat_b',pair:'smith',name:'Smith Machine Squat',icon:'squat',cat:'semi',tip:'Barre guid\u00e9e \u00b7 Cuisses parall\u00e8les au sol \u00b7 Dos droit'},
+    {id:'smithlunge_b',pair:'smith',name:'Smith Machine Lunges',icon:'squat',cat:'semi',tip:'Fentes guid\u00e9es \u00b7 Grand pas \u00b7 Quadriceps + Fessiers'},
+    {id:'legpressnarrow',isVariant:true,name:'Leg Press pieds bas prise \u00e9troite',icon:'legPress',cat:'assist',tip:'Pieds rapproch\u00e9s et bas \u00b7 Quadriceps externes \u00b7 M\u00eame machine Leg Press \u00b7 Variation semaine B'},
+    {id:'legcurl_mer_b',name:'Lying Leg Curl',icon:'legCurl',cat:'assist',tip:'Ischios \u00b7 Talon vers les fesses \u00b7 Contraction en haut'},
+    {id:'legext_b',name:'Leg Extension',icon:'legExt',cat:'assist',isIso:true,tip:'Quadriceps isolation \u00b7 Tempo lent 4 secondes descente \u00b7 Contr\u00f4le total'},
+    {id:'calf_mer_b',name:'Standing Calf Raise',icon:'calf',cat:'assist',tip:'Mollets \u00b7 Monte sur la pointe des pieds \u00b7 Contraction en haut'},
+  ]},
+  {id:'jeu',label:'JEU',name:'\u00c9paules \u2014 Cardio',sub:'Arnold Press + Cable Lat\u00e9ral',color:'#a855f7',exercises:[
+    {id:'ab_jeu_b',name:'Ab Machine (Crunch)',icon:'abMachine',cat:'assist',isAbdo:true,tip:'Gainage abdominal \u00b7 Contraction en bas'},
+    {id:'arnoldpress',isVariant:true,pair:'db',name:'Arnold Press',icon:'shoulderPress',cat:'free',tip:'Halt\u00e8res \u00b7 Rotation du poignet \u00b7 Travaille les 3 faisceaux de l\u2019\u00e9paule \u00b7 Pleine amplitude'},
+    {id:'reardelt_b',name:'Dumbbell Rear Delt Fly',icon:'rearDelt',cat:'free',pair:'db',tip:'Pench\u00e9 en avant \u00b7 Halt\u00e8res \u00b7 D\u00e9lto\u00efde post\u00e9rieur \u00b7 Dos des \u00e9paules'},
+    {id:'cablelateral',isVariant:true,name:'Cable Lateral Raise',icon:'lateralRaise',cat:'assist',tip:'Poulie basse \u00b7 Tension constante \u00b7 D\u00e9lto\u00efde lat\u00e9ral \u00b7 Meilleur qu\u2019halt\u00e8re pour l\u2019isolation'},
+    {id:'facepull_b',name:'Cable Face Pull',icon:'facePull',cat:'assist',tip:'Corde vers le visage \u00b7 Coudes hauts \u00b7 \u00c9paules post\u00e9rieures + Coiffe des rotateurs'},
+    {id:'shrug_b',name:'Machine Shrug',icon:'overhead',cat:'assist',tip:'Hausser les \u00e9paules \u00b7 Trap\u00e8zes \u00b7 Contraction en haut'},
+    {id:'cardio_jeu_b',name:'Stair Climbing',icon:'stairs',cat:'cardio',tip:'20-25 min \u00b7 Cardio mod\u00e9r\u00e9 \u00b7 Cuisses + Cardio'},
+  ]},
+  {id:'ven',label:'VEN',name:'Jambes \u2014 Ischios/Fessiers',sub:'Back Ext 45\u00b0 + Prise large',color:'#2ecc71',exercises:[
+    {id:'ab_ven_b',name:'Ab Machine (Crunch)',icon:'abMachine',cat:'assist',isAbdo:true,tip:'Gainage abdominal \u00b7 Contraction en bas'},
+    {id:'backext45',isVariant:true,name:'45\u00b0 Back Extension Machine',icon:'barbellRow',cat:'assist',tip:'Ischios + Bas du dos \u00b7 Machine guid\u00e9e \u00b7 Descends et remonte contr\u00f4l\u00e9 \u00b7 Pas pr\u00e9sent en semaine A'},
+    {id:'hipabduct_b',pair:'hip',name:'Hip Abduction Machine',icon:'hipAbduct',cat:'assist',tip:'Ecarte les jambes \u00b7 Fessiers ext\u00e9rieurs \u00b7 Contraction en haut'},
+    {id:'hipadduct_b',pair:'hip',name:'Hip Adduction Machine',icon:'hipAbduct',cat:'assist',tip:'Rapproche les jambes \u00b7 Int\u00e9rieur cuisse \u00b7 Contraction au centre'},
+    {id:'legpresshigh_b',isVariant:true,name:'Leg Press prise large pieds hauts',icon:'legPress',cat:'assist',tip:'Pieds \u00e9cart\u00e9s et hauts \u00b7 Int\u00e9rieur cuisses + Fessiers \u00b7 Variation semaine B'},
+    {id:'seatedlegcurl_b',name:'Seated Leg Curl Machine',icon:'legCurl',cat:'assist',tip:'Assis \u00b7 Ischios isolation \u00b7 Angle diff\u00e9rent du Lying Leg Curl'},
+    {id:'bulgsplit_b',name:'Bulgarian Split Squat',icon:'squat',cat:'free',tip:'Un pied sur banc arri\u00e8re \u00b7 Fentes \u00b7 Cuisses + Fessiers + Ischios'},
+  ]},
+  {id:'sam',label:'SAM',name:'Full Body',sub:'Pull-Through ',color:'#e91e8c',exercises:[
+    {id:'ab_sam_b',name:'Ab Machine (Crunch)',icon:'abMachine',cat:'assist',isAbdo:true,tip:'Gainage abdominal \u00b7 Contraction en bas'},
+    {id:'pullup_sam_b',name:'Assisted Pull-Up Machine',icon:'pullup',cat:'assist',tip:'Traction assist\u00e9e \u00b7 Largeur dos'},
+    {id:'chestpress_sam_b',name:'Machine Chest Press',icon:'chestPress',cat:'assist',tip:'Machine guid\u00e9e \u00b7 Pecs central'},
+    {id:'seatedrow_sam_b',name:'Seated Cable Row',icon:'seatedRow',cat:'assist',tip:'Dos \u00e9paisseur \u00b7 Tire vers le ventre'},
+    {id:'legpress_sam_b',name:'Leg Press 45\u00b0',icon:'legPress',cat:'assist',tip:'Cuisses \u00b7 Pieds largeur \u00e9paules'},
+    {id:'cablepull_sam',isVariant:true,name:'Cable Pull-Through',icon:'pullThrough',cat:'assist',tip:'C\u00e2ble entre les jambes \u00b7 Pousse les hanches en avant \u00b7 Fessiers \u00b7 Variation semaine B'},
+    {id:'calf_sam_b',name:'Standing Calf Raise',icon:'calf',cat:'assist',tip:'Mollets \u00b7 Monte sur la pointe des pieds'},
+  ]},
+  {id:'dim',label:'DIM',name:'R\u00e9cup\u00e9ration Active',sub:'Prise neutre + Adduction',color:'#6b6b78',exercises:[
+    {id:'ab_dim_b',name:'Ab Machine (light)',icon:'abMachine',cat:'assist',isAbdo:true,tip:'L\u00e9ger \u00b7 Gainage doux'},
+    {id:'walk_dim_b',name:'Incline Treadmill Walk',icon:'inclineTreadmill',cat:'cardio',tip:'35-50 min \u00b7 Cardio doux \u00b7 R\u00e9cup\u00e9ration active'},
+    {id:'neutrallat',isVariant:true,name:'Neutral Grip Lat Pulldown',icon:'latPull',cat:'assist',tip:'Prise neutre \u00b7 M\u00eame machine \u00b7 Milieu du dos \u00b7 Variation semaine B'},
+    {id:'hipadduct_dim',isVariant:true,name:'Hip Adduction Machine',icon:'hipAbduct',cat:'assist',tip:'Int\u00e9rieur cuisse \u00b7 L\u00e9ger \u00b7 Variation semaine B'},
+    {id:'seatedcalf_b',name:'Seated Calf Raise Machine',icon:'calf',cat:'assist',tip:'Mollets assis \u00b7 Poids sur les genoux \u00b7 Variation semaine B'},
+  ]},
+];
+
+// ── HELPERS ────────────────────────────────────────────────────────────────
+function getISO(){var d=new Date(),f=new Date(d.getFullYear(),0,1),x=Math.floor((d-f)/86400000);return Math.ceil((x+f.getDay()+1)/7);}
+function getWK(){var d=new Date();return d.getFullYear()+'-W'+getISO();}
+function getTI(){var d=new Date().getDay();return d===0?6:d-1;}
+function getReps(ex,wt){
+  if(ex.isAbdo)return'4 \u00d7 15 reps';
+  if(ex.id==='pullov')return'3 \u00d7 12\u201315 reps';
+  if(ex.cat==='cardio'){var m={cardio_jeu:'20\u201325 min',walk_dim:'35\u201350 min'};return m[ex.id]||'\u2014';}
+  if(ex.isIso)return wt==='A'?'3 \u00d7 12\u201315 reps':'3 \u00d7 15\u201320 reps';
+  return wt==='A'?'4 \u00d7 8\u201310 reps':'4 \u00d7 12\u201315 reps';
+}
+function buildBlocks(exs){
+  var blocks=[],cur=null;
+  for(var i=0;i<exs.length;i++){
+    var ex=exs[i];
+    if(ex.isAbdo||ex.cat==='cardio'||ex.isIso||!ex.pair){
+      if(cur){blocks.push(cur);cur=null;}
+      blocks.push({type:'solo',exercises:[ex]});
+      continue;
+    }
+    if(cur&&cur.pair===ex.pair&&cur.exercises.length<2){cur.exercises.push(ex);}
+    else{if(cur)blocks.push(cur);cur={type:'group',cat:ex.cat,pair:ex.pair,exercises:[ex]};}
+  }
+  if(cur)blocks.push(cur);
+  return blocks.map(function(b){return b.exercises.length===1?{type:'solo',cat:b.cat,exercises:b.exercises}:b;});
+}
+function exCol(ex,dc){
+  if(ex.cat==='cardio')return'#2ecc71';
+  return dc;
+}
+function ld(k,d){try{var v=localStorage.getItem(k);return v===null?d:JSON.parse(v);}catch(e){return d;}}
+function sv(k,v){try{localStorage.setItem(k,JSON.stringify(v));}catch(e){}}
+
+// ── STATE ──────────────────────────────────────────────────────────────────
+var TI=getTI();
+var WT=getISO()%2===1?'A':'B';
+var DL=new Date('2026-07-30');
+var JLEFT=Math.max(0,Math.floor((DL-new Date()+new Date().getTimezoneOffset()*60000+3600000)/86400000));
+var WK=getWK();
+var S={
+  mode:'today',
+  openDays:{},
+  weights:ld('mw10',{}),
+  hist:ld('mh10',{}),
+  done:ld('mk10',null)===WK?ld('md10',{}):{},
+  timer:null,
+  timerIv:null
+};
+S.openDays[TI]=true;
+if(ld('mk10',null)!==WK){sv('mk10',WK);}
+
+// ── RENDER ─────────────────────────────────────────────────────────────────
+function render(){
+  var el=document.getElementById('app');
+  if(!el)return;
+  el.innerHTML=buildHTML();
+  bindEvents();
+}
+
+function bindEvents(){
+  // Mode buttons
+  var btnToday=document.getElementById('btn-today');
+  var btnWeek=document.getElementById('btn-week');
+  if(btnToday)btnToday.addEventListener('click',function(){S.mode='today';S.openDays={};S.openDays[TI]=true;render();});
+  if(btnWeek)btnWeek.addEventListener('click',function(){S.mode='week';S.openDays={};render();});
+  // Day headers
+  var dhs=document.querySelectorAll('.dh');
+  dhs.forEach(function(dh){
+    dh.addEventListener('click',function(){
+      var i=parseInt(this.getAttribute('data-i'));
+      if(S.openDays[i])delete S.openDays[i];else S.openDays[i]=true;
+      render();
+    });
+  });
+  // Exercise taps
+  var taps=document.querySelectorAll('.extap');
+  taps.forEach(function(tap){
+    tap.addEventListener('click',function(){
+      var id=this.getAttribute('data-id');
+      S.done[id]=!S.done[id];
+      sv('md10',S.done);
+      render();
+    });
+  });
+  // Weight selects
+  var sels=document.querySelectorAll('.wsel');
+  sels.forEach(function(sel){
+    sel.addEventListener('change',function(e){
+      e.stopPropagation();
+      var id=this.getAttribute('data-id');
+      var val=this.value;
+      S.weights[id]=val;
+      sv('mw10',S.weights);
+      var hist=S.hist[id]||[];
+      var last=hist.length>0?hist[hist.length-1]:null;
+      if(last&&last.weight===val){hist[hist.length-1].completedCount=(last.completedCount||1)+1;}
+      else{hist.push({weight:val,completedCount:1});if(hist.length>20)hist.shift();}
+      S.hist[id]=hist;
+      sv('mh10',S.hist);
+      render();
+    });
+    sel.addEventListener('click',function(e){e.stopPropagation();});
+  });
+  // FAB
+  var fab=document.getElementById('fab');
+  if(fab)fab.addEventListener('click',startTimer);
+  // Skip timer
+  var skip=document.getElementById('tskip');
+  if(skip)skip.addEventListener('click',function(){stopTimer();render();});
+}
+
+function buildHTML(){
+  var wA=WT==='A';
+  var PROG=WT==='B'?PB:P;
+  var td=PROG[TI];
+  var daysHTML=S.mode==='today'
+    ?dayHTML(PROG[TI],TI,true)
+    :PROG.map(function(d,i){return dayHTML(d,i,false);}).join('');
+  var fabHTML='';
+  var timerH='';
+
+  return '<div class="hdr">'
+    +'<div class="hdr-top">'
+    +'<div class="ttl">ANTHONY <span style="color:#3d8bff">&#9794;</span></div>'
+    +'<div class="wbadge" style="background:'+(wA?'rgba(255,77,28,.15)':'rgba(61,139,255,.15)')+';border:1.5px solid '+(wA?'#ff4d1c':'#3d8bff')+'">'
+    +'<div class="wl">SEMAINE</div>'
+    +'<div class="wv" style="color:'+(wA?'#ff4d1c':'#3d8bff')+'">'+WT+'</div>'
+    +'</div></div>'
+    +'<div class="dlbar">'
+    +'<div><div class="dll">&#128197; R\u00c9VISION DU PROGRAMME</div><div class="dld">30 Juillet 2026</div></div>'
+    +'<div style="text-align:right"><div class="dlc" style="color:'+(JLEFT<14?'#ff4d1c':'#f5a623')+'">J\u2013'+JLEFT+'</div><div class="dls">jours restants</div></div>'
+    +'</div></div>'
+    +'<div class="mtog">'
+    +'<button class="mbtn" id="btn-today" style="'+(S.mode==='today'?'background:'+td.color+'18;border-color:'+td.color+';color:'+td.color:'')+'">&#128205; AUJOURD\u2019HUI</button>'
+    +'<button class="mbtn" id="btn-week" style="'+(S.mode==='week'?'background:rgba(255,77,28,.15);border-color:#ff4d1c;color:#ff4d1c':'')+'">&#128198; SEMAINE</button>'
+    +'</div>'
+    +'<div class="days">'+daysHTML+'</div>'
+    +fabHTML+timerH;
+}
+
+function dayHTML(day,idx,forceOpen){
+  var open=forceOpen||!!S.openDays[idx];
+  var isToday=idx===TI;
+  var dc=0;
+  for(var i=0;i<day.exercises.length;i++){
+    var ex_i=day.exercises[i];
+    if(!ex_i.isAbdo&&S.done[ex_i.id])dc++;
+  }
+  var tot=day.exercises.filter(function(e){return !e.isAbdo;}).length;
+  var pct=Math.round(dc/tot*100);
+  var fc=pct===100?'#2ecc71':day.color;
+  return '<div class="dc" style="border-color:'+(open?day.color+'50':'#252528')+'">'
+    +'<div class="dh" data-i="'+idx+'" style="'+(pct===100?'background:rgba(46,204,113,.08);':'')+'">'
+    +'<div class="dbox" style="background:'+day.color+'18">'
+    +'<span class="dlbl" style="color:'+day.color+'">'+day.label+'</span>'
+    +(isToday?'<span class="tdot" style="background:'+day.color+'"></span>':'')
+    +'</div>'
+    +'<div class="di">'
+    +'<div class="dn" style="color:'+day.color+'">'+day.name+'</div>'
+    +'<div class="ds">'+day.sub+'</div>'
+    +'<div class="dpb"><div class="dpf" style="width:'+pct+'%;background:'+fc+'"></div></div>'
+    +'</div>'
+    +'<div style="display:flex;flex-direction:column;align-items:flex-end;gap:4px">'
+    +(pct===100?'<span style="font-size:18px;color:#2ecc71">&#10003;</span>':'<span class="dchev" style="'+(open?'transform:rotate(90deg)':'')+'">&#8250;</span>')
+    +'<span class="dcnt" style="color:'+(pct===100?'#2ecc71':'#6b6b78')+'">'+dc+'/'+tot+'</span>'
+    +'</div>'
+    +'</div>'
+    +(open?'<div class="dbody">'+bodyHTML(day)+'</div>':'')
+    +'</div>';
+}
+
+function bodyHTML(day){
+  return buildBlocks(day.exercises).map(function(b){return blkHTML(b,day);}).join('');
+}
+
+function blkHTML(block,day){
+  if(block.type==='solo'){
+    var ex=block.exercises[0];
+    return ex.isAbdo?abdoHTML():exHTML(ex,day);
+  }
+  var gc='#ffffff';
+  return '<div class="ssblk" style="border:1px solid '+gc+'">'
+    +'<div class="sshdr" style="background:'+gc+'25"><span class="sslbl" style="color:'+gc+'">\uD83D\uDD17 SUPERSET \u00b7 2 exercices</span></div>'
+    +block.exercises.map(function(ex,i){
+      var last=i===block.exercises.length-1;
+      return '<div class="sswrap"><div class="ssnum" style="background:'+gc+'">'+(i+1)+'</div>'
+        +exHTML(ex,day)+'</div>'
+        +(!last?'<div class="ssbetween"><span class="ssarr" style="color:'+gc+'">\u2193 SANS REPOS, PASSE AU 2\u00c8ME</span></div>':'');
+    }).join('')
+    +'<div class="ssftr" style="border-top:1px dashed '+gc+'30"><span style="color:'+gc+'">&#9201; Repos 60s apr\u00e8s les 2 exos \u00b7 puis recommencer</span></div>'
+    +'</div>';
+}
+
+function abdoHTML(){
+  return '<div class="exrow"><div class="abanner">'
+    +'<svg width="24" height="24" viewBox="0 0 28 28" fill="none">'
+    +'<rect x="4" y="8" width="20" height="14" rx="3" fill="rgba(168,85,247,.2)" stroke="#a855f7" stroke-width="1.5"/>'
+    +'<line x1="4" y1="13" x2="24" y2="13" stroke="#a855f7" stroke-width="1"/>'
+    +'<line x1="14" y1="8" x2="14" y2="22" stroke="#a855f7" stroke-width="1"/>'
+    +'<rect x="7" y="10" width="4" height="2.5" rx="1" fill="#a855f7"/>'
+    +'<rect x="17" y="10" width="4" height="2.5" rx="1" fill="#a855f7"/>'
+    +'</svg>'
+    +'<span class="abtxt">AVANT LA S\u00c9ANCE \u00b7 Ab Machine \u00b7 4 \u00d7 15 reps</span>'
+    +'</div></div>';
+}
+
+function exHTML(ex,day){
+  var done=!!S.done[ex.id];
+  var ec=exCol(ex,day.color);
+  var reps=getReps(ex,WT);
+  var w=S.weights[ex.id]||'';
+  var hist=S.hist[ex.id]||[];
+  var last=hist.length>0?hist[hist.length-1]:null;
+  var showSugg=w&&w!=='\u2014'&&!ex.isAbdo&&ex.cat!=='cardio'&&last&&last.completedCount>=3&&last.weight===w;
+  var newW=w?(parseFloat(w)+2.5).toFixed(1):'';
+  var catB=ex.isAbdo?'<span class="bdg bab">Abdos</span>'
+    :ex.cat==='assist'?'<span class="bdg ba">\uD83D\uDD35 Assist\u00e9e</span>'
+    :ex.cat==='semi'?'<span class="bdg bs">\uD83D\uDFE1 Semi-guid\u00e9e</span>'
+    :ex.cat==='free'?'<span class="bdg bf">\uD83D\uDD34 Libre</span>'
+    :ex.cat==='cardio'?'<span class="bdg bc">\uD83C\uDFC3 Cardio</span>':'';
+  var isoB=ex.isIso?'<span class="bdg bi">\uD83C\uDFAF Isolation</span>':'';
+  var varB=ex.isVariant?'<span class="bdg" style="color:#e91e8c;border-color:rgba(233,30,140,.4);background:rgba(233,30,140,.1)">&#10022; SEM.B</span>':'';
+  var doneB=done?'<span class="bdg bd">\u2713 Fait</span>':'';
+  var opts=['\u2014','2.5','5','7.5','10','12.5','15','17.5','20','22.5','25','27.5','30','32.5','35','40','45','50','55','60','70','80','90','100','120'];
+  var selOpts=opts.map(function(o){return '<option value="'+o+'"'+(o===(w||'\u2014')?' selected':'')+'>'+(o==='\u2014'?'S\u00e9lectionner kg':o+' kg')+'</option>';}).join('');
+  var wRow=ex.cat!=='cardio'
+    ?'<div class="wrow">'
+      +'<span style="font-size:11px;color:#555">&#9878;</span>'
+      +'<select class="wsel" data-id="'+ex.id+'" style="color:'+(w&&w!=='\u2014'?ec:'#555')+';border-color:'+(w&&w!=='\u2014'?ec+'60':'#2a2a30')+'">'+selOpts+'</select>'
+      +(w&&w!=='\u2014'?'<span class="wval" style="color:'+ec+';background:'+ec+'18;border-color:'+ec+'40">'+w+' kg</span>':'')
+      +'</div>'
+      +(showSugg?'<div class="sugg">&#128200; Tu tiens '+w+'kg depuis 3 fois &mdash; essaie <strong>'+newW+' kg</strong></div>':'')
+    :'';
+  return '<div class="exrow">'
+    +'<div class="extap" data-id="'+ex.id+'" style="background:'+(done?'rgba(46,204,113,.06)':'transparent')+'">'
+    +'<div class="exicon" style="background:'+(done?'rgba(46,204,113,.1)':'#111113')+';border-color:'+(done?'rgba(46,204,113,.3)':'#252528')+'">'+mkIcon(ex.icon,done?'#2ecc71':ec,52)+'</div>'
+    +'<div class="excnt">'
+    +'<div class="exnm" style="color:'+(done?'#2ecc71':'#efefef')+'">'+ex.name+'</div>'
+    +'<div class="exst"><strong style="color:'+(done?'#2ecc71':'#c0c0c0')+'">'+reps+'</strong></div>'
+    +'<div class="extip">'+ex.tip+'</div>'
+    +'<div class="exbadges">'+catB+isoB+varB+doneB+'</div>'
+    +'</div>'
+    +'<div class="exck" style="background:'+(done?'#2ecc71':'transparent')+';border-color:'+(done?'#2ecc71':'#333')+';color:'+(done?'#000':'transparent')+'">\u2713</div>'
+    +'</div>'+wRow+'</div>';
+}
+
+function timerHTML(){
+  var r=S.timer.remaining,t=S.timer.total,c=S.timer.color;
+  var pct=Math.round((t-r)/t*100);
+  var m=Math.floor(r/60),s=String(r%60).padStart(2,'0');
+  return '<div class="tov" style="border-top:2px solid '+c+'">'
+    +'<div class="trow">'
+    +'<div style="flex:1">'
+    +'<div class="tlbl">&#9203; REPOS EN COURS</div>'
+    +'<div class="tcnt" id="tc" style="color:'+c+'">'+m+':'+s+'</div>'
+    +'<div class="tbg"><div class="tfill" id="tf" style="width:'+pct+'%;background:'+c+'"></div></div>'
+    +'</div>'
+    +'<button class="tskip" id="tskip">Passer</button>'
+    +'</div></div>';
+}
+
+// ── TIMER ──────────────────────────────────────────────────────────────────
+function startTimer(){
+  stopTimer();
+  S.timer={remaining:60,total:60,color:'#2ecc71'};
+  var t0=Date.now();
+  S.timerIv=setInterval(function(){
+    var left=60-Math.floor((Date.now()-t0)/1000);
+    if(left<=0){stopTimer();beep();render();return;}
+    S.timer.remaining=left;
+    var tc=document.getElementById('tc');
+    var tf=document.getElementById('tf');
+    if(tc){tc.textContent=Math.floor(left/60)+':'+String(left%60).padStart(2,'0');}
+    if(tf){tf.style.width=Math.round((60-left)/60*100)+'%';}
+  },250);
+  render();
+}
+function stopTimer(){
+  if(S.timerIv){clearInterval(S.timerIv);S.timerIv=null;}
+  S.timer=null;
+}
+function beep(){
+  try{
+    var ctx=new(window.AudioContext||window.webkitAudioContext)();
+    [[880,0,.3],[1100,.35,.35],[1320,.75,.5]].forEach(function(x){
+      var o=ctx.createOscillator(),g=ctx.createGain();
+      o.connect(g);g.connect(ctx.destination);
+      o.type='sine';o.frequency.value=x[0];
+      g.gain.setValueAtTime(0,ctx.currentTime+x[1]);
+      g.gain.linearRampToValueAtTime(.4,ctx.currentTime+x[1]+.02);
+      g.gain.exponentialRampToValueAtTime(.001,ctx.currentTime+x[1]+x[2]);
+      o.start(ctx.currentTime+x[1]);o.stop(ctx.currentTime+x[1]+x[2]);
+    });
+  }catch(e){}
+}
+
+setInterval(function(){
+  var nwk=getWK();
+  if(ld('mk10',null)!==nwk){S.done={};sv('mk10',nwk);render();}
+},300000);
+
+window.addEventListener('DOMContentLoaded',function(){render();});
+</script>
+</body>
+</html>
