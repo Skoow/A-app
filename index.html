@@ -217,10 +217,8 @@ function getISO(){
 function getWK(){var d=new Date();return d.getFullYear()+'-W'+getISO();}
 function getTI(){var d=new Date(new Date().toLocaleString('en-US',{timeZone:'Europe/Paris'})).getDay();return d===0?6:d-1;}
 function getReps(ex){
-  if(ex.isAbdo) return '4 \u00d7 15 reps';
   if(ex.cat==='cardio') return '';
-  var sets=ex.pair?3:4;
-  return sets+'\u00d7 12 reps';
+  return '4\u00d712 reps';
 }
 function buildBlocks(exs){
   var blocks=[],cur=null;
@@ -335,7 +333,7 @@ function buildHTML(){
     +'<div class="wbadge" style="background:rgba(255,77,28,.15);border:1.5px solid #ff4d1c">'
     +'<div class="wl">PROGRAMME</div>'
     +'<div class="wv" style="color:#ff4d1c">4×12</div>'
-    +'<div class="wr" style="color:#ff4d1c">3×12 supersets · 4×15 abdos</div>'
+    +'<div class="wr" style="color:#ff4d1c">4 séries · 12 répétitions</div>'
     +'</div></div>'
     +'<div class="dlbar">'
     +'<div><div class="dll">&#128197; R\u00c9VISION DU PROGRAMME</div><div class="dld">30 Juillet 2026</div></div>'
@@ -411,7 +409,7 @@ function abdoHTML(){
     +'<rect x="7" y="10" width="4" height="2.5" rx="1" fill="#a855f7"/>'
     +'<rect x="17" y="10" width="4" height="2.5" rx="1" fill="#a855f7"/>'
     +'</svg>'
-    +'<span class="abtxt">AVANT LA S\u00c9ANCE \u00b7 Ab Machine \u00b7 4 \u00d7 15 reps</span>'
+    +'<span class="abtxt">AVANT LA S\u00c9ANCE \u00b7 Ab Machine \u00b7 4\u00d712 reps</span>'
     +'</div></div>';
 }
 
