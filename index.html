@@ -202,77 +202,6 @@ var P=[
   ]},
 ];
 
-var PB=[
-  {id:'lun',label:'LUN',name:'Pectoraux \u2014 Triceps',sub:'3 Pecs \u00b7 3 Triceps \u00b7 1 Obliques',color:'#ff4d1c',exercises:[
-    {id:'ab_lun_b',name:'Ab Machine (Crunch)',icon:'abMachine',cat:'assist',isAbdo:true,tip:'Gainage abdominal - Contraction en bas - Expiration en haut'},
-    {id:'woodchop_b',name:'Cable Woodchop',icon:'facePull',cat:'assist',tip:'Poulie haute - Tire en diagonale de haut en bas - Rotation du buste - Obliques - Alterne gauche et droite - 3x15 chaque cote'},
-    {id:'benchpress_b',name:'Barbell Bench Press',icon:'bench',cat:'semi',tip:'Allonge sur le banc - Barre descendue jusqu a la poitrine - Prise large - Pecs horizontal - Mouvement principal'},
-    {id:'inclinedb_b',name:'Incline Dumbbell Press',icon:'incline',cat:'free',tip:'Banc incline 30-45 degres - Halteres - Haut des pecs - Coudes legerement vers exterieur - Grande amplitude'},
-    {id:'pecdeck_b',name:'Pec Deck Fly',icon:'pecFly',cat:'assist',tip:'Coudes sur les pads - Ramener les bras devant la poitrine - Isolation pecs interieur - Contraction maximale au centre'},
-    {id:'overheadtri_b',name:'Overhead Triceps Extension',icon:'overhead',cat:'free',tip:'Haltere a deux mains - Debout ou assis - Descend derriere la tete - Chef long du triceps - Coudes fixes'},
-    {id:'tricepsPush_b',name:'Cable Triceps Pushdown',icon:'tricepsPush',cat:'assist',pair:'tri',tip:'Corde ou barre - Coudes colles au corps - Pousse vers le bas - Triceps - SUPERSET avec Seated Dip'},
-    {id:'seatedDipLun_b',name:'Seated Dip Machine',icon:'seatedDip',cat:'assist',pair:'tri',isIso:true,tip:'Machine guidee - Pousse vers le bas - Triceps + Pecs bas - Mouvement different du cable - SUPERSET avec Pushdown - ISOLATION FINALE'},
-  ]},
-  {id:'mar',label:'MAR',name:'Dos \u2014 Biceps',sub:'3 Dos \u00b7 3 Biceps \u00b7 1 \u00c9paules post\u00e9rieures',color:'#3d8bff',exercises:[
-    {id:'ab_mar_b',name:'Ab Machine (Crunch)',icon:'abMachine',cat:'assist',isAbdo:true,tip:'Gainage abdominal - Contraction en bas'},
-    {id:'divLatPull_b',name:'Diverging Lat Pulldown',icon:'latPull',cat:'assist',tip:'Poignees divergentes - Tire vers les epaules en ecartant - Dos large + Milieu dos - Meilleure activation que prise classique'},
-    {id:'dbpullover_b',name:'Dumbbell Pullover',icon:'pullover',cat:'free',tip:'Allonge sur le banc - Haltere descend derriere la tete - Grand dorsal + Pecs bas - Etire le dorsal avant les rowing'},
-    {id:'divSeatedRow_b',name:'Diverging Seated Row',icon:'seatedRow',cat:'assist',tip:'Poignees qui s ecartent en tirant - Rhomboides + Milieu dos - Bras divergent vers exterieur - Different du Seated Row classique'},
-    {id:'facePullMar_b',name:'Cable Face Pull',icon:'facePull',cat:'assist',tip:'Corde vers le visage - Coudes hauts - Epaules posterieures + Coiffe des rotateurs - Protege les epaules - Essentiel apres les tirages'},
-    {id:'preacher_b',name:'Machine Preacher Curl',icon:'preacher',cat:'assist',isIso:true,tip:'Bras sur appui incline - Isolation biceps - Contraction maximale en haut - Descente controlee'},
-    {id:'dbcurl_b',name:'Dumbbell Curl debout',icon:'lateralRaise',cat:'free',pair:'bic',tip:'Debout - Coudes colles au corps - Alterne les bras - Biceps chef court - SUPERSET avec Hammer Curl'},
-    {id:'hammercurl_b',name:'Hammer Curl',icon:'lateralRaise',cat:'free',pair:'bic',isIso:true,tip:'Prise neutre pouce vers le haut - Biceps chef long + Avant-bras - SUPERSET avec Dumbbell Curl - ISOLATION FINALE'},
-  ]},
-  {id:'mer',label:'MER',name:'Jambes \u2014 Quadriceps',sub:'3 Quadriceps \u00b7 1 Ischio \u00b7 1 Mollet \u00b7 1 Fessiers',color:'#f5a623',exercises:[
-    {id:'ab_mer_b',name:'Ab Machine (Crunch)',icon:'abMachine',cat:'assist',isAbdo:true,tip:'Gainage abdominal - Contraction en bas'},
-    {id:'smithSq_b',name:'Smith Machine Squat',icon:'squat',cat:'semi',pair:'smith',tip:'Pieds milieu plateforme - Largeur epaules - Descends cuisses paralleles - Dos droit - (Quadriceps complet + Fessiers) - SUPERSET avec Lunges'},
-    {id:'smithLunge_b',name:'Smith Machine Lunges',icon:'squat',cat:'semi',pair:'smith',tip:'Meme machine Smith - Grand pas AVANT - Pied arriere pointe au sol - Genou avant dans axe - (Quadri avant + Fessier) - SUPERSET avec Squat'},
-    {id:'legPress_b',name:'Leg Press 45\u00b0',icon:'legPress',cat:'semi',tip:'Pieds bas serres = Quadri externes - Pieds normaux = Quadri complet - Pieds hauts = Ischios + Fessiers - Choisis selon objectif'},
-    {id:'legCurl_b',name:'Lying Leg Curl',icon:'legCurl',cat:'assist',tip:'Ventre sur la machine - Talon vers les fesses - Ischios - Contraction en haut - Descente lente 3 secondes'},
-    {id:'calfRaise_b',name:'Standing Calf Raise',icon:'calf',cat:'assist',tip:'Debout - Monte sur la pointe des pieds - Contraction maximale en haut - Descente complete pour etirement - Mollets'},
-    {id:'legExt_b',name:'Leg Extension',icon:'legExt',cat:'assist',isIso:true,tip:'Assis - Jambes etendues vers le haut - Quadriceps isolation - Contraction maximale en haut - Tempo lent 4 secondes - ISOLATION FINALE'},
-  ]},
-  {id:'jeu',label:'JEU',name:'\u00c9paules \u2014 Trap\u00e8zes',sub:'4 \u00c9paules \u00b7 1 Trap\u00e8zes \u00b7 1 Delt\u00f4\u00efdes lat\u00e9raux',color:'#a855f7',exercises:[
-    {id:'ab_jeu_b',name:'Ab Machine (Crunch)',icon:'abMachine',cat:'assist',isAbdo:true,tip:'Gainage abdominal - Contraction en bas'},
-    {id:'shoulderPress_b',name:'Machine Shoulder Press',icon:'shoulderPress',cat:'assist',tip:'Assis - Poussee verticale - Deltoide complet - Mouvement principal epaules - Charge lourde'},
-    {id:'frontRaise_b',name:'Dumbbell Front Raise',icon:'lateralRaise',cat:'free',pair:'db',tip:'Debout - Halteres montent devant soi jusqu a hauteur epaule - Deltoide anterieur - SUPERSET avec Lateral Raise'},
-    {id:'lateralRaise_b',name:'Dumbbell Lateral Raise',icon:'lateralRaise',cat:'free',pair:'db',tip:'Debout - Bras en croix jusqu a hauteur epaule - Deltoide lateral - Coudes legerement flechis - SUPERSET avec Front Raise'},
-    {id:'rearDelt_b',name:'Dumbbell Rear Delt Fly',icon:'rearDelt',cat:'free',tip:'Penche en avant - Halteres s ecartent sur les cotes - Deltoide posterieur - Dos des epaules'},
-    {id:'facePull_b',name:'Cable Face Pull',icon:'facePull',cat:'assist',tip:'Corde vers le visage - Coudes hauts - Epaules posterieures + Coiffe des rotateurs - Sante articulation'},
-    {id:'shrug_b',name:'Machine Shrug',icon:'shoulderPress',cat:'assist',tip:'Hausse les epaules vers les oreilles - Trapezes - Contraction maximale en haut - Descente lente - Zone non travaillee ailleurs'},
-    {id:'uprightRow_b',name:'Cable Upright Row',icon:'facePull',cat:'assist',isIso:true,tip:'Cable bas - Tire vers le menton - Coudes hauts - Deltoide lateral + Trapezes - ISOLATION FINALE'},
-  ]},
-  {id:'ven',label:'VEN',name:'Jambes \u2014 Ischios/Fessiers',sub:'3 Ischios \u00b7 3 Fessiers \u00b7 2 Hanches',color:'#2ecc71',exercises:[
-    {id:'ab_ven_b',name:'Ab Machine (Crunch)',icon:'abMachine',cat:'assist',isAbdo:true,tip:'Gainage abdominal - Contraction en bas'},
-    {id:'backExtMachine_b',name:'Back Extension Machine',icon:'backExt',cat:'assist',tip:'Assis - Dos contre le coussin - Etends le dos vers l arriere - Erecteurs spinaux + Ischios + Fessiers - Machine guidee securisee'},
-    {id:'lyingCurl_b',name:'Lying Leg Curl',icon:'legCurl',cat:'assist',tip:'Ventre sur la machine - Talon vers les fesses - Ischios isolation - Descente lente 3 secondes'},
-    {id:'hipThrust_b',name:'Hip Thrust Machine',icon:'glueKick',cat:'assist',tip:'Dos contre le pad - Pousse les hanches vers le haut - Contracte les fessiers en haut - Meilleur exercice fessiers - Descente controlee'},
-    {id:'bulgarianSplit_b',name:'Bulgarian Split Squat',icon:'squat',cat:'free',tip:'Un pied sur le banc arriere - Descends en fente - Genou avant dans axe - (Cuisses + Fessiers + Ischios) - Compose polyarticulaire'},
-    {id:'hipAbduct_b',name:'Hip Abduction Machine',icon:'hipAbduct',cat:'assist',pair:'hip',tip:'Assis - Ecarte les jambes - Fessier externe + Hanche - Contraction en haut - SUPERSET avec Adduction'},
-    {id:'hipAdduct_b',name:'Hip Adduction Machine',icon:'hipAbduct',cat:'assist',pair:'hip',tip:'Assis - Rapproche les jambes - Interieur de la cuisse - Contraction au centre - SUPERSET avec Abduction'},
-    {id:'singleLegPress_b',name:'Single Leg Press',icon:'legPress',cat:'assist',isIso:true,tip:'Une jambe a la fois - Pied haut sur la plateforme - Fessier + Ischio unilateral - Corrige les desequilibres - ISOLATION FINALE'},
-  ]},
-  {id:'sam',label:'SAM',name:'Haut du corps complet',sub:'2 Dos \u00b7 1 Pecs \u00b7 2 Biceps \u00b7 2 Triceps',color:'#e91e8c',exercises:[
-    {id:'ab_sam_b',name:'Ab Machine (Crunch)',icon:'abMachine',cat:'assist',isAbdo:true,tip:'Gainage abdominal - Contraction en bas'},
-    {id:'pullupSam_b',name:'Assisted Pull-Up Machine',icon:'pullup',cat:'assist',tip:'Traction assistee - Prise large - Dos large - Tire le corps vers le haut - Grand dorsal'},
-    {id:'divRowSam_b',name:'Diverging Seated Row',icon:'seatedRow',cat:'assist',tip:'Poignees divergentes - Rhomboides + Milieu dos - Rappel mardi - Bras s ecartent en tirant'},
-    {id:'deadlift_b',name:'Deadlift - Souleve de terre',icon:'barbellRow',cat:'free',tip:'Barre au sol entre les jambes - Dos plat - Pousse avec les jambes - Remonte en contractant le dos et les fessiers - Ischios + Fessiers + Dos - Faire frais en debut de seance'},
-    {id:'dbBench_b',name:'Dumbbell Bench Press',icon:'bench',cat:'free',tip:'Halteres - Meilleure amplitude que la barre - Pecs complet - Descente complete - Rappel lundi'},
-    {id:'dbCurlSam_b',name:'Dumbbell Curl debout',icon:'lateralRaise',cat:'free',pair:'bicSam',tip:'Coudes colles - Alterne les bras - Biceps - SUPERSET avec Hammer Curl - Rappel mardi'},
-    {id:'hammerSam_b',name:'Hammer Curl',icon:'lateralRaise',cat:'free',pair:'bicSam',tip:'Prise neutre - Biceps long + Avant-bras - SUPERSET avec Dumbbell Curl - Rappel mardi'},
-    {id:'cablePushSam_b',name:'Cable Triceps Pushdown',icon:'tricepsPush',cat:'assist',pair:'triSam',tip:'Corde - Coudes colles - Pousse vers le bas - Triceps - SUPERSET avec Seated Dip'},
-    {id:'seatedDipSam_b',name:'Seated Dip Machine',icon:'seatedDip',cat:'assist',pair:'triSam',isIso:true,tip:'Machine guidee - Triceps + Pecs bas - SUPERSET avec Cable Pushdown - ISOLATION FINALE'},
-  ]},
-  {id:'dim',label:'DIM',name:'R\u00e9cup\u00e9ration Active',sub:'1 Cardio \u00b7 1 Dos \u00b7 1 Mollets \u00b7 1 Fessiers \u00b7 1 Obliques',color:'#6b6b78',exercises:[
-    {id:'ab_dim_b',name:'Ab Machine (light)',icon:'abMachine',cat:'assist',isAbdo:true,tip:'Leger - Gainage doux - Recuperation'},
-    {id:'walk_dim_b',name:'Incline Treadmill Walk',icon:'inclineTreadmill',cat:'cardio',tip:'35-50 min - Cardio doux - Recuperation active - Inclinaison 5-8%'},
-    {id:'latNeck_b',name:'Behind-the-Neck Lat Pulldown',icon:'latPull',cat:'assist',tip:'Prise large - Barre descend derriere la nuque - Haut du dos + Trapezes - Charge legere - Mobilite'},
-    {id:'hipAbductDim_b',name:'Hip Abduction Machine',icon:'hipAbduct',cat:'assist',tip:'Leger - Fessier externe - Recuperation active - Charge reduite'},
-    {id:'seatedCalf_b',name:'Seated Calf Raise Machine',icon:'calf',cat:'assist',tip:'Assis - Poids sur les genoux - Monte sur la pointe des pieds - Mollets - Different du Standing'},
-    {id:'rotaryTorso_b',name:'Rotary Torso Machine',icon:'abMachine',cat:'assist',tip:'Assis - Pieds sous la barre - Rotation du buste - Obliques - Charge legere - Recuperation active'},
-    {id:'rearDeltDim_b',name:'Rear Delt Machine',icon:'rearDelt',cat:'assist',tip:'Assis - Poignees ecartees vers l arriere - Deltoide posterieur - Rappel jeudi - Charge legere dimanche'},
-  ]},
-];
 
 // ── HELPERS ────────────────────────────────────────────────────────────────
 function getISO(){
@@ -285,14 +214,11 @@ function getISO(){
 }
 function getWK(){var d=new Date();return d.getFullYear()+'-W'+getISO();}
 function getTI(){var d=new Date(new Date().toLocaleString('en-US',{timeZone:'Europe/Paris'})).getDay();return d===0?6:d-1;}
-function getReps(ex,wt){
-  var isA=wt==='A';
-  if(ex.isAbdo) return isA?'4 \u00d7 15 reps':'4 \u00d7 20 reps';
+function getReps(ex){
+  if(ex.isAbdo) return '4 \u00d7 15 reps';
   if(ex.cat==='cardio') return '';
-  var isPair=!!ex.pair;
-  var sets=isPair?(isA?3:3):(isA?4:5);
-  var reps=isA?10:6;
-  return sets+'\u00d7'+reps+' reps';
+  var sets=ex.pair?3:4;
+  return sets+'\u00d7 12 reps';
 }
 function buildBlocks(exs){
   var blocks=[],cur=null;
@@ -318,7 +244,6 @@ function sv(k,v){try{localStorage.setItem(k,JSON.stringify(v));}catch(e){}}
 
 // ── STATE ──────────────────────────────────────────────────────────────────
 var TI=getTI();
-var WT=getISO()%2===1?'A':'B';
 var DL=new Date('2026-07-30');
 var JLEFT=Math.max(0,Math.floor((DL-new Date(new Date().toLocaleString('en-US',{timeZone:'Europe/Paris'})))/86400000));
 var WK=getWK();
@@ -395,23 +320,17 @@ function bindEvents(){
 }
 
 function buildHTML(){
-  var wA=WT==='A';
-  var PROG=WT==='B'?PB:P;
-  var td=PROG[TI];
+  var td=P[TI];
   var daysHTML=S.mode==='today'
-    ?dayHTML(PROG[TI],TI,true)
-    :PROG.map(function(d,i){return dayHTML(d,i,false);}).join('');
+    ?dayHTML(P[TI],TI,true)
+    :P.map(function(d,i){return dayHTML(d,i,false);}).join('');
   var fabHTML='';
   var timerH='';
 
   return '<div class="hdr">'
     +'<div class="hdr-top">'
     +'<div class="ttl">ANTHONY <span style="color:#3d8bff">&#9794;</span></div>'
-    +'<div class="wbadge" style="background:'+(wA?'rgba(255,77,28,.15)':'rgba(61,139,255,.15)')+';border:1.5px solid '+(wA?'#ff4d1c':'#3d8bff')+'">'
-    +'<div class="wl">SEMAINE</div>'
-    +'<div class="wv" style="color:'+(wA?'#ff4d1c':'#3d8bff')+'">'+WT+'</div>'
-    +'<div class="wr" style="color:'+(wA?'#ff4d1c':'#3d8bff')+'">'+(wA?'4 x 10 reps':'5 x 6 reps')+'</div>'
-    +'</div></div>'
+    +'</div>'
     +'<div class="dlbar">'
     +'<div><div class="dll">&#128197; R\u00c9VISION DU PROGRAMME</div><div class="dld">30 Juillet 2026</div></div>'
     +'<div style="text-align:right"><div class="dlc" style="color:'+(JLEFT<14?'#ff4d1c':'#f5a623')+'">J\u2013'+JLEFT+'</div><div class="dls">jours restants</div></div>'
@@ -493,7 +412,7 @@ function abdoHTML(){
 function exHTML(ex,day){
   var done=!!S.done[ex.id];
   var ec=exCol(ex,day.color);
-  var reps=getReps(ex,WT);
+  var reps=getReps(ex);
   var w=S.weights[ex.id]||'';
   var hist=S.hist[ex.id]||[];
   var last=hist.length>0?hist[hist.length-1]:null;
@@ -505,7 +424,6 @@ function exHTML(ex,day){
     :ex.cat==='free'?'<span class="bdg bf">\uD83D\uDD34 Libre</span>'
     :ex.cat==='cardio'?'<span class="bdg bc">\uD83C\uDFC3 Cardio</span>':'';
   var isoB=ex.isIso?'<span class="bdg bi">\uD83C\uDFAF Isolation</span>':'';
-  var varB=ex.isVariant?'<span class="bdg" style="color:#e91e8c;border-color:rgba(233,30,140,.4);background:rgba(233,30,140,.1)">&#10022; SEM.B</span>':'';
   var doneB=done?'<span class="bdg bd">\u2713 Fait</span>':'';
   var opts=['\u2014','2.5','5','7.5','10','12.5','15','17.5','20','22.5','25','27.5','30','32.5','35','40','45','50','55','60','70','80','90','100','120'];
   var selOpts=opts.map(function(o){return '<option value="'+o+'"'+(o===(w||'\u2014')?' selected':'')+'>'+(o==='\u2014'?'S\u00e9lectionner kg':o+' kg')+'</option>';}).join('');
@@ -524,7 +442,7 @@ function exHTML(ex,day){
     +'<div class="exnm" style="color:'+(done?'#2ecc71':'#efefef')+'">'+ex.name+'</div>'
     
     +'<div class="extip">'+ex.tip+'</div>'
-    +'<div class="exbadges">'+catB+isoB+varB+doneB+'</div>'
+    +'<div class="exbadges">'+catB+isoB+doneB+'</div>'
     +'</div>'
     +'<div class="exck" style="background:'+(done?'#2ecc71':'transparent')+';border-color:'+(done?'#2ecc71':'#333')+';color:'+(done?'#000':'transparent')+'">\u2713</div>'
     +'</div>'+wRow+'</div>';
