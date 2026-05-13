@@ -59,8 +59,6 @@ select{-webkit-appearance:none;appearance:none}
 .exicon{width:64px;height:64px;flex-shrink:0;border-radius:12px;border:1px solid #252528;display:flex;align-items:center;justify-content:center;overflow:hidden;background:#111113}
 .excnt{flex:1;min-width:0}
 .exnm{font-size:13.5px;font-weight:600;color:#efefef;line-height:1.2}
-.exst{font-size:12px;color:#6b6b78;margin-top:3px}
-.exst strong{color:#c0c0c0}
 .extip{font-size:11px;color:#555;margin-top:3px;line-height:1.4}
 .exbadges{display:flex;gap:6px;flex-wrap:wrap;margin-top:5px}
 .bdg{font-size:10px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;padding:2px 7px;border-radius:12px;border:1px solid}
@@ -95,7 +93,6 @@ function mkIcon(n,c,sz){
   var shapes={
     bench:'<rect x="4" y="36" width="56" height="8" rx="2" fill="C" opacity=".25"/><rect x="4" y="28" width="10" height="16" rx="2" fill="C" opacity=".3"/><rect x="6" y="10" width="52" height="4" rx="1" fill="C"/><rect x="4" y="6" width="4" height="8" rx="1" fill="C"/><rect x="56" y="6" width="4" height="8" rx="1" fill="C"/><circle cx="32" cy="26" r="4" fill="C"/><path d="M28 30L20 44" stroke="C" stroke-width="4" stroke-linecap="round"/><path d="M36 30L44 44" stroke="C" stroke-width="4" stroke-linecap="round"/><path d="M28 32L36 32" stroke="C" stroke-width="3" stroke-linecap="round"/><path d="M20 44L18 54" stroke="C" stroke-width="3.5" stroke-linecap="round"/><path d="M44 44L46 54" stroke="C" stroke-width="3.5" stroke-linecap="round"/>',
     incline:'<rect x="4" y="44" width="56" height="6" rx="2" fill="C" opacity=".2"/><path d="M10 44L28 16" stroke="C" stroke-width="3"/><rect x="8" y="8" width="24" height="10" rx="2" fill="C" opacity=".25"/><rect x="8" y="4" width="24" height="4" rx="1" fill="C" opacity=".4"/><circle cx="42" cy="22" r="4" fill="C"/><path d="M38 26L30 40" stroke="C" stroke-width="4" stroke-linecap="round"/><path d="M46 26L54 40" stroke="C" stroke-width="4" stroke-linecap="round"/><path d="M38 30L46 30" stroke="C" stroke-width="3" stroke-linecap="round"/><path d="M30 40L28 50" stroke="C" stroke-width="3.5" stroke-linecap="round"/><path d="M54 40L56 50" stroke="C" stroke-width="3.5" stroke-linecap="round"/>',
-    chestPress:'<rect x="4" y="8" width="56" height="48" rx="4" fill="C" opacity=".1" stroke="C" stroke-width="1.5"/><rect x="24" y="16" width="16" height="32" rx="2" fill="C" opacity=".2"/><rect x="4" y="22" width="12" height="6" rx="2" fill="C" opacity=".4"/><rect x="48" y="22" width="12" height="6" rx="2" fill="C" opacity=".4"/><circle cx="32" cy="24" r="4" fill="C"/><path d="M28 28L14 34" stroke="C" stroke-width="4" stroke-linecap="round"/><path d="M36 28L50 34" stroke="C" stroke-width="4" stroke-linecap="round"/><path d="M28 36L26 50" stroke="C" stroke-width="3.5" stroke-linecap="round"/><path d="M36 36L38 50" stroke="C" stroke-width="3.5" stroke-linecap="round"/>',
     pecFly:'<rect x="4" y="8" width="56" height="48" rx="4" fill="C" opacity=".1" stroke="C" stroke-width="1.5"/><path d="M16 20Q16 36 32 36Q48 36 48 20" stroke="C" stroke-width="2" fill="none" opacity=".4"/><circle cx="32" cy="22" r="4" fill="C"/><path d="M28 26L16 32" stroke="C" stroke-width="4" stroke-linecap="round"/><path d="M36 26L48 32" stroke="C" stroke-width="4" stroke-linecap="round"/><path d="M28 34L26 50" stroke="C" stroke-width="3.5" stroke-linecap="round"/><path d="M36 34L38 50" stroke="C" stroke-width="3.5" stroke-linecap="round"/><rect x="4" y="28" width="6" height="12" rx="2" fill="C" opacity=".3"/><rect x="54" y="28" width="6" height="12" rx="2" fill="C" opacity=".3"/>',
     tricepsPush:'<line x1="32" y1="4" x2="32" y2="20" stroke="C" stroke-width="2" stroke-dasharray="3,2"/><rect x="20" y="4" width="24" height="6" rx="2" fill="C" opacity=".3"/><circle cx="32" cy="24" r="4" fill="C"/><path d="M28 28L28 42" stroke="C" stroke-width="4" stroke-linecap="round"/><path d="M36 28L36 42" stroke="C" stroke-width="4" stroke-linecap="round"/><path d="M28 42L24 54" stroke="C" stroke-width="3.5" stroke-linecap="round"/><path d="M36 42L40 54" stroke="C" stroke-width="3.5" stroke-linecap="round"/><rect x="24" y="42" width="16" height="4" rx="1" fill="C" opacity=".5"/>',
     overhead:'<circle cx="32" cy="14" r="4" fill="C"/><path d="M29 18L29 32L35 32L35 18Z" fill="C" opacity=".9"/><path d="M29 22L22 18" stroke="C" stroke-width="3.5" stroke-linecap="round"/><path d="M35 22L42 18" stroke="C" stroke-width="3.5" stroke-linecap="round"/><rect x="18" y="14" width="8" height="6" rx="2" fill="C" opacity=".4"/><rect x="38" y="14" width="8" height="6" rx="2" fill="C" opacity=".4"/><path d="M29 32L26 50" stroke="C" stroke-width="3.5" stroke-linecap="round"/><path d="M35 32L38 50" stroke="C" stroke-width="3.5" stroke-linecap="round"/><line x1="4" y1="56" x2="60" y2="56" stroke="C" stroke-width="1" opacity=".3"/>',
@@ -118,8 +115,6 @@ function mkIcon(n,c,sz){
     glueKick:'<line x1="4" y1="56" x2="60" y2="56" stroke="C" stroke-width="1" opacity=".3"/><rect x="36" y="4" width="24" height="52" rx="3" fill="C" opacity=".15" stroke="C" stroke-width="1.5"/><rect x="4" y="24" width="36" height="6" rx="2" fill="C" opacity=".3"/><circle cx="16" cy="14" r="4" fill="C"/><path d="M12 18L12 32" stroke="C" stroke-width="4" stroke-linecap="round"/><path d="M20 18L20 32" stroke="C" stroke-width="4" stroke-linecap="round"/><path d="M12 32L10 48" stroke="C" stroke-width="3.5" stroke-linecap="round"/><path d="M20 32L32 24" stroke="C" stroke-width="4" stroke-linecap="round"/><path d="M32 24L42 16" stroke="C" stroke-width="4" stroke-linecap="round"/>',
     pullThrough:'<line x1="4" y1="56" x2="60" y2="56" stroke="C" stroke-width="1" opacity=".3"/><rect x="48" y="24" width="14" height="32" rx="3" fill="C" opacity=".15" stroke="C" stroke-width="1.5"/><circle cx="55" cy="36" r="4" fill="none" stroke="C" stroke-width="2"/><line x1="50" y1="36" x2="28" y2="38" stroke="C" stroke-width="2" stroke-dasharray="3,2"/><circle cx="20" cy="14" r="4" fill="C"/><path d="M16 18L14 30" stroke="C" stroke-width="4" stroke-linecap="round"/><path d="M24 18L26 30" stroke="C" stroke-width="4" stroke-linecap="round"/><path d="M16 30L12 54" stroke="C" stroke-width="3.5" stroke-linecap="round"/><path d="M24 30L28 54" stroke="C" stroke-width="3.5" stroke-linecap="round"/>',
     abMachine:'<rect x="8" y="8" width="48" height="48" rx="4" fill="C" opacity=".1" stroke="C" stroke-width="1.5"/><rect x="20" y="12" width="24" height="8" rx="2" fill="C" opacity=".25"/><circle cx="32" cy="22" r="4" fill="C"/><path d="M28 26L28 38" stroke="C" stroke-width="4" stroke-linecap="round"/><path d="M36 26L36 38" stroke="C" stroke-width="4" stroke-linecap="round"/><path d="M28 38L22 52" stroke="C" stroke-width="3.5" stroke-linecap="round"/><path d="M36 38L42 52" stroke="C" stroke-width="3.5" stroke-linecap="round"/><path d="M22 30L42 30" stroke="C" stroke-width="2.5" stroke-linecap="round"/>',
-    stairs:'<line x1="4" y1="56" x2="60" y2="56" stroke="C" stroke-width="1" opacity=".3"/><path d="M4 54L16 54L16 44L28 44L28 34L40 34L40 24L52 24L52 14L60 14" fill="none" stroke="C" stroke-width="2.5" stroke-linejoin="round"/><rect x="4" y="50" width="12" height="4" fill="C" opacity=".25"/><rect x="16" y="40" width="12" height="4" fill="C" opacity=".3"/><rect x="28" y="30" width="12" height="4" fill="C" opacity=".35"/><rect x="40" y="20" width="12" height="4" fill="C" opacity=".4"/><circle cx="20" cy="30" r="3.5" fill="C"/><path d="M17 33L17 42L23 42L23 33Z" fill="C" opacity=".9"/><path d="M17 42L28 34" stroke="C" stroke-width="3" stroke-linecap="round"/>',
-    inclineTreadmill:'<line x1="4" y1="56" x2="60" y2="56" stroke="C" stroke-width="1" opacity=".3"/><rect x="4" y="44" width="56" height="10" rx="3" fill="C" opacity=".2" stroke="C" stroke-width="1.5"/><path d="M8 44L24 14L56 14" stroke="C" stroke-width="2.5" stroke-linecap="round"/><path d="M24 14L56 14L56 44" stroke="C" stroke-width="2.5" stroke-linecap="round"/><rect x="20" y="8" width="40" height="8" rx="2" fill="C" opacity=".3"/><circle cx="30" cy="18" r="3.5" fill="C"/><path d="M27 22L27 34L33 34L33 22Z" fill="C" opacity=".9"/><path d="M27 34L22 44" stroke="C" stroke-width="3.5" stroke-linecap="round"/>',
     backExt:'<rect x="8" y="8" width="48" height="48" rx="4" fill="C" opacity=".1" stroke="C" stroke-width="1.5"/><rect x="30" y="16" width="20" height="36" rx="2" fill="C" opacity=".2"/><rect x="30" y="24" width="28" height="6" rx="2" fill="C" opacity=".3"/><circle cx="20" cy="20" r="4" fill="C"/><path d="M16 24L16 36" stroke="C" stroke-width="4" stroke-linecap="round"/><path d="M24 24L24 36" stroke="C" stroke-width="4" stroke-linecap="round"/><path d="M18 30L30 28" stroke="C" stroke-width="3" stroke-linecap="round"/><path d="M16 36L14 50" stroke="C" stroke-width="3.5" stroke-linecap="round"/><path d="M24 36L26 50" stroke="C" stroke-width="3.5" stroke-linecap="round"/>',
     seatedDip:'<rect x="8" y="8" width="48" height="48" rx="4" fill="C" opacity=".1" stroke="C" stroke-width="1.5"/><rect x="20" y="12" width="24" height="10" rx="2" fill="C" opacity=".25"/><rect x="6" y="30" width="10" height="6" rx="2" fill="C" opacity=".4"/><rect x="48" y="30" width="10" height="6" rx="2" fill="C" opacity=".4"/><circle cx="32" cy="22" r="4" fill="C"/><path d="M28 26L20 40" stroke="C" stroke-width="4" stroke-linecap="round"/><path d="M36 26L44 40" stroke="C" stroke-width="4" stroke-linecap="round"/><path d="M28 30L36 30" stroke="C" stroke-width="3" stroke-linecap="round"/><path d="M20 40L18 52" stroke="C" stroke-width="3.5" stroke-linecap="round"/><path d="M44 40L46 52" stroke="C" stroke-width="3.5" stroke-linecap="round"/>',
 };
@@ -241,6 +236,8 @@ function exCol(ex,dc){
 }
 function ld(k,d){try{var v=localStorage.getItem(k);return v===null?d:JSON.parse(v);}catch(e){return d;}}
 function sv(k,v){try{localStorage.setItem(k,JSON.stringify(v));}catch(e){}}
+function safeW(w){if(!w)return '';var n=parseFloat(w);return(isFinite(n)&&n>0)?String(n):'';}
+function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
 
 // ── STATE ──────────────────────────────────────────────────────────────────
 var TI=getTI();
@@ -324,8 +321,8 @@ function buildHTML(){
   var daysHTML=S.mode==='today'
     ?dayHTML(P[TI],TI,true)
     :P.map(function(d,i){return dayHTML(d,i,false);}).join('');
-  var fabHTML='';
-  var timerH='';
+  var fabHTML=S.timer?'':'<button class="fab" id="fab">&#9203;</button>';
+  var timerH=S.timer?timerHTML():'';
 
   return '<div class="hdr">'
     +'<div class="hdr-top">'
@@ -416,8 +413,7 @@ function abdoHTML(){
 function exHTML(ex,day){
   var done=!!S.done[ex.id];
   var ec=exCol(ex,day.color);
-  var reps=getReps(ex);
-  var w=S.weights[ex.id]||'';
+  var w=safeW(S.weights[ex.id]||'');
   var hist=S.hist[ex.id]||[];
   var last=hist.length>0?hist[hist.length-1]:null;
   var showSugg=w&&w!=='\u2014'&&!ex.isAbdo&&ex.cat!=='cardio'&&last&&last.completedCount>=3&&last.weight===w;
@@ -435,9 +431,9 @@ function exHTML(ex,day){
     ?'<div class="wrow">'
       +'<span style="font-size:11px;color:#555">&#9878;</span>'
       +'<select class="wsel" data-id="'+ex.id+'" style="color:'+(w&&w!=='\u2014'?ec:'#555')+';border-color:'+(w&&w!=='\u2014'?ec+'60':'#2a2a30')+'">'+selOpts+'</select>'
-      +(w&&w!=='\u2014'?'<span class="wval" style="color:'+ec+';background:'+ec+'18;border-color:'+ec+'40">'+w+' kg</span>':'')
+      +(w?'<span class="wval" style="color:'+ec+';background:'+ec+'18;border-color:'+ec+'40">'+esc(w)+' kg</span>':'')
       +'</div>'
-      +(showSugg?'<div class="sugg">&#128200; Tu tiens '+w+'kg depuis 3 fois &mdash; essaie <strong>'+newW+' kg</strong></div>':'')
+      +(showSugg?'<div class="sugg">&#128200; Tu tiens '+esc(w)+'kg depuis 3 fois &mdash; essaie <strong>'+esc(newW)+' kg</strong></div>':'')
     :'';
   return '<div class="exrow">'
     +'<div class="extap" data-id="'+ex.id+'" style="background:'+(done?'rgba(46,204,113,.06)':'transparent')+'">'
