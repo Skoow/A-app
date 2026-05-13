@@ -74,14 +74,6 @@ select{-webkit-appearance:none;appearance:none}
 .wsel{flex:1;min-width:120px;background:#111113;border-radius:8px;font-size:13px;font-weight:600;padding:7px 10px;outline:none;border:1px solid #2a2a30;color:#555}
 .wval{font-size:12px;font-weight:700;padding:4px 8px;border-radius:8px;white-space:nowrap;border:1px solid}
 .sugg{margin:0 12px 10px 88px;background:rgba(46,204,113,.1);border:1px solid rgba(46,204,113,.3);border-radius:8px;padding:6px 10px;font-size:11.5px;color:#2ecc71}
-.fab{position:fixed;bottom:calc(24px + env(safe-area-inset-bottom));right:20px;width:56px;height:56px;border-radius:50%;background:rgba(46,204,113,.18);border:2px solid #2ecc71;color:#2ecc71;font-size:24px;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(46,204,113,.3);z-index:300}
-.tov{position:fixed;bottom:0;left:0;right:0;background:#0a0a0b;padding:14px 16px calc(14px + env(safe-area-inset-bottom));z-index:500;box-shadow:0 -8px 24px rgba(0,0,0,.5)}
-.tlbl{font-size:10px;color:#6b6b78;letter-spacing:1.5px;font-weight:600;text-transform:uppercase;margin-bottom:4px}
-.tcnt{font-family:Impact,sans-serif;font-size:2.6rem;line-height:1;letter-spacing:1px}
-.tbg{margin-top:8px;height:4px;background:#1e1e22;border-radius:2px;overflow:hidden}
-.tfill{height:100%;border-radius:2px;transition:width .2s linear}
-.trow{display:flex;align-items:center;gap:14px}
-.tskip{padding:10px 16px;background:#1e1e22;border:1px solid #2a2a30;border-radius:10px;color:#aaa;font-size:13px;font-weight:600;flex-shrink:0}
 </style>
 </head>
 <body>
@@ -236,8 +228,6 @@ function exCol(ex,dc){
 }
 function ld(k,d){try{var v=localStorage.getItem(k);return v===null?d:JSON.parse(v);}catch(e){return d;}}
 function sv(k,v){try{localStorage.setItem(k,JSON.stringify(v));}catch(e){}}
-function safeW(w){if(!w)return '';var n=parseFloat(w);return(isFinite(n)&&n>0)?String(n):'';}
-function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
 
 // ── STATE ──────────────────────────────────────────────────────────────────
 var TI=getTI();
@@ -250,8 +240,6 @@ var S={
   weights:ld('mw10',{}),
   hist:ld('mh10',{}),
   done:ld('mk10',null)===WK?ld('md10',{}):{},
-  timer:null,
-  timerIv:null
 };
 S.openDays[TI]=true;
 if(ld('mk10',null)!==WK){sv('mk10',WK);}
@@ -308,12 +296,6 @@ function bindEvents(){
     });
     sel.addEventListener('click',function(e){e.stopPropagation();});
   });
-  // FAB
-  var fab=document.getElementById('fab');
-  if(fab)fab.addEventListener('click',startTimer);
-  // Skip timer
-  var skip=document.getElementById('tskip');
-  if(skip)skip.addEventListener('click',function(){stopTimer();render();});
 }
 
 function buildHTML(){
@@ -321,8 +303,6 @@ function buildHTML(){
   var daysHTML=S.mode==='today'
     ?dayHTML(P[TI],TI,true)
     :P.map(function(d,i){return dayHTML(d,i,false);}).join('');
-  var fabHTML=S.timer?'':'<button class="fab" id="fab">&#9203;</button>';
-  var timerH=S.timer?timerHTML():'';
 
   return '<div class="hdr">'
     +'<div class="hdr-top">'
@@ -340,8 +320,7 @@ function buildHTML(){
     +'<button class="mbtn" id="btn-today" style="'+(S.mode==='today'?'background:'+td.color+'18;border-color:'+td.color+';color:'+td.color:'')+'">&#128205; AUJOURD\u2019HUI</button>'
     +'<button class="mbtn" id="btn-week" style="'+(S.mode==='week'?'background:rgba(255,77,28,.15);border-color:#ff4d1c;color:#ff4d1c':'')+'">&#128198; SEMAINE</button>'
     +'</div>'
-    +'<div class="days">'+daysHTML+'</div>'
-    +fabHTML+timerH;
+    +'<div class="days">'+daysHTML+'</div>';
 }
 
 function dayHTML(day,idx,forceOpen){
@@ -413,7 +392,8 @@ function abdoHTML(){
 function exHTML(ex,day){
   var done=!!S.done[ex.id];
   var ec=exCol(ex,day.color);
-  var w=safeW(S.weights[ex.id]||'');
+  var reps=getReps(ex);
+  var w=S.weights[ex.id]||'';
   var hist=S.hist[ex.id]||[];
   var last=hist.length>0?hist[hist.length-1]:null;
   var showSugg=w&&w!=='\u2014'&&!ex.isAbdo&&ex.cat!=='cardio'&&last&&last.completedCount>=3&&last.weight===w;
@@ -431,9 +411,9 @@ function exHTML(ex,day){
     ?'<div class="wrow">'
       +'<span style="font-size:11px;color:#555">&#9878;</span>'
       +'<select class="wsel" data-id="'+ex.id+'" style="color:'+(w&&w!=='\u2014'?ec:'#555')+';border-color:'+(w&&w!=='\u2014'?ec+'60':'#2a2a30')+'">'+selOpts+'</select>'
-      +(w?'<span class="wval" style="color:'+ec+';background:'+ec+'18;border-color:'+ec+'40">'+esc(w)+' kg</span>':'')
+      +(w&&w!=='\u2014'?'<span class="wval" style="color:'+ec+';background:'+ec+'18;border-color:'+ec+'40">'+w+' kg</span>':'')
       +'</div>'
-      +(showSugg?'<div class="sugg">&#128200; Tu tiens '+esc(w)+'kg depuis 3 fois &mdash; essaie <strong>'+esc(newW)+' kg</strong></div>':'')
+      +(showSugg?'<div class="sugg">&#128200; Tu tiens '+w+'kg depuis 3 fois &mdash; essaie <strong>'+newW+' kg</strong></div>':'')
     :'';
   return '<div class="exrow">'
     +'<div class="extap" data-id="'+ex.id+'" style="background:'+(done?'rgba(46,204,113,.06)':'transparent')+'">'
@@ -448,55 +428,6 @@ function exHTML(ex,day){
     +'</div>'+wRow+'</div>';
 }
 
-function timerHTML(){
-  var r=S.timer.remaining,t=S.timer.total,c=S.timer.color;
-  var pct=Math.round((t-r)/t*100);
-  var m=Math.floor(r/60),s=String(r%60).padStart(2,'0');
-  return '<div class="tov" style="border-top:2px solid '+c+'">'
-    +'<div class="trow">'
-    +'<div style="flex:1">'
-    +'<div class="tlbl">&#9203; REPOS EN COURS</div>'
-    +'<div class="tcnt" id="tc" style="color:'+c+'">'+m+':'+s+'</div>'
-    +'<div class="tbg"><div class="tfill" id="tf" style="width:'+pct+'%;background:'+c+'"></div></div>'
-    +'</div>'
-    +'<button class="tskip" id="tskip">Passer</button>'
-    +'</div></div>';
-}
-
-// ── TIMER ──────────────────────────────────────────────────────────────────
-function startTimer(){
-  stopTimer();
-  S.timer={remaining:60,total:60,color:'#2ecc71'};
-  var t0=Date.now();
-  S.timerIv=setInterval(function(){
-    var left=60-Math.floor((Date.now()-t0)/1000);
-    if(left<=0){stopTimer();beep();render();return;}
-    S.timer.remaining=left;
-    var tc=document.getElementById('tc');
-    var tf=document.getElementById('tf');
-    if(tc){tc.textContent=Math.floor(left/60)+':'+String(left%60).padStart(2,'0');}
-    if(tf){tf.style.width=Math.round((60-left)/60*100)+'%';}
-  },250);
-  render();
-}
-function stopTimer(){
-  if(S.timerIv){clearInterval(S.timerIv);S.timerIv=null;}
-  S.timer=null;
-}
-function beep(){
-  try{
-    var ctx=new(window.AudioContext||window.webkitAudioContext)();
-    [[880,0,.3],[1100,.35,.35],[1320,.75,.5]].forEach(function(x){
-      var o=ctx.createOscillator(),g=ctx.createGain();
-      o.connect(g);g.connect(ctx.destination);
-      o.type='sine';o.frequency.value=x[0];
-      g.gain.setValueAtTime(0,ctx.currentTime+x[1]);
-      g.gain.linearRampToValueAtTime(.4,ctx.currentTime+x[1]+.02);
-      g.gain.exponentialRampToValueAtTime(.001,ctx.currentTime+x[1]+x[2]);
-      o.start(ctx.currentTime+x[1]);o.stop(ctx.currentTime+x[1]+x[2]);
-    });
-  }catch(e){}
-}
 
 setInterval(function(){
   var nwk=getWK();
