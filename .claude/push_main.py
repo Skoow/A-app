@@ -10,22 +10,29 @@ BRANCH   = 'main'
 def run(cmd):
     return subprocess.run(cmd, capture_output=True, text=True, cwd=REPO_DIR).stdout.strip()
 
-# Rien à pousser ?
 if int(run(['git', 'rev-list', 'origin/main..HEAD', '--count']) or '0') == 0:
     sys.exit(0)
 
-# Fichiers modifiés entre origin/main et HEAD
-changed = [f for f in run(['git', 'diff', '--name-only', 'origin/main..HEAD']).split('\n') if f]
-if not changed:
+# Fichiers modifiés avec leur statut (D=supprimé, autres=ajout/modif)
+status_lines = [l for l in run(['git', 'diff', '--name-status', 'origin/main..HEAD']).split('\n') if l]
+if not status_lines:
     sys.exit(0)
 
-files = []
-for path in changed:
-    full = os.path.join(REPO_DIR, path)
-    if os.path.exists(full):
-        files.append({'path': path, 'content': open(full, encoding='utf-8').read()})
+files   = []
+deleted = []
+for line in status_lines:
+    parts = line.split('\t', 1)
+    if len(parts) != 2:
+        continue
+    status, path = parts
+    if status.startswith('D'):
+        deleted.append(path)
+    else:
+        full = os.path.join(REPO_DIR, path)
+        if os.path.exists(full):
+            files.append({'path': path, 'content': open(full, encoding='utf-8').read()})
 
-if not files:
+if not files and not deleted:
     sys.exit(0)
 
 commit_msg = run(['git', 'log', '-1', '--pretty=%s']) or 'Update'
@@ -40,27 +47,20 @@ cfg     = json.load(open(cfg_files[-1]))
 gh      = cfg['mcpServers']['github']
 mcp_url = gh.get('url', '')
 headers = gh.get('headers', {})
+tok     = open('/home/claude/.claude/remote/.session_ingress_token').read().strip()
 
-tok = open('/home/claude/.claude/remote/.session_ingress_token').read().strip()
-
-payload = json.dumps({
-    'jsonrpc': '2.0', 'id': 1, 'method': 'tools/call',
-    'params': {
-        'name': 'push_files',
-        'arguments': {
-            'owner': OWNER, 'repo': REPO, 'branch': BRANCH,
-            'message': commit_msg, 'files': files
-        }
-    }
-}).encode()
-
-req = urllib.request.Request(mcp_url, data=payload)
-req.add_header('Content-Type', 'application/json')
-for k, v in headers.items():
-    req.add_header(k, v)
-req.add_header('Authorization', f'Bearer {tok}')
-
-def parse_sse(body):
+def mcp_call(name, arguments):
+    payload = json.dumps({
+        'jsonrpc': '2.0', 'id': 1, 'method': 'tools/call',
+        'params': {'name': name, 'arguments': arguments}
+    }).encode()
+    req = urllib.request.Request(mcp_url, data=payload)
+    req.add_header('Content-Type', 'application/json')
+    for k, v in headers.items():
+        req.add_header(k, v)
+    req.add_header('Authorization', f'Bearer {tok}')
+    with urllib.request.urlopen(req, timeout=30) as r:
+        body = r.read()
     for line in body.decode().splitlines():
         if line.startswith('data:'):
             try:
@@ -70,16 +70,28 @@ def parse_sse(body):
     return json.loads(body)
 
 try:
-    with urllib.request.urlopen(req, timeout=30) as r:
-        resp = parse_sse(r.read())
-        if resp.get('result') or 'error' not in resp:
-            # Sync local avec le remote mis à jour
-            subprocess.run(['git', 'fetch', 'origin', 'main'], cwd=REPO_DIR)
-            subprocess.run(['git', 'reset', '--hard', 'origin/main'], cwd=REPO_DIR)
-            print(f'Poussé {len(files)} fichier(s) vers main via MCP')
-        else:
-            print(f'Erreur MCP: {resp}', file=sys.stderr)
+    if files:
+        resp = mcp_call('push_files', {
+            'owner': OWNER, 'repo': REPO, 'branch': BRANCH,
+            'message': commit_msg, 'files': files
+        })
+        if 'error' in resp and not resp.get('result'):
+            print(f'Erreur push_files: {resp}', file=sys.stderr)
             sys.exit(1)
+
+    for path in deleted:
+        resp = mcp_call('delete_file', {
+            'owner': OWNER, 'repo': REPO, 'branch': BRANCH,
+            'path': path, 'message': commit_msg
+        })
+        if 'error' in resp and not resp.get('result'):
+            print(f'Erreur delete_file {path}: {resp}', file=sys.stderr)
+            sys.exit(1)
+
+    subprocess.run(['git', 'fetch', 'origin', 'main'], cwd=REPO_DIR)
+    subprocess.run(['git', 'reset', '--hard', 'origin/main'], cwd=REPO_DIR)
+    total = len(files) + len(deleted)
+    print(f'Poussé {total} fichier(s) vers main via MCP ({len(deleted)} suppression(s))')
 except Exception as e:
     print(f'Erreur: {e}', file=sys.stderr)
     sys.exit(1)
