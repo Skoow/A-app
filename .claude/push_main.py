@@ -60,9 +60,18 @@ for k, v in headers.items():
     req.add_header(k, v)
 req.add_header('Authorization', f'Bearer {tok}')
 
+def parse_sse(body):
+    for line in body.decode().splitlines():
+        if line.startswith('data:'):
+            try:
+                return json.loads(line[5:].strip())
+            except Exception:
+                pass
+    return json.loads(body)
+
 try:
     with urllib.request.urlopen(req, timeout=30) as r:
-        resp = json.loads(r.read())
+        resp = parse_sse(r.read())
         if resp.get('result') or 'error' not in resp:
             # Sync local avec le remote mis à jour
             subprocess.run(['git', 'fetch', 'origin', 'main'], cwd=REPO_DIR)
