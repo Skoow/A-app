@@ -117,9 +117,9 @@ function mkIcon(n,c,sz){
 
 // ── PROGRAMME ──────────────────────────────────────────────────────────────
 var P=[
-  {id:'lun',label:'LUN',name:'Pectoraux \u2014 Triceps',sub:'3 Pecs \u00b7 3 Triceps \u00b7 1 Obliques',color:'#ff4d1c',exercises:[
+  {id:'lun',label:'LUN',name:'Pectoraux \u2014 Triceps',sub:'3 Pecs \u00b7 3 Triceps \u00b7 1 Skull Crusher',color:'#ff4d1c',exercises:[
     {id:'ab_lun',name:'Ab Machine (Crunch)',icon:'abMachine',cat:'assist',isAbdo:true,tip:'Gainage abdominal - Contraction en bas - Expiration en haut'},
-    {id:'woodchop',name:'Cable Woodchop',icon:'facePull',cat:'assist',tip:'Poulie haute - Tire en diagonale de haut en bas - Rotation du buste - Obliques - Alterne gauche et droite - 3x15 chaque cote'},
+    {id:'skullCrusher',name:'EZ Bar Skull Crusher',icon:'overhead',cat:'semi',tip:'Allonge sur le banc - Barre EZ bras tendus au-dessus - Descend la barre derriere la tete - R\u00e9-etend vers le haut - Chef long du triceps - Coudes fixes pendant tout le mouvement'},
     {id:'benchpress',name:'Barbell Bench Press',icon:'bench',cat:'semi',tip:'Allonge sur le banc - Barre descendue jusqu a la poitrine - Prise large - Pecs horizontal - Mouvement principal'},
     {id:'inclinedb',name:'Incline Dumbbell Press',icon:'incline',cat:'free',tip:'Banc incline 30-45 degres - Halteres - Haut des pecs - Coudes legerement vers exterieur - Grande amplitude'},
     {id:'pecdeck',name:'Pec Deck Fly',icon:'pecFly',cat:'assist',tip:'Coudes sur les pads - Ramener les bras devant la poitrine - Isolation pecs interieur - Contraction maximale au centre'},
@@ -149,12 +149,12 @@ var P=[
     {id:'hipThrustMer',name:'Hip Thrust Machine',icon:'glueKick',cat:'assist',tip:'Dos contre le pad - Pousse les hanches vers le haut - Fessiers - Bonne transition apres les quadri - Contracte en haut'},
     {id:'legExt',name:'Leg Extension',icon:'legExt',cat:'assist',isIso:true,tip:'Assis - Jambes etendues vers le haut - Quadriceps isolation - Contraction maximale en haut - Tempo lent 4 secondes - ISOLATION FINALE'},
   ]},
-  {id:'jeu',label:'JEU',name:'\u00c9paules \u2014 Trap\u00e8zes',sub:'3 \u00c9paules \u00b7 1 Trap\u00e8zes \u00b7 1 Arnold',color:'#a855f7',exercises:[
+  {id:'jeu',label:'JEU',name:'\u00c9paules \u2014 Trap\u00e8zes',sub:'3 \u00c9paules \u00b7 1 Trap\u00e8zes \u00b7 1 Rear Delt',color:'#a855f7',exercises:[
     {id:'ab_jeu',name:'Ab Machine (Crunch)',icon:'abMachine',cat:'assist',isAbdo:true,tip:'Gainage abdominal - Contraction en bas'},
     {id:'shoulderPress',name:'Machine Shoulder Press',icon:'shoulderPress',cat:'assist',tip:'Assis - Poussee verticale - Deltoide complet - Mouvement principal epaules - Charge lourde'},
     {id:'cableFrontRaiseJeu',name:'Cable Front Raise',icon:'lateralRaise',cat:'assist',tip:'Cable bas - Tire vers le haut jusqu a hauteur epaule - Deltoide anterieur - Tension constante cable'},
-    {id:'arnoldJeu',name:'Arnold Press',icon:'overhead',cat:'free',pair:'db',tip:'Halteres paumes vers toi en bas - Pousse vers le haut en tournant les poignets - Paumes vers l avant en haut - Deltoide anterieur + lateral + posterieur - SUPERSET avec Lateral Raise'},
-    {id:'lateralRaise',name:'Dumbbell Lateral Raise',icon:'lateralRaise',cat:'free',pair:'db',tip:'Debout - Bras en croix jusqu a hauteur epaule - Deltoide lateral - Coudes legerement flechis - SUPERSET avec Arnold Press'},
+    {id:'rearDeltMachineJeu',name:'Rear Delt Machine',icon:'rearDelt',cat:'assist',pair:'db',tip:'Pec deck en mode inverse - Poignees ecartent vers l arriere - Deltoide posterieur - Machine 100% guidee - SUPERSET avec Lateral Raise'},
+    {id:'lateralRaise',name:'Dumbbell Lateral Raise',icon:'lateralRaise',cat:'free',pair:'db',tip:'Debout - Bras en croix jusqu a hauteur epaule - Deltoide lateral - Coudes legerement flechis - SUPERSET avec Rear Delt Machine'},
     {id:'shrug',name:'Machine Shrug',icon:'shoulderPress',cat:'assist',tip:'Hausse les epaules vers les oreilles - Trapezes - Contraction maximale en haut - Descente lente - Zone non travaillee ailleurs'},
     {id:'uprightRow',name:'Cable Upright Row',icon:'facePull',cat:'assist',isIso:true,tip:'Cable bas - Tire vers le menton - Coudes hauts - Deltoide lateral + Trapezes - ISOLATION FINALE'},
   ]},
