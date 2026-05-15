@@ -109,6 +109,7 @@ function mkIcon(n,c,sz){
     abMachine:'<rect x="8" y="8" width="48" height="48" rx="4" fill="C" opacity=".1" stroke="C" stroke-width="1.5"/><rect x="20" y="12" width="24" height="8" rx="2" fill="C" opacity=".25"/><circle cx="32" cy="22" r="4" fill="C"/><path d="M28 26L28 38" stroke="C" stroke-width="4" stroke-linecap="round"/><path d="M36 26L36 38" stroke="C" stroke-width="4" stroke-linecap="round"/><path d="M28 38L22 52" stroke="C" stroke-width="3.5" stroke-linecap="round"/><path d="M36 38L42 52" stroke="C" stroke-width="3.5" stroke-linecap="round"/><path d="M22 30L42 30" stroke="C" stroke-width="2.5" stroke-linecap="round"/>',
     backExt:'<rect x="8" y="8" width="48" height="48" rx="4" fill="C" opacity=".1" stroke="C" stroke-width="1.5"/><rect x="30" y="16" width="20" height="36" rx="2" fill="C" opacity=".2"/><rect x="30" y="24" width="28" height="6" rx="2" fill="C" opacity=".3"/><circle cx="20" cy="20" r="4" fill="C"/><path d="M16 24L16 36" stroke="C" stroke-width="4" stroke-linecap="round"/><path d="M24 24L24 36" stroke="C" stroke-width="4" stroke-linecap="round"/><path d="M18 30L30 28" stroke="C" stroke-width="3" stroke-linecap="round"/><path d="M16 36L14 50" stroke="C" stroke-width="3.5" stroke-linecap="round"/><path d="M24 36L26 50" stroke="C" stroke-width="3.5" stroke-linecap="round"/>',
     seatedDip:'<rect x="8" y="8" width="48" height="48" rx="4" fill="C" opacity=".1" stroke="C" stroke-width="1.5"/><rect x="20" y="12" width="24" height="10" rx="2" fill="C" opacity=".25"/><rect x="6" y="30" width="10" height="6" rx="2" fill="C" opacity=".4"/><rect x="48" y="30" width="10" height="6" rx="2" fill="C" opacity=".4"/><circle cx="32" cy="22" r="4" fill="C"/><path d="M28 26L20 40" stroke="C" stroke-width="4" stroke-linecap="round"/><path d="M36 26L44 40" stroke="C" stroke-width="4" stroke-linecap="round"/><path d="M28 30L36 30" stroke="C" stroke-width="3" stroke-linecap="round"/><path d="M20 40L18 52" stroke="C" stroke-width="3.5" stroke-linecap="round"/><path d="M44 40L46 52" stroke="C" stroke-width="3.5" stroke-linecap="round"/>',
+    treadmill:'<line x1="4" y1="56" x2="60" y2="56" stroke="C" stroke-width="1" opacity=".3"/><path d="M6 50L54 32" stroke="C" stroke-width="5" stroke-linecap="round" opacity=".35"/><line x1="8" y1="50" x2="8" y2="56" stroke="C" stroke-width="3" stroke-linecap="round"/><line x1="52" y1="34" x2="52" y2="56" stroke="C" stroke-width="3" stroke-linecap="round"/><line x1="50" y1="34" x2="46" y2="14" stroke="C" stroke-width="2.5" stroke-linecap="round"/><line x1="40" y1="16" x2="52" y2="12" stroke="C" stroke-width="2.5" stroke-linecap="round"/><circle cx="28" cy="12" r="4" fill="C"/><path d="M26 16L24 28" stroke="C" stroke-width="3.5" stroke-linecap="round"/><path d="M26 20L40 16" stroke="C" stroke-width="3" stroke-linecap="round"/><path d="M26 20L20 26" stroke="C" stroke-width="3" stroke-linecap="round"/><path d="M24 28L30 40" stroke="C" stroke-width="3.5" stroke-linecap="round"/><path d="M24 28L16 38" stroke="C" stroke-width="3.5" stroke-linecap="round"/>',
 };
   var s=shapes[n]||shapes.abMachine;
   s=s.split('C').join(c);
@@ -117,7 +118,7 @@ function mkIcon(n,c,sz){
 
 // ── PROGRAMME ──────────────────────────────────────────────────────────────
 var P=[
-  {id:'lun',label:'LUN',name:'Pectoraux \u2014 Triceps',sub:'3 Pecs \u00b7 3 Triceps \u00b7 1 Skull Crusher',color:'#ff4d1c',exercises:[
+  {id:'lun',label:'LUN',name:'Pectoraux \u2014 Triceps',sub:'3 Pecs \u00b7 3 Triceps \u00b7 1 Skull Crusher \u00b7 Cardio',color:'#ff4d1c',exercises:[
     {id:'ab_lun',name:'Ab Machine (Crunch)',icon:'abMachine',cat:'assist',isAbdo:true,tip:'Gainage abdominal - Contraction en bas - Expiration en haut'},
     {id:'skullCrusher',name:'EZ Bar Skull Crusher',icon:'overhead',cat:'semi',tip:'Allonge sur le banc - Barre EZ bras tendus au-dessus - Descend la barre derriere la tete - R\u00e9-etend vers le haut - Chef long du triceps - Coudes fixes pendant tout le mouvement'},
     {id:'benchpress',name:'Barbell Bench Press',icon:'bench',cat:'semi',tip:'Allonge sur le banc - Barre descendue jusqu a la poitrine - Prise large - Pecs horizontal - Mouvement principal'},
@@ -126,6 +127,7 @@ var P=[
     {id:'overheadtri',name:'Overhead Triceps Extension',icon:'overhead',cat:'free',tip:'Haltere a deux mains - Debout ou assis - Descend derriere la tete - Chef long du triceps - Coudes fixes'},
     {id:'tricepsPush',name:'Cable Triceps Pushdown',icon:'tricepsPush',cat:'assist',pair:'tri',tip:'Corde ou barre - Coudes colles au corps - Pousse vers le bas - Triceps - SUPERSET avec Seated Dip'},
     {id:'seatedDipLun',name:'Seated Dip Machine',icon:'seatedDip',cat:'assist',pair:'tri',isIso:true,tip:'Machine guidee - Pousse vers le bas - Triceps + Pecs bas - Mouvement different du cable - SUPERSET avec Pushdown - ISOLATION FINALE'},
+    {id:'cardioLun',name:'Marche Inclinée',icon:'treadmill',cat:'cardio',tip:'Tapis incliné 8-12% - Vitesse marche rapide - 25 à 30 minutes - Après la séance'},
   ]},
   {id:'mar',label:'MAR',name:'Dos \u2014 Biceps',sub:'4 Dos \u00b7 3 Biceps \u00b7 1 \u00c9paules post\u00e9rieures',color:'#3d8bff',exercises:[
     {id:'ab_mar',name:'Ab Machine (Crunch)',icon:'abMachine',cat:'assist',isAbdo:true,tip:'Gainage abdominal - Contraction en bas'},
@@ -149,7 +151,7 @@ var P=[
     {id:'hipThrustMer',name:'Hip Thrust Machine',icon:'glueKick',cat:'assist',tip:'Dos contre le pad - Pousse les hanches vers le haut - Fessiers - Bonne transition apres les quadri - Contracte en haut'},
     {id:'legExt',name:'Leg Extension',icon:'legExt',cat:'assist',isIso:true,tip:'Assis - Jambes etendues vers le haut - Quadriceps isolation - Contraction maximale en haut - Tempo lent 4 secondes - ISOLATION FINALE'},
   ]},
-  {id:'jeu',label:'JEU',name:'\u00c9paules \u2014 Trap\u00e8zes',sub:'4 \u00c9paules \u00b7 1 Trap\u00e8zes \u00b7 2 Cable',color:'#a855f7',exercises:[
+  {id:'jeu',label:'JEU',name:'\u00c9paules \u2014 Trap\u00e8zes',sub:'4 \u00c9paules \u00b7 1 Trap\u00e8zes \u00b7 2 Cable \u00b7 Cardio',color:'#a855f7',exercises:[
     {id:'ab_jeu',name:'Ab Machine (Crunch)',icon:'abMachine',cat:'assist',isAbdo:true,tip:'Gainage abdominal - Contraction en bas'},
     {id:'shoulderPress',name:'Machine Shoulder Press',icon:'shoulderPress',cat:'assist',tip:'Assis - Poussee verticale - Deltoide complet - Mouvement principal epaules - Charge lourde'},
     {id:'rearDeltMachineJeu',name:'Rear Delt Machine',icon:'rearDelt',cat:'assist',tip:'Pec deck en mode inverse - Poignees ecartent vers l arriere - Deltoide posterieur - Machine 100% guidee'},
@@ -158,6 +160,7 @@ var P=[
     {id:'shrug',name:'Machine Shrug',icon:'shoulderPress',cat:'assist',tip:'Hausse les epaules vers les oreilles - Trapezes - Contraction maximale en haut - Descente lente'},
     {id:'cableFrontRaiseJeu',name:'Cable Front Raise',icon:'lateralRaise',cat:'assist',pair:'cable',tip:'Cable bas - Tire vers le haut jusqu a hauteur epaule - Deltoide anterieur - Tension constante cable - SUPERSET avec Upright Row'},
     {id:'uprightRow',name:'Cable Upright Row',icon:'facePull',cat:'assist',pair:'cable',tip:'Cable bas - Tire vers le menton - Coudes hauts - Deltoide lateral + Trapezes - SUPERSET avec Front Raise'},
+    {id:'cardioJeu',name:'Marche Inclinée',icon:'treadmill',cat:'cardio',tip:'Tapis incliné 8-12% - Vitesse marche rapide - 25 à 30 minutes - Après la séance'},
   ]},
   {id:'ven',label:'VEN',name:'Jambes \u2014 Ischios/Fessiers',sub:'2 Ischios \u00b7 3 Fessiers \u00b7 2 Hanches',color:'#2ecc71',exercises:[
     {id:'ab_ven',name:'Ab Machine (Crunch)',icon:'abMachine',cat:'assist',isAbdo:true,tip:'Gainage abdominal - Contraction en bas'},
@@ -169,7 +172,7 @@ var P=[
     {id:'hipAdduct',name:'Hip Adduction Machine',icon:'hipAbduct',cat:'assist',pair:'hip',tip:'Assis - Rapproche les jambes - Interieur de la cuisse - Contraction au centre - SUPERSET avec Abduction'},
     {id:'singleLegPress',name:'Single Leg Press',icon:'legPress',cat:'assist',isIso:true,tip:'Une jambe a la fois - Pied haut sur la plateforme - Fessier + Ischio unilateral - Corrige les desequilibres - ISOLATION FINALE'},
   ]},
-  {id:'sam',label:'SAM',name:'Haut du corps complet',sub:'3 Dos \u00b7 1 Pecs \u00b7 2 Biceps \u00b7 2 Triceps',color:'#e91e8c',exercises:[
+  {id:'sam',label:'SAM',name:'Haut du corps complet',sub:'3 Dos \u00b7 1 Pecs \u00b7 2 Biceps \u00b7 2 Triceps \u00b7 Cardio',color:'#e91e8c',exercises:[
     {id:'ab_sam',name:'Ab Machine (Crunch)',icon:'abMachine',cat:'assist',isAbdo:true,tip:'Gainage abdominal - Contraction en bas'},
     {id:'pullupSam',name:'Assisted Pull-Up Machine',icon:'pullup',cat:'assist',tip:'Traction assistee - Prise large - Dos large - Tire le corps vers le haut - Grand dorsal'},
     {id:'divRowSam',name:'Diverging Seated Row',icon:'seatedRow',cat:'assist',tip:'Poignees divergentes - Rhomboides + Milieu dos - Rappel mardi - Bras s ecartent en tirant'},
@@ -179,6 +182,7 @@ var P=[
     {id:'hammerSam',name:'Hammer Curl',icon:'lateralRaise',cat:'free',pair:'bicSam',tip:'Prise neutre - Biceps long + Avant-bras - SUPERSET avec Dumbbell Curl - Rappel mardi'},
     {id:'cablePushSam',name:'Cable Triceps Pushdown',icon:'tricepsPush',cat:'assist',tip:'Corde - Coudes colles - Pousse vers le bas - Triceps'},
     {id:'seatedDipSam',name:'Seated Dip Machine',icon:'seatedDip',cat:'assist',isIso:true,tip:'Machine guidee - Triceps + Pecs bas - ISOLATION FINALE'},
+    {id:'cardioSam',name:'Marche Inclinée',icon:'treadmill',cat:'cardio',tip:'Tapis incliné 8-12% - Vitesse marche rapide - 25 à 30 minutes - Après la séance'},
   ]},
 ];
 
