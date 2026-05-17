@@ -295,8 +295,9 @@ function bindEvents(){
 
 function buildHTML(){
   var td=P[TI];
+  var isRest=!td;
   var daysHTML=S.mode==='today'
-    ?dayHTML(P[TI],TI,true)
+    ?(isRest?'<div style="text-align:center;padding:48px 16px;color:#6b6b78"><div style="font-size:3rem">😴</div><div style="font-family:Impact,sans-serif;font-size:1.4rem;letter-spacing:2px;margin-top:12px">REPOS</div><div style="font-size:13px;margin-top:8px">Profites-en pour récupérer !</div></div>':dayHTML(td,TI,true))
     :P.map(function(d,i){return dayHTML(d,i,false);}).join('');
 
   return '<div class="hdr">'
@@ -312,7 +313,7 @@ function buildHTML(){
     +'<div style="text-align:right"><div class="dlc" style="color:'+(JLEFT<14?'#ff4d1c':'#f5a623')+'">J\u2013'+JLEFT+'</div><div class="dls">jours restants</div></div>'
     +'</div></div>'
     +'<div class="mtog">'
-    +'<button class="mbtn" id="btn-today" style="'+(S.mode==='today'?'background:'+td.color+'18;border-color:'+td.color+';color:'+td.color:'')+'">&#128205; AUJOURD\u2019HUI</button>'
+    +'<button class="mbtn" id="btn-today" style="'+(S.mode==='today'?'background:'+(isRest?'rgba(107,107,120,.2)':td.color+'18')+';border-color:'+(isRest?'#6b6b78':td.color)+';color:'+(isRest?'#6b6b78':td.color):'')+'">&#128205; AUJOURD\u2019HUI</button>'
     +'<button class="mbtn" id="btn-week" style="'+(S.mode==='week'?'background:rgba(255,77,28,.15);border-color:#ff4d1c;color:#ff4d1c':'')+'">&#128198; SEMAINE</button>'
     +'</div>'
     +'<div class="days">'+daysHTML+'</div>';
