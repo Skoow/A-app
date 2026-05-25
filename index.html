@@ -234,10 +234,10 @@ var S={
   openDays:{},
   weights:ld('mw10',{}),
   hist:ld('mh10',{}),
-  done:ld('mk10',null)===WK?ld('md10',{}):{},
+  done:ld('mk10',null)===WK?ld('md11',{}):{},
 };
 S.openDays[TI]=true;
-if(ld('mk10',null)!==WK){sv('mk10',WK);sv('md10',{});}
+if(ld('mk10',null)!==WK){sv('mk10',WK);sv('md11',{});}
 
 // ── RENDER ─────────────────────────────────────────────────────────────────
 function render(){
@@ -268,7 +268,7 @@ function bindEvents(){
     tap.addEventListener('click',function(){
       var id=this.getAttribute('data-id');
       S.done[id]=!S.done[id];
-      sv('md10',S.done);
+      sv('md11',S.done);
       render();
     });
   });
@@ -427,7 +427,7 @@ function exHTML(ex,day){
 
 setInterval(function(){
   var nwk=getWK();
-  if(ld('mk10',null)!==nwk){S.done={};sv('mk10',nwk);sv('md10',{});render();}
+  if(ld('mk10',null)!==nwk){S.done={};sv('mk10',nwk);sv('md11',{});render();}
 },300000);
 
 window.addEventListener('DOMContentLoaded',function(){render();});
