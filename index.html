@@ -428,7 +428,7 @@ function exHTML(ex,day){
 setInterval(function(){
   var nwk=getWK();
   if(ld('mk10',null)!==nwk){S.done={};sv('mk10',nwk);sv('md11',{});render();}
-},300000);
+},3600000);
 
 window.addEventListener('DOMContentLoaded',function(){render();});
 </script>
