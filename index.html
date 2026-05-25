@@ -237,7 +237,7 @@ var S={
   done:ld('mk10',null)===WK?ld('md10',{}):{},
 };
 S.openDays[TI]=true;
-if(ld('mk10',null)!==WK){sv('mk10',WK);}
+if(ld('mk10',null)!==WK){sv('mk10',WK);sv('md10',{});}
 
 // ── RENDER ─────────────────────────────────────────────────────────────────
 function render(){
@@ -427,7 +427,7 @@ function exHTML(ex,day){
 
 setInterval(function(){
   var nwk=getWK();
-  if(ld('mk10',null)!==nwk){S.done={};sv('mk10',nwk);render();}
+  if(ld('mk10',null)!==nwk){S.done={};sv('mk10',nwk);sv('md10',{});render();}
 },300000);
 
 window.addEventListener('DOMContentLoaded',function(){render();});
