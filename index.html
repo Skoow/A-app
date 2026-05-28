@@ -118,51 +118,48 @@ function mkIcon(n,c,sz){
 
 // ── PROGRAMME ──────────────────────────────────────────────────────────────
 var P=[
-  {id:'lun',label:'LUN',name:'Pectoraux \u2014 Triceps',sub:'3 Pecs \u00b7 3 Triceps \u00b7 1 Skull Crusher \u00b7 Cardio',color:'#ff4d1c',exercises:[
+  {id:'lun',label:'LUN',name:'Pectoraux — Triceps',sub:'4 Pecs · 4 Triceps · Cardio',color:'#ff4d1c',exercises:[
     {id:'ab_lun',name:'Ab Machine (Crunch)',icon:'abMachine',cat:'assist',isAbdo:true,tip:'Gainage abdominal - Contraction en bas - Expiration en haut'},
-    {id:'skullCrusher',name:'EZ Bar Skull Crusher',icon:'overhead',cat:'semi',tip:'Allonge sur le banc - Barre EZ bras tendus au-dessus - Descend la barre derriere la tete - R\u00e9-etend vers le haut - Chef long du triceps - Coudes fixes pendant tout le mouvement'},
     {id:'benchpress',name:'Barbell Bench Press',icon:'bench',cat:'semi',tip:'Allonge sur le banc - Barre descendue jusqu a la poitrine - Prise large - Pecs horizontal - Mouvement principal'},
     {id:'inclinedb',name:'Incline Dumbbell Press',icon:'incline',cat:'free',tip:'Banc incline 30-45 degres - Halteres - Haut des pecs - Coudes legerement vers exterieur - Grande amplitude'},
+    {id:'dbpulloverLun',name:'Dumbbell Pullover',icon:'pullover',cat:'free',tip:'Allonge sur le banc - Haltere descend derriere la tete - Pecs bas + Grand dorsal - Grande amplitude - Etirement complet'},
     {id:'pecdeck',name:'Pec Deck Fly',icon:'pecFly',cat:'assist',tip:'Coudes sur les pads - Ramener les bras devant la poitrine - Isolation pecs interieur - Contraction maximale au centre'},
+    {id:'closeGripLun',name:'Close-Grip Bench Press',icon:'bench',cat:'semi',tip:'Barre - Prise serree largeur epaules - Triceps chef lateral + medial - Coudes colles au corps - Descente jusqu a la poitrine'},
     {id:'overheadtri',name:'Overhead Triceps Extension',icon:'overhead',cat:'free',pair:'tri',tip:'Haltere a deux mains - Debout ou assis - Descend derriere la tete - Chef long du triceps - Coudes fixes - SUPERSET avec Cable Pushdown'},
     {id:'tricepsPush',name:'Cable Triceps Pushdown',icon:'tricepsPush',cat:'assist',pair:'tri',tip:'Corde ou barre - Coudes colles au corps - Pousse vers le bas - Triceps - SUPERSET avec Overhead Triceps'},
     {id:'seatedDipLun',name:'Seated Dip Machine',icon:'seatedDip',cat:'assist',isIso:true,tip:'Machine guidee - Pousse vers le bas - Triceps + Pecs bas - ISOLATION FINALE'},
     {id:'cardioLun',name:'Marche Inclinée',icon:'treadmill',cat:'cardio',tip:'Tapis incliné 8-12% - Vitesse marche rapide - 25 à 30 minutes - Après la séance'},
   ]},
-  {id:'mar',label:'MAR',name:'Dos \u2014 Biceps',sub:'4 Dos \u00b7 3 Biceps \u00b7 1 \u00c9paules post\u00e9rieures',color:'#3d8bff',exercises:[
+  {id:'mar',label:'MAR',name:'Dos — Biceps',sub:'4 Dos · 3 Biceps · 1 Épaules postérieures',color:'#3d8bff',exercises:[
     {id:'ab_mar',name:'Ab Machine (Crunch)',icon:'abMachine',cat:'assist',isAbdo:true,tip:'Gainage abdominal - Contraction en bas'},
     {id:'pullupMar',name:'Assisted Pull-Up Machine',icon:'pullup',cat:'assist',tip:'Traction assistee - Prise large - Dos large - Tire le corps vers le haut - Grand dorsal - Debut de seance dos'},
     {id:'divLatPull',name:'Diverging Lat Pulldown',icon:'latPull',cat:'assist',tip:'Poignees divergentes - Tire vers les epaules en ecartant - Dos large + Milieu dos - Meilleure activation que prise classique'},
-    {id:'dbpullover',name:'Dumbbell Pullover',icon:'pullover',cat:'free',tip:'Allonge sur le banc - Haltere descend derriere la tete - Grand dorsal + Pecs bas - Etire le dorsal avant les rowing'},
+    {id:'singleArmRowMar',name:'Single-Arm Dumbbell Row',icon:'barbellRow',cat:'free',tip:'Un genou sur le banc - Haltere - Tire vers la hanche - Grand dorsal + Rhomboides - Coude longe le corps - Alterne les deux cotes'},
     {id:'divSeatedRow',name:'Diverging Seated Row',icon:'seatedRow',cat:'assist',tip:'Poignees qui s ecartent en tirant - Rhomboides + Milieu dos - Bras divergent vers exterieur - Different du Seated Row classique'},
     {id:'facePullMar',name:'Cable Face Pull',icon:'facePull',cat:'assist',tip:'Corde vers le visage - Coudes hauts - Epaules posterieures + Coiffe des rotateurs - Protege les epaules - Essentiel apres les tirages'},
     {id:'preacher',name:'Machine Preacher Curl',icon:'preacher',cat:'assist',isIso:true,tip:'Bras sur appui incline - Isolation biceps - Contraction maximale en haut - Descente controlee'},
     {id:'dbcurl',name:'Dumbbell Curl debout',icon:'lateralRaise',cat:'free',pair:'bic',tip:'Debout - Coudes colles au corps - Alterne les bras - Biceps chef court - SUPERSET avec Hammer Curl'},
     {id:'hammercurl',name:'Hammer Curl',icon:'lateralRaise',cat:'free',pair:'bic',isIso:true,tip:'Prise neutre pouce vers le haut - Biceps chef long + Avant-bras - SUPERSET avec Dumbbell Curl - ISOLATION FINALE'},
   ]},
-  {id:'mer',label:'MER',name:'Jambes \u2014 Quadriceps',sub:'5 Quadriceps \u00b7 1 Ischio \u00b7 1 Mollet \u00b7 1 Fessiers',color:'#f5a623',exercises:[
+  {id:'mer',label:'MER',name:'Jambes — Quadriceps',sub:'4 Quadri · 1 Ischio · 1 Mollet',color:'#f5a623',exercises:[
     {id:'ab_mer',name:'Ab Machine (Crunch)',icon:'abMachine',cat:'assist',isAbdo:true,tip:'Gainage abdominal - Contraction en bas'},
-    {id:'smithSq',name:'Smith Machine Squat',icon:'squat',cat:'semi',pair:'smith',tip:'Pieds milieu plateforme - Largeur epaules - Descends cuisses paralleles - Dos droit - (Quadriceps complet + Fessiers) - SUPERSET avec Lunges'},
-    {id:'smithLunge',name:'Smith Machine Lunges',icon:'squat',cat:'semi',pair:'smith',tip:'Meme machine Smith - Grand pas AVANT - Pied arriere pointe au sol - Genou avant dans axe - (Quadri avant + Fessier) - SUPERSET avec Squat'},
-    {id:'legPress',name:'Leg Press 45\u00b0',icon:'legPress',cat:'semi',tip:'Pieds bas serres = Quadri externes - Pieds normaux = Quadri complet - Pieds hauts = Ischios + Fessiers - Choisis selon objectif'},
+    {id:'gobletSq',name:'Goblet Squat',icon:'squat',cat:'free',tip:'Haltere tenu devant la poitrine - Pieds largeur epaules - Descends cuisses paralleles - Dos droit - Centre de gravite unique - Quadriceps complet'},
+    {id:'legPress',name:'Leg Press 45°',icon:'legPress',cat:'semi',tip:'Pieds bas serres = Quadri externes - Pieds normaux = Quadri complet - Pieds hauts = Ischios + Fessiers - Choisis selon objectif'},
     {id:'hackSquat',name:'Hack Squat Machine',icon:'squat',cat:'semi',tip:'Machine guidee - Pieds ecarte largeur epaules - Descend cuisses paralleles - Quadriceps complet - Dos plat contre le coussin'},
     {id:'seatedLegCurl',name:'Seated Leg Curl',icon:'legCurl',cat:'assist',tip:'Assis sur la machine - Talon sous le pad - Flechis les jambes - Ischios - Angle different du couche vendredi - Descente lente 3 secondes'},
     {id:'calfRaise',name:'Standing Calf Raise',icon:'calf',cat:'assist',tip:'Debout - Monte sur la pointe des pieds - Contraction maximale en haut - Descente complete pour etirement - Mollets'},
-    {id:'hipThrustMer',name:'Hip Thrust Machine',icon:'glueKick',cat:'assist',tip:'Dos contre le pad - Pousse les hanches vers le haut - Fessiers - Bonne transition apres les quadri - Contracte en haut'},
     {id:'legExt',name:'Leg Extension',icon:'legExt',cat:'assist',isIso:true,tip:'Assis - Jambes etendues vers le haut - Quadriceps isolation - Contraction maximale en haut - Tempo lent 4 secondes - ISOLATION FINALE'},
   ]},
-  {id:'jeu',label:'JEU',name:'\u00c9paules \u2014 Trap\u00e8zes',sub:'4 \u00c9paules \u00b7 1 Trap\u00e8zes \u00b7 2 Cable \u00b7 Cardio',color:'#a855f7',exercises:[
+  {id:'jeu',label:'JEU',name:'Épaules — Trapèzes',sub:'3 Épaules · 1 Trapèze · 1 Cable · Cardio',color:'#a855f7',exercises:[
     {id:'ab_jeu',name:'Ab Machine (Crunch)',icon:'abMachine',cat:'assist',isAbdo:true,tip:'Gainage abdominal - Contraction en bas'},
     {id:'shoulderPress',name:'Machine Shoulder Press',icon:'shoulderPress',cat:'assist',tip:'Assis - Poussee verticale - Deltoide complet - Mouvement principal epaules - Charge lourde'},
     {id:'rearDeltMachineJeu',name:'Rear Delt Machine',icon:'rearDelt',cat:'assist',tip:'Pec deck en mode inverse - Poignees ecartent vers l arriere - Deltoide posterieur - Machine 100% guidee'},
     {id:'lateralRaise',name:'Dumbbell Lateral Raise',icon:'lateralRaise',cat:'free',tip:'Debout - Bras en croix jusqu a hauteur epaule - Deltoide lateral - Coudes legerement flechis'},
-    {id:'facePullJeu',name:'Cable Face Pull',icon:'facePull',cat:'assist',tip:'Corde - Coudes hauts - Tire vers le visage - Epaules posterieures + Trapezes moyens + Coiffe des rotateurs - Rappel mardi'},
     {id:'shrug',name:'Machine Shrug',icon:'shoulderPress',cat:'assist',tip:'Hausse les epaules vers les oreilles - Trapezes - Contraction maximale en haut - Descente lente'},
-    {id:'cableFrontRaiseJeu',name:'Cable Front Raise',icon:'lateralRaise',cat:'assist',pair:'cable',tip:'Cable bas - Tire vers le haut jusqu a hauteur epaule - Deltoide anterieur - Tension constante cable - SUPERSET avec Upright Row'},
-    {id:'uprightRow',name:'Cable Upright Row',icon:'facePull',cat:'assist',pair:'cable',tip:'Cable bas - Tire vers le menton - Coudes hauts - Deltoide lateral + Trapezes - SUPERSET avec Front Raise'},
+    {id:'uprightRow',name:'Cable Upright Row',icon:'facePull',cat:'assist',tip:'Cable bas - Tire vers le menton - Coudes hauts - Deltoide lateral + Trapezes'},
     {id:'cardioJeu',name:'Marche Inclinée',icon:'treadmill',cat:'cardio',tip:'Tapis incliné 8-12% - Vitesse marche rapide - 25 à 30 minutes - Après la séance'},
   ]},
-  {id:'ven',label:'VEN',name:'Jambes \u2014 Ischios/Fessiers',sub:'2 Ischios \u00b7 3 Fessiers \u00b7 2 Hanches',color:'#2ecc71',exercises:[
+  {id:'ven',label:'VEN',name:'Jambes — Ischios/Fessiers',sub:'2 Ischios · 3 Fessiers · 2 Hanches · Cardio',color:'#2ecc71',exercises:[
     {id:'ab_ven',name:'Ab Machine (Crunch)',icon:'abMachine',cat:'assist',isAbdo:true,tip:'Gainage abdominal - Contraction en bas'},
     {id:'hyperext45',name:'45° Hyperextension',icon:'backExt',cat:'semi',tip:'Banc incline 45 degres - Hanches sur le pad - Descends le buste vers le bas - Remonte en contractant - Ischios + Fessiers + Erecteurs spinaux - Mains croisees sur la poitrine ou derriere la tete'},
     {id:'lyingCurl',name:'Lying Leg Curl',icon:'legCurl',cat:'assist',tip:'Ventre sur la machine - Talon vers les fesses - Ischios isolation - Descente lente 3 secondes'},
@@ -171,19 +168,8 @@ var P=[
     {id:'hipAbduct',name:'Hip Abduction Machine',icon:'hipAbduct',cat:'assist',pair:'hip',tip:'Assis - Ecarte les jambes - Fessier externe + Hanche - Contraction en haut - SUPERSET avec Adduction'},
     {id:'hipAdduct',name:'Hip Adduction Machine',icon:'hipAbduct',cat:'assist',pair:'hip',tip:'Assis - Rapproche les jambes - Interieur de la cuisse - Contraction au centre - SUPERSET avec Abduction'},
     {id:'singleLegPress',name:'Single Leg Press',icon:'legPress',cat:'assist',isIso:true,tip:'Une jambe a la fois - Pied haut sur la plateforme - Fessier + Ischio unilateral - Corrige les desequilibres - ISOLATION FINALE'},
+    {id:'cardioVen',name:'Marche Inclinée',icon:'treadmill',cat:'cardio',tip:'Tapis incliné 8-12% - Vitesse marche rapide - 25 à 30 minutes - Après la séance'},
   ]},
-  {id:'sam',label:'SAM',name:'Pecs · Obliques · Abdos',sub:'1 Dos · 3 Pecs · 2 Obliques · 1 Abdos',color:'#e91e8c',exercises:[
-    {id:'ab_sam',name:'Ab Machine (Crunch)',icon:'abMachine',cat:'assist',isAbdo:true,tip:'Gainage abdominal - Contraction en bas'},
-    {id:'pullupSam',name:'Assisted Pull-Up Machine',icon:'pullup',cat:'assist',tip:'Traction assistee - Prise large - Dos large - Tire le corps vers le haut - Grand dorsal'},
-    {id:'dipsSam',name:'Dips Barres Parallèles',icon:'seatedDip',cat:'free',tip:'Poids du corps - Penche vers l avant - Pecs bas + Triceps - Descente complete - Remonte sans verrouiller'},
-    {id:'cableFlySam',name:'Cable Chest Fly (Crossover)',icon:'pecFly',cat:'assist',tip:'Cables niveau epaules - Tension constante sur pecs - Grande amplitude - Mains se croisent en avant'},
-    {id:'chestPressSam',name:'Machine Chest Press',icon:'bench',cat:'assist',tip:'Machine guidee - Poussee horizontale - Pecs complet - Dos plat contre le dossier - Descente controlee'},
-    {id:'rotaryTorsoSam',name:'Rotary Torso Machine',icon:'hipAbduct',cat:'assist',tip:'Machine rotation - Obliques - Tourne lentement - Amplitude maximale des deux cotes - Gainage pendant la rotation'},
-    {id:'sideBendSam',name:'Dumbbell Side Bend',icon:'lateralRaise',cat:'free',tip:'Haltere d un cote - Penche lateralement - Obliques externes - Alterne gauche et droite - Controle la descente'},
-    {id:'legRaiseSam',name:'Relevé de Jambes Tendues (Chaise Romaine)',icon:'pullup',cat:'free',tip:'Chaise romaine - Jambes tendues - Monte a 90 degres horizontale - Abdos bas - Descente lente et controlee'},
-  ]},
-];
-
 
 // ── HELPERS ────────────────────────────────────────────────────────────────
 function getISO(){
