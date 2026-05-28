@@ -141,22 +141,24 @@ var P=[
     {id:'dbcurl',name:'Dumbbell Curl debout',icon:'lateralRaise',cat:'free',pair:'bic',tip:'Debout - Coudes colles au corps - Alterne les bras - Biceps chef court - SUPERSET avec Hammer Curl'},
     {id:'hammercurl',name:'Hammer Curl',icon:'lateralRaise',cat:'free',pair:'bic',isIso:true,tip:'Prise neutre pouce vers le haut - Biceps chef long + Avant-bras - SUPERSET avec Dumbbell Curl - ISOLATION FINALE'},
   ]},
-  {id:'mer',label:'MER',name:'Jambes — Quadriceps',sub:'4 Quadri · 1 Ischio · 1 Mollet',color:'#f5a623',exercises:[
+  {id:'mer',label:'MER',name:'Jambes — Quadriceps',sub:'4 Quadri · 1 Ischio · 2 Mollets',color:'#f5a623',exercises:[
     {id:'ab_mer',name:'Ab Machine (Crunch)',icon:'abMachine',cat:'assist',isAbdo:true,tip:'Gainage abdominal - Contraction en bas'},
     {id:'gobletSq',name:'Goblet Squat',icon:'squat',cat:'free',tip:'Haltere tenu devant la poitrine - Pieds largeur epaules - Descends cuisses paralleles - Dos droit - Centre de gravite unique - Quadriceps complet'},
     {id:'legPress',name:'Leg Press 45°',icon:'legPress',cat:'semi',tip:'Pieds bas serres = Quadri externes - Pieds normaux = Quadri complet - Pieds hauts = Ischios + Fessiers - Choisis selon objectif'},
     {id:'hackSquat',name:'Hack Squat Machine',icon:'squat',cat:'semi',tip:'Machine guidee - Pieds ecarte largeur epaules - Descend cuisses paralleles - Quadriceps complet - Dos plat contre le coussin'},
     {id:'seatedLegCurl',name:'Seated Leg Curl',icon:'legCurl',cat:'assist',tip:'Assis sur la machine - Talon sous le pad - Flechis les jambes - Ischios - Angle different du couche vendredi - Descente lente 3 secondes'},
-    {id:'calfRaise',name:'Standing Calf Raise',icon:'calf',cat:'assist',tip:'Debout - Monte sur la pointe des pieds - Contraction maximale en haut - Descente complete pour etirement - Mollets'},
+    {id:'calfRaise',name:'Standing Calf Raise',icon:'calf',cat:'assist',pair:'calf',tip:'Debout - Monte sur la pointe des pieds - Contraction maximale en haut - Descente complete - Gastrocnemien - SUPERSET avec Seated Calf'},
+    {id:'seatedCalfMer',name:'Seated Calf Raise',icon:'calf',cat:'assist',pair:'calf',tip:'Assis - Genoux flechis sous le pad - Monte sur la pointe des pieds - Solaire (muscle profond) - Angle different du debout - SUPERSET avec Standing Calf'},
     {id:'legExt',name:'Leg Extension',icon:'legExt',cat:'assist',isIso:true,tip:'Assis - Jambes etendues vers le haut - Quadriceps isolation - Contraction maximale en haut - Tempo lent 4 secondes - ISOLATION FINALE'},
   ]},
-  {id:'jeu',label:'JEU',name:'Épaules — Trapèzes',sub:'3 Épaules · 1 Trapèze · 1 Cable · Cardio',color:'#a855f7',exercises:[
+  {id:'jeu',label:'JEU',name:'Épaules — Trapèzes',sub:'3 Épaules · 1 Trapèze · 2 Cable · Cardio',color:'#a855f7',exercises:[
     {id:'ab_jeu',name:'Ab Machine (Crunch)',icon:'abMachine',cat:'assist',isAbdo:true,tip:'Gainage abdominal - Contraction en bas'},
     {id:'shoulderPress',name:'Machine Shoulder Press',icon:'shoulderPress',cat:'assist',tip:'Assis - Poussee verticale - Deltoide complet - Mouvement principal epaules - Charge lourde'},
     {id:'rearDeltMachineJeu',name:'Rear Delt Machine',icon:'rearDelt',cat:'assist',tip:'Pec deck en mode inverse - Poignees ecartent vers l arriere - Deltoide posterieur - Machine 100% guidee'},
     {id:'lateralRaise',name:'Dumbbell Lateral Raise',icon:'lateralRaise',cat:'free',tip:'Debout - Bras en croix jusqu a hauteur epaule - Deltoide lateral - Coudes legerement flechis'},
     {id:'shrug',name:'Machine Shrug',icon:'shoulderPress',cat:'assist',tip:'Hausse les epaules vers les oreilles - Trapezes - Contraction maximale en haut - Descente lente'},
-    {id:'uprightRow',name:'Cable Upright Row',icon:'facePull',cat:'assist',tip:'Cable bas - Tire vers le menton - Coudes hauts - Deltoide lateral + Trapezes'},
+    {id:'facePullJeu',name:'Cable Face Pull',icon:'facePull',cat:'assist',pair:'cable',tip:'Corde - Coudes hauts - Tire vers le visage - Epaules posterieures + Trapezes moyens - SUPERSET avec Upright Row'},
+    {id:'uprightRow',name:'Cable Upright Row',icon:'facePull',cat:'assist',pair:'cable',tip:'Cable bas - Tire vers le menton - Coudes hauts - Deltoide lateral + Trapezes - SUPERSET avec Face Pull'},
     {id:'cardioJeu',name:'Marche Inclinée',icon:'treadmill',cat:'cardio',tip:'Tapis incliné 8-12% - Vitesse marche rapide - 25 à 30 minutes - Après la séance'},
   ]},
   {id:'ven',label:'VEN',name:'Jambes — Ischios/Fessiers',sub:'2 Ischios · 3 Fessiers · 2 Hanches · Cardio',color:'#2ecc71',exercises:[
