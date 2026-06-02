@@ -118,7 +118,7 @@ function mkIcon(n,c,sz){
 
 // ── PROGRAMME ──────────────────────────────────────────────────────────────
 var P=[
-  {id:'lun',label:'LUN',name:'Pectoraux — Triceps',sub:'4 Pecs · 4 Triceps · Cardio',color:'#ff4d1c',exercises:[
+  {id:'lun',label:'LUN',name:'Pectoraux — Triceps',sub:'4 Pecs · 4 Triceps',color:'#ff4d1c',exercises:[
     {id:'ab_lun',name:'Ab Machine (Crunch)',icon:'abMachine',cat:'assist',isAbdo:true,tip:'Gainage abdominal - Contraction en bas - Expiration en haut'},
     {id:'benchpress',name:'Barbell Bench Press',icon:'bench',cat:'semi',tip:'Allonge sur le banc - Barre descendue jusqu a la poitrine - Prise large - Pecs horizontal - Mouvement principal'},
     {id:'inclinedb',name:'Incline Dumbbell Press',icon:'incline',cat:'free',tip:'Banc incline 30-45 degres - Halteres - Haut des pecs - Coudes legerement vers exterieur - Grande amplitude'},
@@ -128,7 +128,6 @@ var P=[
     {id:'overheadtri',name:'Overhead Triceps Extension',icon:'overhead',cat:'free',pair:'tri',tip:'Haltere a deux mains - Debout ou assis - Descend derriere la tete - Chef long du triceps - Coudes fixes - SUPERSET avec Cable Pushdown'},
     {id:'tricepsPush',name:'Cable Triceps Pushdown',icon:'tricepsPush',cat:'assist',pair:'tri',tip:'Corde ou barre - Coudes colles au corps - Pousse vers le bas - Triceps - SUPERSET avec Overhead Triceps'},
     {id:'seatedDipLun',name:'Seated Dip Machine',icon:'seatedDip',cat:'assist',isIso:true,tip:'Machine guidee - Pousse vers le bas - Triceps + Pecs bas - ISOLATION FINALE'},
-    {id:'cardioLun',name:'Marche Inclinée',icon:'treadmill',cat:'cardio',tip:'Tapis incliné 8-12% - Vitesse marche rapide - 25 à 30 minutes - Après la séance'},
   ]},
   {id:'mar',label:'MAR',name:'Dos — Biceps',sub:'4 Dos · 3 Biceps · 1 Épaules postérieures',color:'#3d8bff',exercises:[
     {id:'ab_mar',name:'Ab Machine (Crunch)',icon:'abMachine',cat:'assist',isAbdo:true,tip:'Gainage abdominal - Contraction en bas'},
@@ -151,7 +150,7 @@ var P=[
     {id:'seatedCalfMer',name:'Seated Calf Raise',icon:'calf',cat:'assist',pair:'calf',tip:'Assis - Genoux flechis sous le pad - Monte sur la pointe des pieds - Solaire (muscle profond) - Angle different du debout - SUPERSET avec Standing Calf'},
     {id:'legExt',name:'Leg Extension',icon:'legExt',cat:'assist',isIso:true,tip:'Assis - Jambes etendues vers le haut - Quadriceps isolation - Contraction maximale en haut - Tempo lent 4 secondes - ISOLATION FINALE'},
   ]},
-  {id:'jeu',label:'JEU',name:'Épaules — Trapèzes',sub:'3 Épaules · 1 Trapèze · 2 Cable · Cardio',color:'#a855f7',exercises:[
+  {id:'jeu',label:'JEU',name:'Épaules — Trapèzes',sub:'3 Épaules · 1 Trapèze · 2 Cable',color:'#a855f7',exercises:[
     {id:'ab_jeu',name:'Ab Machine (Crunch)',icon:'abMachine',cat:'assist',isAbdo:true,tip:'Gainage abdominal - Contraction en bas'},
     {id:'shoulderPress',name:'Machine Shoulder Press',icon:'shoulderPress',cat:'assist',tip:'Assis - Poussee verticale - Deltoide complet - Mouvement principal epaules - Charge lourde'},
     {id:'rearDeltMachineJeu',name:'Rear Delt Machine',icon:'rearDelt',cat:'assist',tip:'Pec deck en mode inverse - Poignees ecartent vers l arriere - Deltoide posterieur - Machine 100% guidee'},
@@ -159,9 +158,8 @@ var P=[
     {id:'shrug',name:'Machine Shrug',icon:'shoulderPress',cat:'assist',tip:'Hausse les epaules vers les oreilles - Trapezes - Contraction maximale en haut - Descente lente'},
     {id:'facePullJeu',name:'Cable Face Pull',icon:'facePull',cat:'assist',pair:'cable',tip:'Corde - Coudes hauts - Tire vers le visage - Epaules posterieures + Trapezes moyens - SUPERSET avec Upright Row'},
     {id:'uprightRow',name:'Cable Upright Row',icon:'facePull',cat:'assist',pair:'cable',tip:'Cable bas - Tire vers le menton - Coudes hauts - Deltoide lateral + Trapezes - SUPERSET avec Face Pull'},
-    {id:'cardioJeu',name:'Marche Inclinée',icon:'treadmill',cat:'cardio',tip:'Tapis incliné 8-12% - Vitesse marche rapide - 25 à 30 minutes - Après la séance'},
   ]},
-  {id:'ven',label:'VEN',name:'Jambes — Ischios/Fessiers',sub:'2 Ischios · 3 Fessiers · 2 Hanches · Cardio',color:'#2ecc71',exercises:[
+  {id:'ven',label:'VEN',name:'Jambes — Ischios/Fessiers',sub:'2 Ischios · 3 Fessiers · 2 Hanches',color:'#2ecc71',exercises:[
     {id:'ab_ven',name:'Ab Machine (Crunch)',icon:'abMachine',cat:'assist',isAbdo:true,tip:'Gainage abdominal - Contraction en bas'},
     {id:'hyperext45',name:'45° Hyperextension',icon:'backExt',cat:'semi',tip:'Banc incline 45 degres - Hanches sur le pad - Descends le buste vers le bas - Remonte en contractant - Ischios + Fessiers + Erecteurs spinaux - Mains croisees sur la poitrine ou derriere la tete'},
     {id:'lyingCurl',name:'Lying Leg Curl',icon:'legCurl',cat:'assist',tip:'Ventre sur la machine - Talon vers les fesses - Ischios isolation - Descente lente 3 secondes'},
@@ -170,7 +168,6 @@ var P=[
     {id:'hipAbduct',name:'Hip Abduction Machine',icon:'hipAbduct',cat:'assist',pair:'hip',tip:'Assis - Ecarte les jambes - Fessier externe + Hanche - Contraction en haut - SUPERSET avec Adduction'},
     {id:'hipAdduct',name:'Hip Adduction Machine',icon:'hipAbduct',cat:'assist',pair:'hip',tip:'Assis - Rapproche les jambes - Interieur de la cuisse - Contraction au centre - SUPERSET avec Abduction'},
     {id:'singleLegPress',name:'Single Leg Press',icon:'legPress',cat:'assist',isIso:true,tip:'Une jambe a la fois - Pied haut sur la plateforme - Fessier + Ischio unilateral - Corrige les desequilibres - ISOLATION FINALE'},
-    {id:'cardioVen',name:'Marche Inclinée',icon:'treadmill',cat:'cardio',tip:'Tapis incliné 8-12% - Vitesse marche rapide - 25 à 30 minutes - Après la séance'},
   ]},
   {id:'sam',label:'SAM',name:'Pecs · Obliques · Abdos',sub:'1 Dos · 3 Pecs · 2 Obliques · 1 Abdos',color:'#e91e8c',exercises:[
     {id:'ab_sam',name:'Ab Machine (Crunch)',icon:'abMachine',cat:'assist',isAbdo:true,tip:'Gainage abdominal - Contraction en bas'},
