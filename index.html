@@ -121,10 +121,10 @@ var P=[
   {id:'lun',label:'LUN',name:'Pectoraux — Triceps',sub:'4 Pecs · 4 Triceps',color:'#ff4d1c',exercises:[
     {id:'ab_lun',name:'Ab Machine (Crunch)',icon:'abMachine',cat:'assist',isAbdo:true,tip:'Gainage abdominal - Contraction en bas - Expiration en haut'},
     {id:'benchpress',name:'Barbell Bench Press',icon:'bench',cat:'semi',tip:'Allonge sur le banc - Barre descendue jusqu a la poitrine - Prise large - Pecs horizontal - Mouvement principal'},
-    {id:'inclinedb',name:'Dumbbell Bench Press',icon:'bench',cat:'free',tip:'Banc plat - Deux halteres - Monte les halteres et colle les en haut - Pecs complet - Meilleure amplitude que la barre - Descente complete'},
+    {id:'inclinedb',name:'Incline Dumbbell Press',icon:'incline',cat:'free',tip:'Banc incline 30-45 degres - Deux halteres - Haut des pecs - Coudes legerement vers exterieur - Grande amplitude - Descente complete'},
     {id:'dbpulloverLun',name:'Dumbbell Pullover',icon:'pullover',cat:'free',tip:'Allonge sur le banc - Haltere descend derriere la tete - Pecs bas + Grand dorsal - Grande amplitude - Etirement complet'},
     {id:'pecdeck',name:'Pec Deck Fly',icon:'pecFly',cat:'assist',tip:'Coudes sur les pads - Ramener les bras devant la poitrine - Isolation pecs interieur - Contraction maximale au centre'},
-    {id:'cableOverheadLun',name:'Cable Overhead Triceps Extension',icon:'overhead',cat:'assist',tip:'Corde sur cable haut - Dos au cable - Bras derriere la tete - Etend les bras vers le haut - Chef long du triceps - Tension constante - Coudes fixes'},
+    {id:'skullCrusherLun',name:'EZ Bar Skull Crusher',icon:'overhead',cat:'semi',tip:'Allonge sur le banc - Barre EZ bras tendus - Descend la barre derriere la tete - Re-etend vers le haut - Chef long du triceps - Coudes fixes tout le mouvement'},
     {id:'overheadtri',name:'Overhead Triceps Extension',icon:'overhead',cat:'free',pair:'tri',tip:'Haltere a deux mains - Debout ou assis - Descend derriere la tete - Chef long du triceps - Coudes fixes - SUPERSET avec Cable Pushdown'},
     {id:'tricepsPush',name:'Cable Triceps Pushdown',icon:'tricepsPush',cat:'assist',pair:'tri',tip:'Corde ou barre - Coudes colles au corps - Pousse vers le bas - Triceps - SUPERSET avec Overhead Triceps'},
     {id:'seatedDipLun',name:'Seated Dip Machine',icon:'seatedDip',cat:'assist',isIso:true,tip:'Machine guidee - Pousse vers le bas - Triceps + Pecs bas - ISOLATION FINALE'},
@@ -132,7 +132,7 @@ var P=[
   {id:'mar',label:'MAR',name:'Dos — Biceps',sub:'4 Dos · 3 Biceps · 1 Épaules postérieures',color:'#3d8bff',exercises:[
     {id:'ab_mar',name:'Ab Machine (Crunch)',icon:'abMachine',cat:'assist',isAbdo:true,tip:'Gainage abdominal - Contraction en bas'},
     {id:'pullupMar',name:'Assisted Pull-Up Machine',icon:'pullup',cat:'assist',tip:'Traction assistee - Prise large - Dos large - Tire le corps vers le haut - Grand dorsal - Debut de seance dos'},
-    {id:'divLatPull',name:'Diverging Lat Pulldown',icon:'latPull',cat:'assist',tip:'Poignees divergentes - Tire vers les epaules en ecartant - Dos large + Milieu dos - Meilleure activation que prise classique'},
+    {id:'chestRowMar',name:'Chest-Supported Row',icon:'seatedRow',cat:'assist',tip:'Poitrine contre le pad incline - Tire les poignees vers le ventre - Rhomboides + Milieu dos - Dos neutre - Pas de compensation du dos car poitrine soutenue'},
     {id:'straightArmMar',name:'Cable Straight-Arm Pulldown',icon:'latPull',cat:'assist',tip:'Bras tendus - Cable en hauteur - Pousse la barre vers les hanches - Grand dorsal en isolation - Tension constante - Pas de flexion des coudes'},
     {id:'divSeatedRow',name:'Diverging Seated Row',icon:'seatedRow',cat:'assist',tip:'Poignees qui s ecartent en tirant - Rhomboides + Milieu dos - Bras divergent vers exterieur - Different du Seated Row classique'},
     {id:'facePullMar',name:'Cable Face Pull',icon:'facePull',cat:'assist',tip:'Corde vers le visage - Coudes hauts - Epaules posterieures + Coiffe des rotateurs - Protege les epaules - Essentiel apres les tirages'},
@@ -153,7 +153,7 @@ var P=[
   {id:'jeu',label:'JEU',name:'Épaules — Trapèzes',sub:'3 Épaules · 1 Trapèze · 2 Cable',color:'#a855f7',exercises:[
     {id:'ab_jeu',name:'Ab Machine (Crunch)',icon:'abMachine',cat:'assist',isAbdo:true,tip:'Gainage abdominal - Contraction en bas'},
     {id:'shoulderPress',name:'Machine Shoulder Press',icon:'shoulderPress',cat:'assist',tip:'Assis - Poussee verticale - Deltoide complet - Mouvement principal epaules - Charge lourde'},
-    {id:'rearDeltMachineJeu',name:'Rear Delt Machine',icon:'rearDelt',cat:'assist',tip:'Pec deck en mode inverse - Poignees ecartent vers l arriere - Deltoide posterieur - Machine 100% guidee'},
+    {id:'rearDeltFlyJeu',name:'Dumbbell Rear Delt Fly',icon:'rearDelt',cat:'free',tip:'Assis penche en avant - Deux halteres - Bras s ecartent vers l arriere - Deltoide posterieur - Coudes legerement flechis - Contraction en haut'},
     {id:'lateralRaise',name:'Dumbbell Lateral Raise',icon:'lateralRaise',cat:'free',tip:'Debout - Bras en croix jusqu a hauteur epaule - Deltoide lateral - Coudes legerement flechis'},
     {id:'shrug',name:'Machine Shrug',icon:'shoulderPress',cat:'assist',tip:'Hausse les epaules vers les oreilles - Trapezes - Contraction maximale en haut - Descente lente'},
     {id:'facePullJeu',name:'Cable Face Pull',icon:'facePull',cat:'assist',pair:'cable',tip:'Corde - Coudes hauts - Tire vers le visage - Epaules posterieures + Trapezes moyens - SUPERSET avec Upright Row'},
