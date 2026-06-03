@@ -134,7 +134,7 @@ var P=[
     {id:'pullupMar',name:'Assisted Pull-Up Machine',icon:'pullup',cat:'assist',tip:'Traction assistee - Prise large - Dos large - Tire le corps vers le haut - Grand dorsal - Debut de seance dos'},
     {id:'chestRowMar',name:'Chest-Supported Row',icon:'seatedRow',cat:'assist',tip:'Poitrine contre le pad incline - Tire les poignees vers le ventre - Rhomboides + Milieu dos - Dos neutre - Pas de compensation du dos car poitrine soutenue'},
     {id:'straightArmMar',name:'Cable Straight-Arm Pulldown',icon:'latPull',cat:'assist',tip:'Bras tendus - Cable en hauteur - Pousse la barre vers les hanches - Grand dorsal en isolation - Tension constante - Pas de flexion des coudes'},
-    {id:'divSeatedRow',name:'Diverging Seated Row',icon:'seatedRow',cat:'assist',tip:'Poignees qui s ecartent en tirant - Rhomboides + Milieu dos - Bras divergent vers exterieur - Different du Seated Row classique'},
+    {id:'latPulldownMar',name:'Lat Pulldown',icon:'latPull',cat:'assist',tip:'Barre large au-dessus - Tire vers la poitrine - Grand dorsal - Prise large pronation - Coudes pointent vers le bas - Tirage vertical different du Pull-Up'},
     {id:'facePullMar',name:'Cable Face Pull',icon:'facePull',cat:'assist',tip:'Corde vers le visage - Coudes hauts - Epaules posterieures + Coiffe des rotateurs - Protege les epaules - Essentiel apres les tirages'},
     {id:'preacher',name:'Machine Preacher Curl',icon:'preacher',cat:'assist',isIso:true,tip:'Bras sur appui incline - Isolation biceps - Contraction maximale en haut - Descente controlee'},
     {id:'dbcurl',name:'Dumbbell Curl debout',icon:'lateralRaise',cat:'free',pair:'bic',tip:'Debout - Coudes colles au corps - Alterne les bras - Biceps chef court - SUPERSET avec Hammer Curl'},
@@ -142,7 +142,7 @@ var P=[
   ]},
   {id:'mer',label:'MER',name:'Jambes — Quadriceps',sub:'4 Quadri · 1 Ischio · 1 Mollet',color:'#f5a623',exercises:[
     {id:'ab_mer',name:'Ab Machine (Crunch)',icon:'abMachine',cat:'assist',isAbdo:true,tip:'Gainage abdominal - Contraction en bas'},
-    {id:'legPress',name:'Leg Press 45°',icon:'legPress',cat:'semi',tip:'Pieds bas serres = Quadri externes - Pieds normaux = Quadri complet - Pieds hauts = Ischios + Fessiers - Choisis selon objectif'},
+    {id:'legPressNarrow',name:'Leg Press Prise Serrée',icon:'legPress',cat:'semi',tip:'Pieds serres au centre de la plateforme - Quadriceps internes (vaste interne) - Genoux dans l axe des pieds - Descente complete - Different du Hack Squat'},
     {id:'hackSquat',name:'Hack Squat Machine',icon:'squat',cat:'semi',tip:'Machine guidee - Pieds ecarte largeur epaules - Descend cuisses paralleles - Quadriceps complet - Dos plat contre le coussin'},
     {id:'seatedLegCurl',name:'Seated Leg Curl',icon:'legCurl',cat:'assist',tip:'Assis sur la machine - Talon sous le pad - Flechis les jambes - Ischios - Angle different du couche vendredi - Descente lente 3 secondes'},
     {id:'bulgarianMer',name:'Bulgarian Split Squat',icon:'squat',cat:'free',tip:'Pied arriere sur le banc - Descend le genou avant vers le sol - Quadri avant + Fessier - Halteres dans les mains - Dos droit - Alterne les deux jambes'},
@@ -152,7 +152,7 @@ var P=[
   {id:'jeu',label:'JEU',name:'Épaules — Trapèzes',sub:'4 Épaules · 1 Trapèze · 2 Cable',color:'#a855f7',exercises:[
     {id:'ab_jeu',name:'Ab Machine (Crunch)',icon:'abMachine',cat:'assist',isAbdo:true,tip:'Gainage abdominal - Contraction en bas'},
     {id:'shoulderPress',name:'Machine Shoulder Press',icon:'shoulderPress',cat:'assist',tip:'Assis - Poussee verticale - Deltoide complet - Mouvement principal epaules - Charge lourde'},
-    {id:'arnoldPressJeu',name:'Arnold Press',icon:'shoulderPress',cat:'free',tip:'Halteres - Debout ou assis - Prise en supination en bas - Rotation en poussant vers le haut - Prise en pronation en haut - 3 faisceaux deltoide - Mouvement en rotation unique'},
+    {id:'frontRaiseJeu',name:'Dumbbell Front Raise',icon:'lateralRaise',cat:'free',tip:'Debout - Haltere dans chaque main - Monte les bras devant toi jusqu a hauteur epaule - Deltoide anterieur - Coudes legerement flechis - Descente lente et controlee'},
     {id:'rearDeltFlyJeu',name:'Dumbbell Rear Delt Fly',icon:'rearDelt',cat:'free',tip:'Assis penche en avant - Deux halteres - Bras s ecartent vers l arriere - Deltoide posterieur - Coudes legerement flechis - Contraction en haut'},
     {id:'lateralRaise',name:'Dumbbell Lateral Raise',icon:'lateralRaise',cat:'free',tip:'Debout - Bras en croix jusqu a hauteur epaule - Deltoide lateral - Coudes legerement flechis'},
     {id:'shrug',name:'Machine Shrug',icon:'shoulderPress',cat:'assist',tip:'Hausse les epaules vers les oreilles - Trapezes - Contraction maximale en haut - Descente lente'},
@@ -169,9 +169,8 @@ var P=[
     {id:'hipAdduct',name:'Hip Adduction Machine',icon:'hipAbduct',cat:'assist',pair:'hip',tip:'Assis - Rapproche les jambes - Interieur de la cuisse - Contraction au centre - SUPERSET avec Abduction'},
     {id:'singleLegPress',name:'Single Leg Press',icon:'legPress',cat:'assist',isIso:true,tip:'Une jambe a la fois - Pied haut sur la plateforme - Fessier + Ischio unilateral - Corrige les desequilibres - ISOLATION FINALE'},
   ]},
-  {id:'sam',label:'SAM',name:'Pecs · Obliques · Abdos',sub:'1 Dos · 3 Pecs · 2 Obliques · 1 Abdos',color:'#e91e8c',exercises:[
+  {id:'sam',label:'SAM',name:'Pecs · Obliques · Abdos',sub:'3 Pecs · 2 Obliques · 1 Abdos',color:'#e91e8c',exercises:[
     {id:'ab_sam',name:'Ab Machine (Crunch)',icon:'abMachine',cat:'assist',isAbdo:true,tip:'Gainage abdominal - Contraction en bas'},
-    {id:'pullupSam',name:'Assisted Pull-Up Machine',icon:'pullup',cat:'assist',tip:'Traction assistee - Prise large - Dos large - Tire le corps vers le haut - Grand dorsal'},
     {id:'dipsSam',name:'Dips Barres Parallèles',icon:'seatedDip',cat:'free',tip:'Poids du corps - Penche vers l avant - Pecs bas + Triceps - Descente complete - Remonte sans verrouiller'},
     {id:'cableFlySam',name:'Cable Chest Fly (Crossover)',icon:'pecFly',cat:'assist',tip:'Cables niveau epaules - Tension constante sur pecs - Grande amplitude - Mains se croisent en avant'},
     {id:'chestPressSam',name:'Machine Chest Press',icon:'bench',cat:'assist',tip:'Machine guidee - Poussee horizontale - Pecs complet - Dos plat contre le dossier - Descente controlee'},
