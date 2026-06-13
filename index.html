@@ -68,6 +68,7 @@ select{-webkit-appearance:none;appearance:none}
 .bc{color:#2ecc71;border-color:rgba(46,204,113,.4);background:rgba(46,204,113,.12)}
 .bab{color:#c084fc;border-color:rgba(168,85,247,.4);background:rgba(168,85,247,.12)}
 .bi{color:#c084fc;border-color:rgba(168,85,247,.4);background:rgba(168,85,247,.1)}
+.bun{color:#2dd4bf;border-color:rgba(45,212,191,.4);background:rgba(45,212,191,.12)}
 .bd{color:#2ecc71;border-color:rgba(46,204,113,.4);background:rgba(46,204,113,.15)}
 .exck{width:28px;height:28px;flex-shrink:0;border-radius:50%;border:2px solid #333;display:flex;align-items:center;justify-content:center;margin-top:4px;font-size:14px;font-weight:900;color:transparent}
 .wrow{display:flex;align-items:center;gap:8px;padding:0 12px 10px 88px;flex-wrap:wrap}
@@ -125,8 +126,8 @@ var P=[
     {id:'dbpulloverLun',name:'Dumbbell Pullover',icon:'pullover',cat:'free',tip:'Allonge sur le banc - Haltere descend derriere la tete - Pecs bas + Grand dorsal - Grande amplitude - Etirement complet'},
     {id:'pecdeck',name:'Pec Deck Fly',icon:'pecFly',cat:'assist',tip:'Coudes sur les pads - Ramener les bras devant la poitrine - Isolation pecs interieur - Contraction maximale au centre'},
     {id:'skullCrusherLun',name:'EZ Bar Skull Crusher',icon:'overhead',cat:'semi',tip:'Allonge sur le banc - Barre EZ bras tendus - Descend la barre derriere la tete - Re-etend vers le haut - Chef long du triceps - Coudes fixes tout le mouvement'},
-    {id:'overheadtri',name:'Overhead Triceps Extension',icon:'overhead',cat:'free',pair:'tri',tip:'Haltere a deux mains - Debout ou assis - Descend derriere la tete - Chef long du triceps - Coudes fixes - SUPERSET avec Cable Pushdown'},
-    {id:'tricepsPush',name:'Cable Triceps Pushdown',icon:'tricepsPush',cat:'assist',pair:'tri',tip:'Corde ou barre - Coudes colles au corps - Pousse vers le bas - Triceps - SUPERSET avec Overhead Triceps'},
+    {id:'overheadtri',name:'Overhead Triceps Extension',icon:'overhead',cat:'free',pair:'tri',isUni:true,tip:'Un haltere par bras - Un bras a la fois - Descend derriere la tete - Chef long du triceps - Coudes fixes - SUPERSET avec Cable Pushdown'},
+    {id:'tricepsPush',name:'Cable Triceps Pushdown',icon:'tricepsPush',cat:'assist',pair:'tri',isUni:true,tip:'Corde ou poignee simple - Un bras a la fois - Coude colle au corps - Pousse vers le bas - Triceps - SUPERSET avec Overhead Triceps'},
     {id:'seatedDipLun',name:'Seated Dip Machine',icon:'seatedDip',cat:'assist',isIso:true,tip:'Machine guidee - Pousse vers le bas - Triceps + Pecs bas - ISOLATION FINALE'},
   ]},
   {id:'mar',label:'MAR',name:'Dos — Biceps',sub:'3 Dos · 3 Biceps · 1 Épaules postérieures',color:'#3d8bff',exercises:[
@@ -137,7 +138,7 @@ var P=[
     {id:'facePullMar',name:'Cable Face Pull',icon:'facePull',cat:'assist',tip:'Corde vers le visage - Coudes hauts - Epaules posterieures + Coiffe des rotateurs - Protege les epaules - Essentiel apres les tirages'},
     {id:'preacher',name:'Machine Preacher Curl',icon:'preacher',cat:'assist',isIso:true,tip:'Bras sur appui incline - Isolation biceps - Contraction maximale en haut - Descente controlee'},
     {id:'dbcurl',name:'Dumbbell Curl debout',icon:'lateralRaise',cat:'free',pair:'bic',tip:'Debout - Coudes colles au corps - Alterne les bras - Biceps chef court - SUPERSET avec Hammer Curl'},
-    {id:'hammercurl',name:'Hammer Curl',icon:'lateralRaise',cat:'free',pair:'bic',isIso:true,tip:'Prise neutre pouce vers le haut - Biceps chef long + Avant-bras - SUPERSET avec Dumbbell Curl - ISOLATION FINALE'},
+    {id:'inclineDbCurlMar',name:'Incline Dumbbell Curl',icon:'lateralRaise',cat:'free',pair:'bic',isIso:true,isUni:true,tip:'Assis sur banc incline - Bras tombent derriere le corps - Etirement maximal du biceps en bas - Curl un bras a la fois - Chef long + etirement - SUPERSET avec Dumbbell Curl - ISOLATION FINALE'},
   ]},
   {id:'mer',label:'MER',name:'Jambes — Quadriceps',sub:'4 Quadri · 1 Ischio · 1 Mollet',color:'#f5a623',exercises:[
     {id:'ab_mer',name:'Ab Machine (Crunch)',icon:'abMachine',cat:'assist',isAbdo:true,tip:'Gainage abdominal - Contraction en bas'},
@@ -150,10 +151,10 @@ var P=[
   ]},
   {id:'jeu',label:'JEU',name:'Épaules — Trapèzes',sub:'4 Épaules · 1 Trapèze · 2 Cable',color:'#a855f7',exercises:[
     {id:'ab_jeu',name:'Ab Machine (Crunch)',icon:'abMachine',cat:'assist',isAbdo:true,tip:'Gainage abdominal - Contraction en bas'},
-    {id:'shoulderPress',name:'Machine Shoulder Press',icon:'shoulderPress',cat:'assist',tip:'Assis - Poussee verticale - Deltoide complet - Mouvement principal epaules - Charge lourde'},
+    {id:'shoulderPress',name:'Dumbbell Shoulder Press',icon:'shoulderPress',cat:'free',tip:'Assis ou debout - Halteres a hauteur des oreilles - Pousse vers le haut - Deltoide complet - Grande amplitude - Etirement plus profond qu en machine en position basse'},
     {id:'rearDeltFlyJeu',name:'Machine Rear Delt Fly',icon:'rearDelt',cat:'assist',tip:'Pec Deck en sens inverse - Assis face au dossier - Poignees a hauteur epaules - Ecarte les bras vers l arriere - Deltoide posterieur - Contraction maximale en fin de mouvement'},
-    {id:'lateralRaise',name:'Dumbbell Lateral Raise',icon:'lateralRaise',cat:'free',tip:'Debout - Bras en croix jusqu a hauteur epaule - Deltoide lateral - Coudes legerement flechis'},
-    {id:'frontRaiseJeu',name:'Dumbbell Front Raise',icon:'lateralRaise',cat:'free',tip:'Debout - Haltere dans chaque main - Monte les bras devant toi jusqu a hauteur epaule - Deltoide anterieur - Coudes legerement flechis - Descente lente et controlee'},
+    {id:'cableLateralJeu',name:'Cable Lateral Raise',icon:'lateralRaise',cat:'assist',isUni:true,tip:'Cable bas - Un bras a la fois - Ecarte le bras jusqu a hauteur epaule - Tension constante tout le mouvement - Deltoide lateral - Alterne les deux cotes'},
+    {id:'frontRaiseJeu',name:'Dumbbell Front Raise',icon:'lateralRaise',cat:'free',isUni:true,tip:'Debout - Un bras a la fois - Monte le bras devant toi jusqu a hauteur epaule - Deltoide anterieur - Alterne gauche et droite - Descente lente et controlee'},
     {id:'shrug',name:'Machine Shrug',icon:'shoulderPress',cat:'assist',tip:'Hausse les epaules vers les oreilles - Trapezes - Contraction maximale en haut - Descente lente'},
     {id:'facePullJeu',name:'Cable Face Pull',icon:'facePull',cat:'assist',pair:'cable',tip:'Corde - Coudes hauts - Tire vers le visage - Epaules posterieures + Trapezes moyens - SUPERSET avec Upright Row'},
     {id:'uprightRow',name:'Cable Upright Row',icon:'facePull',cat:'assist',pair:'cable',tip:'Cable bas - Tire vers le menton - Coudes hauts - Deltoide lateral + Trapezes - SUPERSET avec Face Pull'},
@@ -172,7 +173,7 @@ var P=[
     {id:'ab_sam',name:'Ab Machine (Crunch)',icon:'abMachine',cat:'assist',isAbdo:true,tip:'Gainage abdominal - Contraction en bas'},
     {id:'dipsSam',name:'Dips Barres Parallèles',icon:'seatedDip',cat:'free',tip:'Poids du corps - Penche vers l avant - Pecs bas + Triceps - Descente complete - Remonte sans verrouiller'},
     {id:'convergingPressSam',name:'Converging Chest Press',icon:'bench',cat:'assist',tip:'Poignees qui convergent en poussant - Pecs centre et bas - Contraction maximale quand les mains se rejoignent - Dos plat contre le dossier - Mouvement plus naturel que la presse droite'},
-    {id:'pecDeckSam',name:'Pec Deck Fly',icon:'pecFly',cat:'assist',tip:'Coudes sur les pads - Ramener les bras devant la poitrine - Isolation pecs interieur - Contraction maximale au centre - Descente controlee'},
+    {id:'cableFlySam',name:'Cable Chest Fly (Crossover)',icon:'pecFly',cat:'assist',tip:'Cables niveau epaules - Grande amplitude - Etirement maximal en position ouverte - Tension constante sur les pecs - Mains se croisent en avant'},
     {id:'rotaryTorsoSam',name:'Rotary Torso Machine',icon:'hipAbduct',cat:'assist',tip:'Machine rotation - Obliques - Tourne lentement - Amplitude maximale des deux cotes - Gainage pendant la rotation'},
     {id:'sideBendSam',name:'Dumbbell Side Bend',icon:'lateralRaise',cat:'free',tip:'Haltere d un cote - Penche lateralement - Obliques externes - Alterne gauche et droite - Controle la descente'},
     {id:'legRaiseSam',name:'Relevé de Jambes Tendues (Chaise Romaine)',icon:'pullup',cat:'free',tip:'Chaise romaine - Jambes tendues - Monte a 90 degres horizontale - Abdos bas - Descente lente et controlee'},
@@ -393,6 +394,7 @@ function exHTML(ex,day){
     :ex.cat==='free'?'<span class="bdg bf">\uD83D\uDD34 Libre</span>'
     :ex.cat==='cardio'?'<span class="bdg bc">\uD83C\uDFC3 Cardio</span>':'';
   var isoB=ex.isIso?'<span class="bdg bi">\uD83C\uDFAF Isolation</span>':'';
+  var uniB=ex.isUni?'<span class="bdg bun">\uD83D\uDCAA Unilat\u00E9ral</span>':'';
   var doneB=done?'<span class="bdg bd">\u2713 Fait</span>':'';
   var opts=['\u2014','2.5','5','7.5','10','12.5','15','17.5','20','22.5','25','27.5','30','32.5','35','40','45','50','55','60','70','80','90','100','120'];
   var selOpts=opts.map(function(o){return '<option value="'+o+'"'+(o===(w||'\u2014')?' selected':'')+'>'+(o==='\u2014'?'S\u00e9lectionner kg':o+' kg')+'</option>';}).join('');
@@ -411,7 +413,7 @@ function exHTML(ex,day){
     +'<div class="exnm" style="color:'+(done?'#2ecc71':'#efefef')+'">'+ex.name+'</div>'
     
     +'<div class="extip">'+ex.tip+'</div>'
-    +'<div class="exbadges">'+catB+isoB+doneB+'</div>'
+    +'<div class="exbadges">'+catB+isoB+uniB+doneB+'</div>'
     +'</div>'
     +'<div class="exck" style="background:'+(done?'#2ecc71':'transparent')+';border-color:'+(done?'#2ecc71':'#333')+';color:'+(done?'#000':'transparent')+'">\u2713</div>'
     +'</div>'+wRow+'</div>';
